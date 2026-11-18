@@ -1,5 +1,5 @@
 // Service worker : app shell + couches du pack en cache (hors ligne). Les appels /api sont geres par l'application (IndexedDB).
-const V = 'oregdo-v43';
+const V = 'oregdo-v44';
 const VM = 'oregdo-masquage-v1';   // moteurs et modèles de masquage (≈ 45 Mo) : mis en cache à la première photo, jamais revérifiés
 const FOND = ['routes_principales', 'communes', 'lieux', 'reperes', 'verts', 'decharges_osm'].map((n) => `data/pack/fond/${n}.geojson`)
   .concat(['OpenSans-Regular', 'OpenSans-Bold'].flatMap((f) => ['0-255', '256-511'].map((r) => `vendor/fonts/${f}/${r}.pbf`)));
@@ -9,7 +9,18 @@ const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'css/polices.css', 'c
   'data/droits.json', 'data/pack/commune.geojson', 'data/pack/secteurs.geojson', 'data/pack/eau.geojson', 'data/pack/routes.geojson', 'data/pack/sites_candidats.geojson', 'data/pack/infrastructures.geojson',
   'vendor/maplibre/maplibre-gl.js', 'vendor/maplibre/maplibre-gl.css', 'icons/icon-192.png', ...FOND];
 
-self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => Promise.all(SHELL.map((u) => c.add(new Request(u, { cache: 'reload' })).catch(() => {})))).then(() => self.skipWaiting())); });
+// Floutage des visages et plaques (≈ 44 Mo) : gardé DÈS l'installation, pour qu'une seule ouverture de l'application suffise
+// à signaler avec photo sans réseau (livrable « application de signalement hors ligne »). Pas en mode économie de données.
+const MASQUAGE = ['mediapipe/vision_bundle.mjs', 'mediapipe/wasm/vision_wasm_internal.js', 'mediapipe/wasm/vision_wasm_internal.wasm',
+  'modeles/blaze_face_short_range.tflite', 'modeles/efficientdet_lite0.tflite', 'modeles/yolo-v9-t-384-license-plates-end2end.onnx',
+  'ort/ort.wasm.min.mjs', 'ort/ort-wasm-simd-threaded.mjs', 'ort/ort-wasm-simd-threaded.wasm'].map((f) => 'vendor/masquage/' + f);
+const economie = () => !!(self.navigator && self.navigator.connection && self.navigator.connection.saveData);
+const garderMasquage = () => (economie() ? Promise.resolve() : caches.open(VM).then((c) => Promise.all(MASQUAGE.map((u) =>
+  c.match(u, { ignoreSearch: true }).then((h) => h || c.add(new Request(u, { cache: 'reload' })).catch(() => {}))))));
+self.addEventListener('install', (e) => { e.waitUntil(Promise.all([
+  caches.open(V).then((c) => Promise.all(SHELL.map((u) => c.add(new Request(u, { cache: 'reload' })).catch(() => {})))),
+  garderMasquage(),
+]).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((k) => Promise.all(k.filter((x) => x !== V && x !== VM).map((x) => caches.delete(x)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', (e) => {
   const u = new URL(e.request.url);
