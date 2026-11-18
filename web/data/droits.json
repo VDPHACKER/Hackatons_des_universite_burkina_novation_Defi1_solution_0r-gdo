@@ -1,0 +1,181 @@
+{
+  "avertissement": "Sources : Code de l'hygiène publique (loi 022-2005/AN), Code de l'environnement (loi 006-2013/AN), presse nationale 2025-2026. Pour une situation précise, voir la mairie, un agent d'hygiène ou un juriste.",
+  "certitudes": {
+    "A": "Confirmé dans le texte de loi",
+    "B": "Source sérieuse, à confirmer",
+    "C": "Incertain, à vérifier",
+    "NV": "Non vérifié"
+  },
+  "phases": [
+    {
+      "nom": "D'abord : on explique et on aide",
+      "texte": "La brigade Laabal commence par expliquer la règle et demander de corriger. Un citoyen peut aussi être orienté vers un travail d'intérêt communautaire (curage de caniveaux, par exemple).",
+      "certitude": "B"
+    },
+    {
+      "nom": "Ensuite, seulement en cas de refus ou de récidive : sanction",
+      "texte": "Procès-verbal et amende. Le Code d'hygiène prévoit 30 000 à 50 000 FCFA pour un dépôt sur la voie publique, le double en cas de récidive.",
+      "certitude": "B"
+    }
+  ],
+  "sections": [
+    {
+      "titre": "Ce que je dois faire",
+      "items": [
+        {
+          "id": "poubelle",
+          "titre": "Avoir une poubelle ou un récipient fermé",
+          "texte": "En ville, les ordures ménagères se mettent dans un récipient étanche et facile à porter, ou dans un dépotoir autorisé par la commune. Dans la concession, elles sont gardées dans des poubelles adaptées.",
+          "base": "Code d'hygiène publique (loi 022-2005/AN), art. 15 et 32",
+          "sanction": "5 000 à 30 000 FCFA (art. 141) ; 30 000 à 50 000 FCFA pour l'art. 15 (art. 143)",
+          "certitude": "A",
+          "note": "Le texte est ambigu : l'art. 15 relève de la plage de l'art. 143, l'art. 32 de celle de l'art. 141."
+        },
+        {
+          "id": "livrer",
+          "titre": "Remettre mes déchets à un collecteur, ou les traiter moi-même",
+          "texte": "Toute personne qui détient des déchets doit les livrer à un collecteur public ou privé, ou les traiter conformément aux règles. S'abonner à un pré-collecteur est le moyen courant.",
+          "base": "Code de l'environnement (loi 006-2013/AN), art. 51",
+          "sanction": "Pas d'amende chiffrée dans la loi pour un ménage. L'art. 52 prévoit la mise en demeure, puis le nettoyage d'office aux frais du contrevenant.",
+          "certitude": "A"
+        },
+        {
+          "id": "abonnement",
+          "titre": "Suis-je obligé de m'abonner ?",
+          "texte": "Aucun texte lu n'impose explicitement l'abonnement à un service de pré-collecte. L'obligation est de livrer les déchets à un collecteur ou de les traiter soi-même. Tarif habituel : 1 000 FCFA par mois (500 en quartier populaire selon une enquête de 2015).",
+          "base": "Code de l'environnement, art. 51 ; profil ONU-Habitat 2019",
+          "sanction": "Non applicable",
+          "certitude": "C"
+        },
+        {
+          "id": "parcelle",
+          "titre": "Garder ma parcelle et ses abords propres",
+          "texte": "Chaque occupant d'une concession assure la propreté à l'intérieur et aux abords immédiats.",
+          "base": "Code d'hygiène, art. 31",
+          "sanction": "5 000 à 30 000 FCFA, doublée en cas de récidive (art. 141)",
+          "certitude": "A"
+        }
+      ]
+    },
+    {
+      "titre": "Ce qui est interdit",
+      "items": [
+        {
+          "id": "voie",
+          "titre": "Jeter ou enfouir des déchets dans la rue, un caniveau, une mare ou près d'un point d'eau",
+          "texte": "Interdit de déposer, jeter ou enfouir des déchets sur les voies et places publiques, rives, mares, rivières, canaux d'évacuation des eaux de pluie.",
+          "base": "Code d'hygiène, art. 13",
+          "sanction": "30 000 à 50 000 FCFA, doublée en cas de récidive (art. 143)",
+          "certitude": "A"
+        },
+        {
+          "id": "enfouir",
+          "titre": "Enfouir les ordures dans la concession",
+          "texte": "Interdit d'enfouir les ordures ménagères dans la concession.",
+          "base": "Code d'hygiène, art. 37",
+          "sanction": "5 000 à 30 000 FCFA (art. 141)",
+          "certitude": "A"
+        },
+        {
+          "id": "bruler",
+          "titre": "Brûler les déchets",
+          "texte": "Il est interdit de brûler en plein air des déchets qui peuvent causer des nuisances (fumées dangereuses pour la santé).",
+          "base": "Code d'hygiène, art. 113",
+          "sanction": "30 000 à 50 000 FCFA, doublée en cas de récidive (art. 143)",
+          "certitude": "A"
+        },
+        {
+          "id": "plastique",
+          "titre": "Sachets plastiques non biodégradables",
+          "texte": "La loi 017-2014/AN interdit leur production, importation et distribution. Les montants des peines varient selon les sources. Jeter un sachet dans la nature : environ 5 000 FCFA selon la presse de 2023.",
+          "base": "Loi 017-2014/AN",
+          "sanction": "Montants contradictoires selon les sources",
+          "certitude": "C"
+        },
+        {
+          "id": "melange",
+          "titre": "Mélanger des déchets toxiques ou industriels aux ordures ménagères",
+          "texte": "Interdit.",
+          "base": "Code d'hygiène, art. 86",
+          "sanction": "50 000 à 500 000 FCFA et 3 à 12 mois de prison (art. 147)",
+          "certitude": "A"
+        }
+      ]
+    },
+    {
+      "titre": "Qui peut me contrôler et comment ?",
+      "items": [
+        {
+          "id": "constat",
+          "titre": "Le constat se fait par procès-verbal",
+          "texte": "Les agents assermentés de la force publique ou de l'hygiène publique établissent un procès-verbal. Les agents de l'hygiène peuvent notifier et percevoir sur place les amendes jusqu'à 50 000 FCFA. Entraver un agent est puni (50 000 à 900 000 FCFA).",
+          "base": "Code d'hygiène, art. 135, 137, 148",
+          "sanction": "Voir texte",
+          "certitude": "A"
+        },
+        {
+          "id": "laabal",
+          "titre": "La brigade Laabal",
+          "texte": "Brigade civique créée par décret le 18 juin 2025 (ministère de la Sécurité). Méthode annoncée : sensibiliser d'abord, sanctionner en cas de refus ou de récidive. Paiement des contraventions par l'application Faso Arzèka. Numéro de signalement : 50 40 05 04. Effectifs et barème propre : non communiqués.",
+          "base": "Presse nationale 2025 et 2026 ; décret sans numéro retrouvé",
+          "sanction": "Barème non communiqué",
+          "certitude": "B"
+        },
+        {
+          "id": "arrete",
+          "titre": "Arrêtés municipaux",
+          "texte": "Aucun arrêté communal chiffrant des amendes pour dépôt sauvage à Ouagadougou n'a été retrouvé. Les sanctions sont rarement appliquées selon certaines sources.",
+          "base": "Recherche en ligne",
+          "sanction": "Inconnue",
+          "certitude": "NV"
+        }
+      ]
+    },
+    {
+      "titre": "Mes droits",
+      "items": [
+        {
+          "id": "signaler",
+          "titre": "Je peux signaler une infraction",
+          "texte": "Tout citoyen peut informer les services compétents d'une infraction à l'hygiène publique. C'est la base de l'écran « Signaler » de cette application.",
+          "base": "Code d'hygiène, art. 134",
+          "sanction": "Non applicable",
+          "certitude": "A"
+        },
+        {
+          "id": "preuve",
+          "titre": "Le procès-verbal fait foi jusqu'à preuve du contraire",
+          "texte": "Vous pouvez donc contester un procès-verbal en apportant des preuves. Un agent non assermenté ne peut établir qu'un rapport, qui vaut jusqu'à preuve contraire.",
+          "base": "Code d'hygiène, art. 135 ; Code de l'environnement, art. 106 et 108",
+          "sanction": "Non applicable",
+          "certitude": "A"
+        },
+        {
+          "id": "mise-en-demeure",
+          "titre": "Mise en demeure avant nettoyage d'office",
+          "texte": "Pour un rejet de déchets dans la nature, l'autorité doit d'abord vous mettre en demeure d'éliminer dans un délai fixé, sauf danger urgent ou auteur inconnu.",
+          "base": "Code de l'environnement, art. 52",
+          "sanction": "Frais de nettoyage à la charge du contrevenant",
+          "certitude": "A"
+        },
+        {
+          "id": "service",
+          "titre": "La commune doit organiser la collecte",
+          "texte": "La commune est responsable de la salubrité et de la gestion des ordures ménagères sur son territoire.",
+          "base": "Code de l'environnement, art. 85 ; Code d'hygiène, art. 8 et 12",
+          "sanction": "Non applicable",
+          "certitude": "A"
+        }
+      ]
+    }
+  ],
+  "conseils": {
+    "titre": "Ce que je peux faire dès aujourd'hui",
+    "items": [
+      "Mettre mes déchets dans un récipient fermé, ou dans un sac que je remets au pré-collecteur.",
+      "Me renseigner sur l'abonnement de mon quartier (environ 500 à 1 000 FCFA par mois selon les sources de 2015 à 2019).",
+      "Ne rien déposer dans la rue, un caniveau ou près d'une mare : porter mes déchets au point de regroupement le plus proche.",
+      "Signaler un tas avec l'application : cela aide la commune à le ramasser."
+    ]
+  }
+}

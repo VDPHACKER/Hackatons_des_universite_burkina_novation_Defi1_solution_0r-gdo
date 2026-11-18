@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e3524">
+<title>Orẽgdo</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-48.png" sizes="48x48">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preload" href="vendor/polices/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/polices.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/design.css">
+</head>
+<body>
+<a class="skip" href="#vue">Aller au contenu</a>
+<div id="app">
+  <!-- Barre latérale (ordinateur) : marque, navigation par rôle, slogan -->
+  <aside id="lateral" aria-label="Navigation principale">
+    <a class="marque" href="#/accueil" aria-label="Accueil">
+      <img src="icons/logo-entete.png" alt="" width="52" height="52" class="logo-marque">
+      <span class="marque-nom"><b id="marque-a">Orẽgdo</b><b id="marque-b"></b></span>
+    </a>
+    <p class="slogan" id="slogan">Zéro déchet, une ville plus verte</p>
+    <nav id="nav-lateral" aria-label="Écrans"></nav>
+    <p class="lateral-bas" id="lateral-bas">Une ville propre, c'est l'affaire de tous !</p>
+  </aside>
+
+  <div id="principal">
+    <header id="entete">
+      <h1 class="titre-mobile"><a href="#/accueil" class="marque-mobile"><img src="icons/logo-entete.png" alt="" width="40" height="40"><span><b id="marque-mobile">Orẽgdo</b><small id="nom-commune">Ouagadougou</small></span></a></h1>
+      <div class="barre-gauche">
+        <span class="pastille-lieu" title="Commune servie"><span class="ico-slot" data-ico="locate"></span> <b id="lieu-commune">Ouagadougou</b></span>
+        <span id="zone-arr" hidden><label for="sel-arr">Arrondissement :</label> <select id="sel-arr" aria-label="Filtrer le tableau de bord par arrondissement"></select></span>
+      </div>
+      <div class="puces">
+        <span id="puce-reseau" class="puce" role="status" aria-live="polite">En ligne</span>
+        <span id="puce-fraicheur" class="puce" title="Fraîcheur des données">Données : -</span>
+        <button id="cloche" type="button" class="puce bouton" hidden aria-label="Notifications" aria-haspopup="true" aria-expanded="false" aria-controls="panneau-notif"><span class="ico-slot" data-ico="cloche"></span><b id="cloche-n" hidden>0</b></button>
+        <div id="sel-langue" class="menu-deroulant"></div>
+        <div id="zone-utilisateur" class="menu-deroulant"></div>
+        <button id="btn-eco" class="puce bouton" aria-pressed="false" title="Mode économie de données">Éco</button>
+        <button id="btn-theme" class="puce bouton" aria-label="Changer le thème clair ou sombre">Thème</button>
+      </div>
+    </header>
+    <div id="panneau-notif" role="region" aria-label="Notifications" hidden></div>
+    <div id="bandeau-synth" class="bandeau compact" role="note" hidden><details><summary><b>Données de démonstration</b> (fictives)</summary>Les chiffres et les tas affichés servent aux essais : ils ne décrivent pas la situation réelle de <span id="synth-commune">la commune</span>.</details></div>
+    <div id="bandeau-langue" class="bandeau" role="note" hidden></div>
+    <main id="vue" tabindex="-1"></main>
+    <footer id="pied">
+      <span><span class="ico-slot" data-ico="horsligne"></span> Mode hors connexion : les signalements partent dès le retour du réseau</span>
+      <span><span class="ico-slot" data-ico="donnees"></span> Données : OpenStreetMap, Open Buildings et signalements citoyens</span>
+      <span><span class="ico-slot" data-ico="licence"></span> Licence ouverte (ODbL)</span>
+      <span class="pied-droit" id="pied-droit">Vers une ville durable</span>
+    </footer>
+  </div>
+</div>
+<div id="plus" class="feuille" hidden></div>
+<nav id="onglets" aria-label="Navigation principale (téléphone)"></nav>
+<div id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

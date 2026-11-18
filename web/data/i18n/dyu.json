@@ -1,0 +1,12 @@
+{
+  "_statut": "brouillon",
+  "_note": "Brouillon minimal : seules les formules les plus courantes sont renseignées ; tout le reste s'affiche en français. À compléter et valider par des locuteurs natifs (voir docs/14-langues-locales.md).",
+  "salut": "I ni ce",
+  "merci": "I ni ce",
+  "sig.oui": "Awɔ",
+  "sig.non": "Ayi",
+  "sig.nsp": "N t'a dɔn",
+  "sig.retour": "Segin",
+  "sig.continuer": "Taa ɲɛ",
+  "sig.photo": "Foto"
+}

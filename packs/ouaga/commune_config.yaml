@@ -1,0 +1,228 @@
+# Configuration du pack commune : Ouagadougou.
+# AUCUNE valeur propre à Ouaga ne doit être codée en dur dans le code : tout vient d'ici.
+# Légende : [S] sourcé (voir docs/01), [H] hypothèse à confirmer avec la mairie.
+
+commune:
+  code: ouaga
+  nom: Ouagadougou
+  marque: Orẽgdo        # nom de l'application affiché dans l'interface
+  fuseau: Africa/Ouagadougou
+  crs_metrique: EPSG:32630          # UTM 30N, pour les distances en mètres
+  couches:                          # fichiers du pack, relatifs à ce dossier
+    commune: commune.geojson
+    secteurs: secteurs.geojson
+    eau: eau.geojson
+    aeroport: aeroport.geojson
+    routes: routes.geojson
+    ilots: ilots.geojson
+    sites_candidats: sites_candidats.geojson
+    infrastructures: infrastructures.geojson
+
+demographie:
+  population: 2415266               # [S] RGPH 2019 ; la mairie évoque ~4 M en 2026, à confirmer
+  menages: 502938                   # [S] RGPH 2019
+  production_kg_hab_jour: 0.57      # [S] fourchette 0,54-0,60 (Banque mondiale / INSD)
+  taux_abonnement: 0.437            # [S] 43,7 % de ramassage privé (RGPH 2019)
+  modes_evacuation:                 # [S] RGPH 2019, tableau 11.6 (part des ménages ; OCR à valider, cf. docs/01)
+    ramassage_prive: 0.437
+    tas_immondices: 0.189
+    rue: 0.144
+    bac_a_ordures: 0.111
+    fosse_caniveau: 0.049
+    fosses_fumieres: 0.033
+    autres: 0.037
+
+verification:
+  # false : la couche des secteurs du pack est SYNTHÉTIQUE, le secteur déclaré n'est pas contrôlé (sinon de vrais
+  # signalements seraient pénalisés à tort). Passer à true quand une couche officielle des secteurs est chargée.
+  secteurs_officiels: false
+  seuils:
+    verifie: 70                     # score >= 70 : vérifié
+    a_confirmer: 40                 # 40 à 69 : à confirmer sur place ; < 40 : rejeté
+  doublons:
+    rayon_m: 40                     # entre 30 et 50 m
+    min_echantillons: 1
+  rafale:
+    fenetre_secondes: 120           # même appareil, trop vite
+    vitesse_max_kmh: 120            # au-delà = déplacement impossible
+    max_signalements_identiques: 3
+  photo:
+    distance_hash_max: 6            # distance de Hamming pHash sous laquelle la photo est « réutilisée »
+  exif:
+    ecart_position_max_m: 150
+    ecart_date_max_heures: 24
+  horodatage:
+    tolerance_futur_minutes: 5
+  corroboration:
+    enqueteurs_min: 2
+    bonus_points: 15
+  classifieur_image:
+    actif: false                    # drapeau : contrôle 8, optionnel
+    poids: 10
+  poids:                            # contribution maximale de chaque contrôle au score (somme = 100)
+    position: 25
+    lieu_possible: 20
+    doublons: 10
+    photo_reutilisee: 10
+    exif: 10
+    horodatage: 15
+    corroboration: 10
+  non_applicable_penalite: 2        # points retirés quand un contrôle ne peut pas s'appliquer
+  sans_photo_plafond: 69            # score maximal d'un signalement sans photo ET sans corroboration par un 2e enquêteur (=> au mieux « à confirmer »)
+  nouvel_identifiant_plafond: 79    # identifiant (enquêteur ou appareil) jamais vu et aucun EXIF cohérent : score plafonné (pas de confiance maximale pour un compte neuf)
+  precision_gps_max_m: 50           # [H] précision GPS annoncée par le téléphone au-delà de laquelle le lieu doit être confirmé par un agent (au mieux « à confirmer ») ; mesuré par la collecte simulée : un relevé à 80-250 m créait un faux dépotoir
+  limites:                          # protections contre les entrées démesurées
+    texte_max: 500                  # caractères par champ texte
+    photos_max: 5                   # comme l'application béninoise « 229 Cadre de vie » (2 avant)
+    photo_octets_max: 3000000       # taille maximale d'une photo décodée
+    fichier_octets_max: 5000000     # fichier d'import
+    lignes_max: 5000                # lignes d'un fichier d'import
+  audio:                            # message vocal joint à un signalement (pour celles et ceux qui écrivent peu) ; donnée personnelle
+    actif: true
+    octets_max: 500000              # taille maximale du fichier (60 s en Opus 24 kbit/s ≈ 180 Ko)
+    duree_max_s: 60                 # durée maximale enregistrée par l'application
+    conservation_jours: 30          # [H] puis le fichier est effacé (le signalement, lui, n'est jamais supprimé)
+  photo_plausible:                  # heuristique de plausibilité, PAS un classifieur de contenu
+    actif: true
+    cote_min_px: 100                # plus petit côté
+    ecart_type_min: 8               # image non unie (niveaux de gris 0-255)
+    bruit_max: 0.6                  # rapport variation entre pixels voisins / écart-type ; ~1,1 pour du bruit pur
+    nettete_min: 1.0                # variation moyenne entre pixels voisins ; en dessous : image floue ou lisse
+  rafale_zone:                      # plusieurs enquêteurs différents, même zone, quelques secondes
+    rayon_m: 300
+    fenetre_secondes: 60
+    min_enqueteurs: 3
+  fractions:                        # parts de points des cas intermédiaires
+    secteur_absent: 0.8
+    secteur_different: 0.4
+    exif_date_ecart: 0.5
+    exif_absent_partiel: 0.5
+
+planification:
+  rayon_acces_pr_m: 1300            # [H] RECALIBRÉ (1 000 avant). Distance PAR LA ROUTE (graphe OSM). Source : 600 m à pied, < 1 km tricycle (docs/01 §5) ; mais à 1 000 m de route la couverture tombe à 34 % (37 % avec les 330 sites ouverts), loin du RGPH 2019 (54,8 % de collecte possible). 1 300 m redonne 42 % (cf. docs/11 §6). À confirmer avec la mairie.
+  budget_pr_fcfa: 250000000         # [H] RECALIBRÉ (60 M avant) : ~250 PR à ~1 M FCFA pour couvrir ~80 % de la demande (docs/05)
+  camions:
+    nombre: 40                      # [H] RECALIBRÉ (20 avant) : ~590 t/j à évacuer + dépotoirs, 21 t/j par camion (docs/05)
+    capacite_kg: 7000               # [H]
+    cout_km_fcfa: 450               # [H]
+    voyages_max_par_jour: 3
+  frequence_collecte_jours: 1
+  saison_pluies:
+    mois: [5, 6, 7, 8, 9, 10]       # mai à octobre
+    facteur_cout_piste: 2.5         # pénalité sur routes non revêtues
+    facteur_zone_inondable: 6.0     # quasi coupure près de l'eau
+    rayon_zone_inondable_m: 150
+  limites:                          # bornes des paramètres acceptés (protection du serveur), toutes [H]
+    camions_nombre: [0, 500]
+    facteur_population: [0.1, 10]
+    taux_abonnement: [0, 1]
+    taux_tri: [0, 1]
+    budget_pr_fcfa: [0, 50000000000]      # 50 milliards de FCFA
+    rayon_acces_pr_m: [50, 5000]
+    frequence_collecte_jours: [1, 30]
+    voyages_max_par_jour: [1, 10]
+    capacite_camion_kg: [500, 40000]
+    nouveaux_quartiers_max: 5
+    quartier_population: [1, 1000000]
+    quartier_points_max: 500              # sommets du polygone
+    quartier_surface_km2_max: 50
+    quartier_etendue_km_max: 20           # côté maximal de l'emprise
+    quartier_distance_commune_max_m: 5000 # au-delà : refusé ; entre 0 et cette valeur : avertissement
+    jours_simulation_max: 365
+    pieges_max: 1000                      # signalements piégés par appel
+    temps_calcul_max_s: 25                # garde-fou de durée d'un plan
+    temps_simulation_max_s: 40            # garde-fou de durée d'une simulation
+  couts:                            # coût complet de la collecte secondaire (la mairie), tous [H] sauf mention
+    salaire_chauffeur_jour_fcfa: 6000      # [H]
+    salaire_ripeur_jour_fcfa: 4000         # [H]
+    ripeurs_par_camion: 2                  # [H]
+    prix_camion_fcfa: 70000000             # [H] benne tasseuse 7 t neuve
+    duree_vie_camion_ans: 8                # [H]
+    entretien_camion_taux_annuel: 0.08     # [H] part du prix par an (pièces, pneus, réparations)
+    duree_amortissement_pr_ans: 10         # [H]
+    reference_banque_mondiale:             # What a Waste 2.0 (2018), docs/01 §2.2, Afrique subsaharienne
+      transport_usd_par_tonne: [20, 50]    # [S]
+      exploitation_usd_par_tonne: 35       # [S]
+      usd_fcfa: 600                        # [H] taux de change
+  moteur:                           # réglages techniques [H] du moteur (anciens DEFAUTS_MOTEUR, cf. docs/05)
+    facteur_detour: 1.3   # [H] rapport distance routière / distance à vol d'oiseau en ville
+    temps_milp_s: 10.0   # plafond de sécurité du solveur p-médiane (HiGHS) : l'optimum est trouvé en ~3 s ; large pour que le plan ne dépende pas de la charge de la machine
+    graphe_routier: graphe_routier.npz   # graphe routier OSM du pack (scripts/build_osm_layers.py) ; null : vol d'oiseau x facteur_detour
+    solveur_tournees: pyvrp   # pyvrp (PyVRP, MIT : ~14 % de distance en moins mesuré) ou ortools (repli)
+    pyvrp_iterations: 200     # arrêt déterministe, ~1,5 s pour ~300 arrêts
+    pyvrp_temps_max_s: 10     # garde-fou de temps seulement
+    facteur_service_pyvrp: 10   # [H] prime de service d'un arrêt = pénalité d'OR-Tools x 10 (servir tous les arrêts si c'est faisable)
+    cvrp_solutions_max: 80   # arrêt déterministe de la recherche locale (nombre d'améliorations)
+    temps_cvrp_s: 3   # garde-fou de temps ; la descente gloutonne s'arrête seule (déterministe)
+    stock_depotoir_kg: 1500   # [H] tonnage à enlever par dépotoir vérifié sans volume connu
+    penalite_pr_m_par_tonne: 20000   # [H] pénalité (en mètres) pour un PR non visité, par tonne non collectée
+    priorite_depotoir: 5.0   # [H] un dépotoir vérifié pèse 5 fois un PR à tonnage égal
+    vitesse_kmh: 25   # [H] vitesse moyenne d'un camion en ville
+    temps_service_min: 15   # [H] chargement par arrêt
+    duree_journee_h: 8   # [H] durée de travail d'un camion
+    resolution_nouveau_quartier_m: 400   # [H] maille des îlots générés pour un nouveau quartier
+    # --- simulation multi-agents (réglages [H]) ---
+    tarif_quartier_populaire_fcfa: 500   # [S] tarif d'abonnement mensuel en quartier non loti
+    voyages_pre_collecteur_par_jour: 3   # [H] voyages d'un tricycle vers le PR
+    apport_volontaire_non_abonnes: 0.197   # [S dérivé] bac à ordures 11,1 % / (1 - 43,7 %) : part des non-abonnés qui apportent à un PR/bac
+    stock_max_jours_pr: 3   # [H] un PR déborde au-delà de 3 jours de capacité
+    seuil_depotoir_actif_kg: 500   # [H] stock au-delà duquel un dépotoir est « actif »
+    rayon_apparition_depotoir_m: 1500   # [H] un dépotoir naît si aucun n'existe à moins de ce rayon
+    delai_verification_jours: 7   # [H] délai avant qu'un nouveau dépotoir soit vérifié
+    variabilite_production: 0.1   # [H] bruit journalier de production (écart relatif)
+    reduction_sensibilisation: 0.1   # [H] baisse des dépôts sauvages après sensibilisation
+    duree_effet_jours: 45   # [H] durée de l'effet d'une intervention avant rechute
+    reduction_sanction: 0.25   # [H] baisse après sanction
+    interventions_par_agent_jour: 0.25   # [H] interventions de la brigade par agent et par jour
+    contrevenants_par_intervention: 1   # [H] PRUDENT (3 avant) : contrevenants verbalisables par intervention de sanction
+    part_depots_auteur_identifiable: 0.15   # [H] part des interventions où un auteur est identifié (flagrant délit, commerce) ; un dépôt anonyme ne peut pas être verbalisé
+    rayon_risque_inondation_m: 200   # [H] un dépotoir actif à moins de cette distance d'un plan d'eau est à risque d'inondation en saison des pluies
+    rendement_capacite_supplementaire: 0.8   # [H] part de la capacité d'un camion en plus réellement utilisable pour enlever des dépotoirs
+    tolerance_stock_relative: 0.02   # [H] seuil (part du flux de fuite) en dessous duquel le stock de dépotoirs est dit stable
+    taux_recouvrement_amendes: 0.3   # [H] part des amendes réellement payées (sanctions « rarement appliquées »)
+    cout_agent_brigade_jour_fcfa: 5000   # [H]
+    conversion_abonnement_apres_sensibilisation: 0.03   # [H] part de non-abonnés qui s'abonnent
+
+simulation:
+  pas_jours: 1
+  horizon_jours: 90
+  graine: 20260116
+  pre_collecteurs:
+    tarif_abonnement_fcfa: 1000     # [S] 500 en quartier populaire, 1000 en quartier aisé
+    capacite_kg: 300                # [H] tricycle
+    nombre_par_secteur: 14          # [H] RECALIBRÉ (6 avant) : ~11 t/j d'abonnés par secteur (jusqu'à ~13) / 0,9 t par tricycle (docs/05)
+  brigade_laabal:
+    effectif: 60                    # [H] effectifs non trouvés
+    rayon_action_m: 3000
+    phase_sensibilisation_jours: 14 # première intervention = sensibilisation
+    amende_fcfa: [30000, 50000]     # [S] Code d'hygiène 022-2005 art. 13 et 143 (doublée si récidive)
+  fuite_vers_depotoir_si_pr_inaccessible: 0.59  # [S dérivé] (tas 18,9 % + rue 14,4 %) / (1 - 43,7 %) = 0,59 des déchets non collectés
+
+securite:                           # AUCUN secret ici : la clé de signature vient de OREGDO_SECRET (ou data/secret.key généré)
+  duree_jeton_heures: 12
+  verrouillage:
+    echecs_max: 5
+    duree_minutes: 15
+  limitation_signalements:          # citoyens (sans compte) : fenêtre glissante
+    fenetre_secondes: 3600
+    max_par_appareil: 20
+    max_par_ip: 60
+  avis_voisins:                     # « moi aussi je le vois » / « ce tas n'est plus là » sur la carte publique
+    rayon_presence_m: 150           # [H] le GPS de l'appareil doit être à moins de ce rayon du dépotoir (preuve de présence)
+    delai_heures: 24                # [H] un seul avis par appareil, par dépotoir et par type, sur cette durée
+    jours_disparu: 14               # [H] fenêtre de comptage des avis « disparu »
+    min_disparu: 2                  # [H] appareils distincts nécessaires pour marquer le dépotoir « à revérifier » (jamais supprimé)
+  sanctions:                        # Code d'hygiène publique, loi 022-2005/AN
+    base_legale: "Loi 022-2005/AN portant Code de l'hygiène publique, art. 13 et 143"
+    recidive_multiplicateur: 2      # amende doublée en cas de récidive
+
+export_osm:
+  tags_depotoir_sauvage: {landuse: landfill, informal: "yes", source: Orẽgdo}
+  tags_point_installe: {amenity: waste_disposal, waste: trash, source: Orẽgdo}
+  note: "Ne verser que des objets vérifiés, après consultation de la communauté OSM locale."
+
+valorisation:                       # tri et revente des matières recyclables par les ménages (levier de scénario `taux_tri`) ; TOUT est [H]
+  part_valorisable: 0.12            # [H] part du poids des déchets ménagers : plastiques, métaux, papier-carton
+  captation: 0.7                    # [H] part de ce gisement réellement récupérée par les ménages qui trient
+  prix_fcfa_kg: 50                  # [H] prix moyen de rachat (FCFA par kg) : à confirmer avec les filières locales
+  part_revenu_menage: 0.5           # [H] part du prix reversée au ménage ; le reste rémunère le pré-collecteur

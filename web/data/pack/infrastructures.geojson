@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"id":"CET1","nom":"CTVD de Polesgo (position approximative)","type":"cet"},"geometry":{"type":"Point","coordinates":[-1.61727,12.44313]}},{"type":"Feature","properties":{"id":"DEP1","nom":"Dépôt des camions (hypothèse)","type":"depot_camions"},"geometry":{"type":"Point","coordinates":[-1.5337,12.3686]}}]}

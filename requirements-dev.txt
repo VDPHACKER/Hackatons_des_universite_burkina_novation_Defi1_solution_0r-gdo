@@ -1,0 +1,6 @@
+# Dependances de developpement : tests (pytest, httpx pour TestClient) et generation du diaporama (python-pptx).
+-r requirements.txt
+pytest==9.2.0
+python-pptx==1.0.2
+httpx==0.28.1
+markdown==3.11.3

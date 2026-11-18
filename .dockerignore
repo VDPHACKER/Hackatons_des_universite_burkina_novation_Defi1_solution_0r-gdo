@@ -1,0 +1,9 @@
+.git
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+data
+livrables/captures
+livrables/*.pptx
+node_modules

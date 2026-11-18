@@ -1,0 +1,22 @@
+# Dependances d'EXECUTION (deploiement, Docker) : uniquement ce que le code importe. Versions exactes testees (Windows 11, Python 3.12.10).
+# Tests et diaporama : voir requirements-dev.txt. Liste complete transitive : requirements-lock.txt
+# numpy epingle a 2.5.4 (2.5.5 bloque par Smart App Control ici).
+
+
+fastapi==0.163.1
+uvicorn==0.54.0
+shapely==2.2.0
+geopandas==1.2.0
+pyproj==3.8.0
+scikit-learn==1.9.1
+pillow==13.0.0
+imagehash==4.3.2
+ortools==9.15.6755
+pyvrp==0.14.1           # solveur de tournées (MIT), solveur par défaut ; OR-Tools reste le repli
+mesa==3.5.2
+pyyaml==6.0.3
+numpy==2.5.4
+pandas==3.1.1
+scipy==1.18.1
+pyogrio==0.13.0
+python-multipart==0.0.34

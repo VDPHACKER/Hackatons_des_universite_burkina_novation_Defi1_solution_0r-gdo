@@ -1,0 +1,474 @@
+/* ===== Design « tableau de bord » : barre latérale foncée, indicateurs colorés, cartes blanches =====
+   Chargé APRÈS app.css : il remplace la palette et ajoute la structure. Contrastes vérifiés (texte >= 4,5:1, commandes >= 3:1). */
+:root{
+  --page:#eef3ee;--bg:#fff;--fg:#14281c;--mut:#4a5e51;--carte:#f4f8f4;--bord:#6a7f70;--bord-carte:#d5e2d8;
+  --pri:#1e7a46;--pri-fg:#fff;--ok:#0f7a3d;--att:#9a5200;--rej:#b3141b;--foc:#0b4fb3;--info:#1b6a47;
+  --lat1:#0e3524;--lat2:#154a33;--lat3:#1d5f43;--accent:#3aa65f;--ombre:0 1px 3px #0e352414,0 6px 18px #0e35240d;
+}
+:root[data-theme=dark]{
+  --page:#0a150f;--bg:#11221a;--fg:#eaf5ee;--mut:#b6cbbd;--carte:#172c21;--bord:#8fae9a;--bord-carte:#244233;
+  --pri:#5fd08a;--pri-fg:#06210f;--ok:#5fe08b;--att:#ffb454;--rej:#ff8a90;--foc:#9cc2ff;--info:#8fe0b0;--ombre:0 1px 3px #0006;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --page:#0a150f;--bg:#11221a;--fg:#eaf5ee;--mut:#b6cbbd;--carte:#172c21;--bord:#8fae9a;--bord-carte:#244233;
+  --pri:#5fd08a;--pri-fg:#06210f;--ok:#5fe08b;--att:#ffb454;--rej:#ff8a90;--foc:#9cc2ff;--info:#8fe0b0;--ombre:0 1px 3px #0006;}}
+
+body{display:block;background:var(--page);color:var(--fg);font-size:16px}
+#app{display:block}
+#principal{display:flex;flex-direction:column;min-height:100dvh;min-width:0}
+#lateral,#pied{display:none}
+
+/* --- composants de base, repris dans la nouvelle palette --- */
+.carte,.kpi,.graph,details.cert{background:var(--bg);border:1px solid var(--bord-carte);border-radius:14px;box-shadow:var(--ombre)}
+.carte-zone{border:1px solid var(--bord-carte);border-radius:14px;overflow:hidden}
+#vue.plein .carte-zone{border:0;border-radius:0}
+fieldset{border:1px solid var(--bord-carte);border-radius:14px;background:var(--bg)}
+.alerte{border:1px solid var(--bord-carte);border-left-width:6px;border-radius:12px;background:var(--bg);box-shadow:var(--ombre)}
+button.primaire,.btn.primaire,.gros.primaire{background:var(--pri);border-color:var(--pri);color:var(--pri-fg)}
+.bandeau{background:#fff3c4;color:#3a2a00;border-bottom:1px solid #d9b84a}
+.badge{border-width:1.5px;background:#ffffff}
+table{background:var(--bg);border-radius:10px;overflow:hidden}th{background:var(--carte)}th,td{border-color:var(--bord-carte)}
+
+/* --- barre du haut --- */
+#entete{background:var(--lat1);color:#fff;padding:8px 14px}
+#entete h1{font-size:1.05rem}
+.barre-gauche{display:none}
+.puce{background:#ffffff14;border:1px solid #ffffff55;color:#fff;font-weight:600}
+.puce.hors{background:#fff;color:#a3151b;border-color:#a3151b}
+.avatar{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--pri);color:#fff;font-weight:800;font-size:.8rem;margin-right:8px}
+.puce.utilisateur{padding:2px 10px 2px 3px;gap:0}
+.u-nom{display:flex;flex-direction:column;line-height:1.05;text-align:left}.u-nom small{opacity:.85;font-size:.68rem;font-weight:500}
+#cloche{position:relative;text-decoration:none}#cloche b{margin-left:5px;background:#e11d48;color:#fff;border-radius:99px;padding:0 6px;font-size:.72rem}
+#sel-langue button[aria-pressed=true]{background:#fff;color:var(--lat2)}
+
+/* --- pied de page --- */
+#pied{gap:18px;flex-wrap:wrap;align-items:center;padding:10px 20px;background:var(--bg);border-top:1px solid var(--bord-carte);font-size:.78rem;color:var(--mut)}
+#pied .pied-droit{margin-left:auto;background:#dcf7e6;color:#0c6b35;border:1px solid #9fdcb7;border-radius:99px;padding:6px 14px;font-weight:700}
+
+/* --- téléphone : barre du bas dans la nouvelle palette --- */
+#onglets{border-top:3px solid var(--pri);box-shadow:0 -6px 18px #0e352422}
+.feuille{border-top:3px solid var(--pri)}
+
+/* ===== ORDINATEUR (>= 960 px) : barre latérale + barre du haut claire + pied de page ===== */
+@media (min-width:960px){
+  #app{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:100dvh}
+  #lateral{display:flex;flex-direction:column;position:sticky;top:0;height:100dvh;padding:18px 14px 14px;overflow-y:auto;color:#fff;
+    background:linear-gradient(180deg,var(--lat1) 0%,var(--lat2) 58%,var(--lat3) 100%)}
+  #onglets,#plus,.titre-mobile{display:none!important}
+  #entete{background:transparent;color:var(--fg);padding:16px 22px 6px;gap:14px}
+  .barre-gauche{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .pastille-lieu,#zone-arr{background:var(--bg);border:1px solid var(--bord-carte);border-radius:14px;padding:8px 14px;box-shadow:var(--ombre);display:inline-flex;align-items:center;gap:8px;font-weight:600}
+  #zone-arr[hidden]{display:none}
+  #zone-arr label{margin:0;font-weight:500;color:var(--mut)}
+  #zone-arr select{width:150px;min-height:32px;border:0;background:transparent;font-weight:700;padding:0 4px;color:var(--fg)}
+  #entete,#entete .puces{flex-wrap:nowrap}#entete{gap:10px}.pastille-lieu,#zone-arr{padding:6px 12px}
+  .puce{background:var(--bg);border:1px solid var(--bord-carte);color:var(--fg);box-shadow:var(--ombre);min-height:38px;padding:2px 12px}
+  #puce-reseau{background:#dcf7e6;border-color:#9fdcb7;color:#0c6b35}
+  #puce-reseau::before{content:"";width:9px;height:9px;border-radius:50%;background:#16a34a;margin-right:7px}
+  #puce-reseau.hors{background:#fde8ea;border-color:#e8a3a9;color:#a3151b}#puce-reseau.hors::before{background:#a3151b}
+  #sel-langue button[aria-pressed=true]{background:var(--pri);color:var(--pri-fg);border-color:var(--pri)}
+  #cloche{color:var(--fg)}
+  #vue{max-width:1180px;padding:10px 22px 26px}
+  #vue.large{max-width:none}
+  #vue.plein{max-width:none;padding:10px 22px 0}
+  #vue.plein .carte-zone{border:1px solid var(--bord-carte);border-radius:14px;min-height:calc(100dvh - 190px)}
+  #pied{display:flex}
+  #toast{left:auto;right:24px;bottom:24px;width:360px}
+
+  .marque{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;min-height:48px}
+  .marque-nom{font-size:1.45rem;line-height:1;font-weight:800;letter-spacing:-.02em;color:#fff}
+  .marque-nom #marque-b{color:#4ade80}
+  .slogan{font-size:.72rem;letter-spacing:.06em;color:#bfdcc9;margin:4px 0 20px}
+  #nav-lateral{display:flex;flex-direction:column;gap:4px}
+  #nav-lateral a{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:12px;color:#d3e6da;text-decoration:none;font-weight:600;font-size:.94rem;min-height:44px}
+  #nav-lateral a:hover{background:#ffffff1c;color:#fff}
+  #nav-lateral a.actif{background:#ffffff24;color:#fff;box-shadow:inset 3px 0 0 #3aa65f}
+  #nav-lateral a:focus-visible,.marque:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .ico{flex:none}
+  .lateral-bas{margin:auto 0 0;padding:120px 14px 16px;border-radius:14px;font-weight:800;font-size:1.02rem;line-height:1.25;color:#fff;
+    background:linear-gradient(180deg,#0000 30%,#0e3524e6 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 130' preserveAspectRatio='xMidYMax slice'%3E%3Cpath d='M0 95C40 75 80 85 120 70s60-6 80 6v54H0z' fill='%2316a34a' opacity='.75'/%3E%3Cg fill='%23134a32'%3E%3Crect x='14' y='60' width='18' height='60'/%3E%3Crect x='36' y='48' width='22' height='72'/%3E%3Crect x='62' y='66' width='16' height='54'/%3E%3Crect x='140' y='56' width='20' height='64'/%3E%3Crect x='164' y='70' width='22' height='50'/%3E%3C/g%3E%3Cpath d='M96 120V58l8-26 8 26v62z' fill='%23d9efe0'/%3E%3Cpath d='M104 32V14' stroke='%23d9efe0' stroke-width='2'/%3E%3C/svg%3E") center bottom/cover no-repeat;}
+
+  #btn-eco,#btn-theme,#puce-fraicheur{display:none}      /* réglages dans « Paramètres » ; la barre du haut reste sur une ligne */
+}
+
+/* --- tableau de bord : composants (communs ordinateur et téléphone) --- */
+.tdb{display:grid;gap:14px;grid-template-columns:1fr}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:960px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}}
+.kpi-t{display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;box-shadow:var(--ombre);color:var(--fg);border:1px solid var(--bord-carte)}
+.kpi-t.bleu{background:#dcebf3}.kpi-t.vert{background:#dcf5e5}.kpi-t.orange{background:#ffe9d2}
+:root[data-theme=dark] .kpi-t.bleu{background:#173446}:root[data-theme=dark] .kpi-t.vert{background:#14392a}:root[data-theme=dark] .kpi-t.orange{background:#4a3318}
+.kpi-t .rond{flex:none;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;color:#fff}
+.kpi-t.bleu .rond{background:#2f6f9f}.kpi-t.vert .rond{background:#16a34a}.kpi-t.orange .rond{background:#ea7a12}
+.kpi-t b{display:block;font-size:2rem;line-height:1.05;font-weight:800}
+.kpi-t span.lib{font-size:.9rem;font-weight:600;color:var(--mut)}
+.kpi-t small{display:block;font-size:.72rem;color:var(--mut)}
+.pan{background:var(--bg);border:1px solid var(--bord-carte);border-radius:16px;box-shadow:var(--ombre);padding:14px 16px}
+.pan h3{margin:0 0 10px;font-size:1.02rem;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pan h3 a{font-size:.8rem;font-weight:600;text-decoration:none;color:var(--info);padding:0}
+.tdb-carte{padding:0;overflow:hidden;position:relative}
+.onglets-c{position:absolute;top:10px;left:10px;z-index:6;display:flex;background:var(--bg);border:1px solid var(--bord-carte);border-radius:10px;box-shadow:var(--ombre);overflow:hidden}
+.onglets-c button{border:0;background:transparent;color:var(--fg);min-height:38px;padding:4px 14px;font-weight:600;cursor:pointer}
+.onglets-c button[aria-pressed=true]{background:var(--pri);color:var(--pri-fg)}
+.tdb-carte .cible-wrap{position:relative;height:430px}
+.tdb-carte .cible-wrap .cible{position:absolute;inset:0}
+.legende-c{position:absolute;top:10px;right:10px;z-index:6;background:var(--bg);border:1px solid var(--bord-carte);border-radius:12px;box-shadow:var(--ombre);padding:8px 12px;font-size:.78rem;line-height:1.7}
+.legende-c i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+.legende-c i.trait{width:18px;height:4px;border-radius:2px;vertical-align:3px}
+.fiche-c{position:absolute;left:14px;bottom:14px;z-index:7;max-width:290px;background:var(--bg);border:1px solid var(--bord-carte);border-radius:12px;box-shadow:var(--ombre);padding:10px 12px;font-size:.85rem}
+.fiche-c[hidden]{display:none}
+.sim .scen{display:flex;gap:6px;margin:0 0 10px;border-bottom:1px solid var(--bord-carte);padding-bottom:0}
+.sim .scen button{background:transparent;border:0;border-bottom:3px solid transparent;color:var(--mut);min-height:38px;padding:4px 10px;font-weight:700;cursor:pointer}
+.sim .scen button[aria-selected=true]{color:var(--pri);border-bottom-color:var(--pri)}
+.sim .champ{display:flex;align-items:center;gap:10px;margin:8px 0}
+.sim .champ label{margin:0;flex:1;font-weight:500;font-size:.88rem;display:flex;align-items:center;gap:8px}
+.sim .champ input{width:118px;min-height:38px;text-align:right;font-weight:700;border-width:1px}
+.sim .lancer{width:100%;margin-top:10px;min-height:46px;border-radius:12px;font-size:1rem}
+.sim .retour{margin-top:10px;padding:8px 12px;border-radius:10px;background:#dcf7e6;color:#0c6b35;font-weight:600;font-size:.85rem}
+.sim .retour.err{background:#fde8ea;color:#a3151b}
+.sim .retour.attente{background:#e4f1e8;color:#14472f}
+.bas{display:grid;gap:14px;grid-template-columns:1fr}
+.donut{display:flex;align-items:center;gap:14px}
+.donut svg{flex:none;width:104px;height:104px}.donut .lg{font-size:.78rem;line-height:1.9;white-space:nowrap}.donut .lg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.astuce{margin-top:10px;padding:10px 12px;border-radius:12px;background:#e4f1e8;font-size:.82rem}
+.astuce a{display:block;margin-top:4px;padding:0;font-weight:700;text-decoration:none}
+.barres{display:flex;align-items:flex-end;gap:14px;height:150px;padding:0 4px;border-bottom:1px solid var(--bord-carte)}
+.barres .grp{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:4px;height:100%}
+.barres .b{flex:1;max-width:26px;border-radius:5px 5px 0 0;min-height:3px}
+.noms{display:flex;gap:14px;padding:4px 4px 0;font-size:.74rem;color:var(--mut)}.noms span{flex:1;text-align:center}
+.lgd{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-size:.78rem}.lgd i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+.recents{list-style:none;margin:0;padding:0}
+.recents li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bord-carte)}
+.recents li:last-child{border:0}
+.recents .vignette{flex:none;width:46px;height:38px;border-radius:8px;background:var(--carte);display:grid;place-items:center;color:var(--mut)}
+.recents .txt{flex:1;min-width:0;font-size:.86rem}.recents .txt b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.recents .txt small{color:var(--mut)}
+@media (min-width:960px){
+  .tdb{grid-template-columns:minmax(0,1fr) 350px;gap:16px;align-items:start}
+  .tdb .kpis{grid-column:1/-1}
+  .tdb .bas{grid-column:1/-1;grid-template-columns:270px minmax(0,1fr) 350px;align-items:start}
+}
+@media (max-width:959px){.tdb-carte .cible-wrap{height:340px}.legende-c{display:none}}
+
+/* --- accueil citoyen et écrans courants : même langage visuel (bordures fines, ombres douces) --- */
+.gros{border:1px solid var(--bord-carte);border-radius:18px;box-shadow:var(--ombre);background:var(--bg)}
+.gros.primaire{border-color:var(--pri);box-shadow:0 8px 22px #1e7a4655}
+.etapes li{border:1px solid var(--bord-carte);border-radius:12px;background:var(--bg)}
+.etapes li[aria-current=step]{border-color:var(--pri);box-shadow:var(--ombre)}
+.choix label{border:1px solid var(--bord);background:var(--bg)}
+button.secondaire,.btn{border:1px solid var(--bord);background:var(--bg);color:var(--fg)}
+input[type=text],input[type=number],input[type=password],select,textarea{border:1px solid var(--bord);background:var(--bg);color:var(--fg)}
+
+/* ===== Typographie ===== */
+:root{
+  --f-texte:"Source Sans 3",system-ui,"Segoe UI",Roboto,sans-serif;
+  --f-chiffres:"Bricolage Grotesque","Source Sans 3",system-ui,sans-serif;
+  --t-s:.8125rem;--t-m:1rem;--t-l:1.1875rem;--t-xl:1.5rem;--t-xxl:2.25rem;
+}
+body{font-family:var(--f-texte);font-size:var(--t-m);line-height:1.5;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button,input,select,textarea{font-family:inherit}
+h1,h2,h3,h4{font-family:var(--f-texte);font-weight:700;letter-spacing:-.011em;line-height:1.2;text-wrap:balance}
+h2{font-size:var(--t-xl);margin:.2em 0 .5em}
+h3{font-size:var(--t-l)}
+p,li{max-width:68ch}
+.petit,.pan small,.kpi-t small{font-size:var(--t-s)}
+/* grands chiffres : Bricolage Grotesque, chiffres alignés */
+.kpi-t b,.marque-nom,.donut text{font-family:var(--f-chiffres);font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
+.kpi-t b{font-size:var(--t-xxl);font-weight:700}
+.marque-nom{font-weight:700}
+.accueil .grand{font-size:clamp(1.9rem,4.2vw,2.75rem);line-height:1.08;font-weight:800;letter-spacing:-.025em}
+.chapeau{font-size:var(--t-l);color:var(--mut)}
+.gros-ico{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:16px;background:#e4f1e8;color:var(--pri)}
+.gros.primaire .gros-ico{background:#ffffff26;color:#fff}
+.gros{font-weight:700;font-size:var(--t-l)}
+
+/* ===== Sous-navigation, menu secondaire, symboles ===== */
+.sous-nav{display:flex;gap:4px;margin:2px 0 16px;border-bottom:1px solid var(--bord-carte);overflow-x:auto}
+.sous-nav a{display:inline-block;padding:10px 16px;text-decoration:none;color:var(--mut);font-weight:600;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.sous-nav a:hover{color:var(--fg)}
+.sous-nav a[aria-current=page]{color:var(--pri);border-bottom-color:var(--pri)}
+.sym{vertical-align:-3px;margin-right:6px;flex:none}
+.legende-c div,.legende div{white-space:nowrap}
+@media (min-width:960px){
+  #nav-lateral .separe{border:0;border-top:1px solid #ffffff2b;margin:10px 6px}
+  #nav-lateral a.second{font-weight:500;font-size:.875rem;min-height:38px;color:#b9d3c4}
+  #nav-lateral a.second .ico{opacity:.8}
+}
+
+/* ===== Carte publique : action principale et fiche « Autour de vous » ===== */
+.cta-flottant{position:absolute;right:14px;bottom:34px;z-index:7;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:99px;
+  background:var(--pri);color:var(--pri-fg);font-weight:700;text-decoration:none;box-shadow:0 8px 22px #1e7a4666}
+.cta-flottant:hover{filter:brightness(1.07)}
+.barre-carte button{border:1px solid var(--bord-carte);box-shadow:var(--ombre)}
+.barre-carte button.primaire{border-color:var(--pri)}
+.legende{border:1px solid var(--bord-carte);border-radius:12px;box-shadow:var(--ombre);padding:8px 12px}
+.legende summary{min-height:0}
+.fiche{border-top:0;border-radius:16px 16px 0 0;box-shadow:0 -10px 30px #0e352433}
+
+/* ===== Accueil citoyen ===== */
+.hero{display:grid;gap:18px;grid-template-columns:1fr;margin:6px 0 18px}
+.hero-texte .grand{margin:.1em 0 .25em}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 10px}
+.btn-fort{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 26px;border-radius:99px;background:var(--pri);color:var(--pri-fg);font-weight:700;font-size:var(--t-l);text-decoration:none;box-shadow:0 10px 26px #1e7a464d}
+.btn-fort:hover{filter:brightness(1.07)}
+.actions .btn{min-height:56px;border-radius:99px;padding:0 22px;font-weight:600}
+.hero-chiffres{background:var(--lat1);color:#fff;border-radius:20px;padding:20px 22px;background-image:linear-gradient(160deg,var(--lat1),var(--lat2))}
+.hero-chiffres h3{margin:0 0 10px;color:#cfe9d8;font-size:var(--t-m);font-weight:600}
+.chiffre{display:flex;align-items:baseline;gap:14px;padding:9px 0;border-top:1px solid #ffffff22}
+.chiffre:first-of-type{border-top:0}
+.chiffre b{font-family:var(--f-chiffres);font-size:2.1rem;line-height:1;min-width:4.2ch;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.02em}
+.chiffre span{color:#d2e8db;font-size:.9rem}
+.trois-etapes{margin:.2em 0 .6em;padding-left:1.3em}.trois-etapes li{margin:.45em 0}
+@media (min-width:960px){.hero{grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);align-items:center;margin-top:14px}}
+
+.btn,button.secondaire,button.primaire,.btn.primaire{gap:8px}
+
+/* téléphone : en-tête sobre (fraîcheur, éco et thème sont dans « Paramètres ») */
+@media (max-width:959px){#puce-fraicheur,#btn-eco,#btn-theme{display:none}#entete{padding:8px 12px}}
+
+/* centre de notifications */
+#cloche b[hidden]{display:none}
+#panneau-notif{position:fixed;top:60px;right:16px;z-index:60;width:min(380px,calc(100vw - 32px));max-height:min(70vh,560px);overflow:auto;background:var(--carte,#fff);color:var(--fg,#14281c);border:1px solid var(--bord,#d5e2d8);border-radius:14px;box-shadow:0 12px 32px rgba(14,53,36,.22)}
+#panneau-notif[hidden]{display:none}
+.notif-tete{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--bord,#d5e2d8);position:sticky;top:0;background:inherit}
+.notif-fermer{background:none;border:0;padding:6px;cursor:pointer;color:inherit;border-radius:8px;min-width:36px;min-height:36px}
+.notif-liste{list-style:none;margin:0;padding:0}
+.notif-liste li{border-bottom:1px solid var(--bord,#e1ece4)}
+.notif-liste li:last-child{border-bottom:0}
+.notif-liste a{display:flex;gap:10px;padding:12px 14px;text-decoration:none;color:inherit}
+.notif-liste a:hover,.notif-liste a:focus-visible{background:rgba(30,122,70,.08)}
+.notif-liste li.non-lu{background:rgba(30,122,70,.07);box-shadow:inset 3px 0 0 #1e7a46}
+.notif-ico{flex:none;color:#1e7a46;margin-top:2px}
+.notif-texte{display:flex;flex-direction:column;gap:2px;font-size:.92rem}
+.notif-texte small{opacity:.7}
+.notif-vide{padding:18px 14px;margin:0;opacity:.8}
+@media (max-width:959px){#panneau-notif{top:52px;right:8px}}
+
+/* portail du pré-collecteur : gros boutons pour le pouce, lisibles en plein soleil */
+.puces-rapides{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}
+.puces-rapides button{min-height:44px;padding:0 16px}
+.pas{display:grid;grid-template-columns:56px 1fr 56px;gap:8px;align-items:stretch}
+.pas button{font-size:1.6rem;min-height:52px;padding:0}
+.pas input{text-align:center;font-size:1.6rem;font-weight:700}
+.barres + .noms{display:flex;gap:14px;padding:4px 4px 0;font-size:.74rem;color:var(--mut)}
+.barres + .noms span{flex:1;text-align:center}
+
+/* portail de la brigade : filtres */
+.filtres{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.filtres button{border:1px solid var(--bord-carte);background:var(--bg);color:var(--fg);border-radius:99px;min-height:40px;padding:0 14px;font-weight:600;cursor:pointer}
+.filtres button.actif{background:var(--pri);border-color:var(--pri);color:#fff}
+.filtres button .petit{opacity:.8;margin-left:4px}
+
+/* accueil : « Comment ça marche » en trois étapes lisibles, sans grand vide à droite */
+.comment{padding:18px 20px}
+.comment-tete{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.comment-tete h3{margin:0}
+.comment .trois-etapes{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:14px;counter-reset:etape}
+.comment .trois-etapes li{display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:start;counter-increment:etape}
+.comment .trois-etapes li::before{content:counter(etape);grid-row:1/3;width:34px;height:34px;border-radius:50%;background:var(--pri);color:var(--pri-fg);display:grid;place-items:center;font-weight:800;font-family:var(--f-chiffres)}
+.comment .trois-etapes b{font-size:1.02rem}
+.comment .trois-etapes span{color:var(--mut);max-width:48ch}
+.comment .petit{max-width:78ch}
+@media (min-width:960px){.comment .trois-etapes{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}}
+.comment .trois-etapes li{align-content:start}
+
+/* téléphone : l'état « En ligne » ne s'affiche que s'il y a un problème (« Hors ligne ») */
+@media (max-width:959px){#puce-reseau:not(.hors){display:none}}
+
+/* langues en codes courts et en-tête compact sur téléphone ; chiffres qui ne se coupent plus */
+.court{display:none}
+.unite{font-size:.45em;font-weight:600;margin-left:.25em;color:var(--mut);letter-spacing:0}
+details.regle{margin:12px 0}details.regle summary{cursor:pointer;min-height:24px}details.regle p{margin:8px 0 0}
+@media (max-width:959px){
+  .long{display:none}.court{display:inline}
+  .u-nom{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .puce.utilisateur{padding:2px 3px}
+  .kpi-t b{font-size:1.75rem}
+  .kpis.compact{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .kpis.compact .kpi-t{flex-direction:column;align-items:flex-start;gap:2px;padding:10px 12px}
+  .kpis.compact .rond,.kpis.compact .kpi-t small{display:none}
+  .kpis.compact .kpi-t b{font-size:1.7rem}
+  .kpis.compact .lib{font-size:.78rem;line-height:1.2}
+}
+
+/* carte du tableau de bord : la légende en bas à gauche (elle masquait les boutons de zoom) ; chiffres plus courts sur téléphone */
+.legende-c{top:auto;right:auto;left:10px;bottom:34px}
+@media (max-width:959px){.kpis:not(.compact) .rond{display:none}.kpis:not(.compact) .kpi-t{padding:12px 14px}}
+
+/* détails de finition : cases et boutons radio dans le vert de la marque, sous-menu sans défilement parasite, curseurs de largeur utile, import de fichier lisible */
+input[type=radio],input[type=checkbox],input[type=range]{accent-color:var(--pri)}
+.sous-nav{overflow-y:hidden}
+#vue input[type=range]{display:block;width:100%;max-width:640px}
+input[type=file]{display:block;max-width:100%;margin:6px 0 12px;font:inherit}
+input[type=file]::file-selector-button{font:inherit;font-weight:600;margin-right:12px;padding:8px 14px;border-radius:10px;border:1px solid var(--bord);background:var(--bg);color:var(--fg);cursor:pointer}
+
+/* panneaux repliables : un chevron montre qu'on peut les ouvrir */
+details:not(.legende):not(.cert)>summary{list-style:none;cursor:pointer;font-weight:700;display:flex;align-items:center;gap:10px;min-height:32px}
+details:not(.legende):not(.cert)>summary::-webkit-details-marker{display:none}
+details:not(.legende):not(.cert)>summary::before{content:"";flex:none;width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+details[open]:not(.legende):not(.cert)>summary::before{transform:rotate(45deg)}
+@media (prefers-reduced-motion:reduce){details>summary::before{transition:none}}
+
+/* titres de groupes : à l'intérieur de la carte, sur toute la largeur, sans s'écraser sur la bordure quand ils passent à la ligne */
+fieldset{padding:14px 16px 16px}
+fieldset>legend{float:left;width:100%;padding:0;margin:0 0 10px;font-weight:700;line-height:1.3}
+fieldset>legend+*{clear:both}
+
+/* suivi du citoyen : chronologie, badges, défi collectif, pastille de mise à jour */
+.champ-bouton{display:flex;gap:10px;align-items:stretch;max-width:520px}
+.champ-bouton input{flex:1;min-width:0;text-transform:uppercase}
+.ligne-signalement{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--bord-carte)}
+.ligne-signalement:last-child{border-bottom:0}
+.ligne-signalement.nouveau{box-shadow:inset 3px 0 0 var(--pri);padding-left:10px}
+.pastille-nouveau{font-size:.72rem;font-weight:700;background:var(--pri);color:var(--pri-fg);border-radius:99px;padding:2px 8px;margin-left:4px}
+.chrono{list-style:none;margin:10px 0;padding:0 0 0 18px;border-left:2px solid var(--bord-carte)}
+.chrono li{position:relative;display:flex;flex-direction:column;gap:1px;padding:0 0 12px 14px}
+.chrono li::before{content:"";position:absolute;left:-25px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--bord);border:2px solid var(--bg)}
+.chrono li.verifie::before{background:var(--ok)}
+.chrono li.a_confirmer::before{background:var(--att)}
+.chrono li.rejete::before{background:var(--rej)}
+.chrono small{color:var(--mut)}
+.gros-chiffre{font-family:var(--f-chiffres);font-size:1.9rem;letter-spacing:-.02em}
+.badges{list-style:none;margin:10px 0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.badges li{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border:1px solid var(--bord-carte);border-radius:12px;opacity:.72}
+.badges li.obtenu{opacity:1;border-color:var(--pri);background:var(--carte)}
+.badges .medaille{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--carte)}
+.badges small{display:block;color:var(--mut)}
+.badges .etat{font-weight:700;margin-top:2px}
+.badges li.obtenu .etat{color:var(--ok)}
+.jauge{height:12px;border-radius:99px;background:var(--bord-carte);overflow:hidden;margin:8px 0}
+.jauge span{display:block;height:100%;background:var(--pri);border-radius:99px}
+#onglets a.avec-point b::after,#nav-lateral a.avec-point::after{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#e11d48;margin-left:6px;vertical-align:super}
+#nav-lateral a.avec-point::after{margin-left:auto;vertical-align:middle}
+.pastille-nouveau{white-space:nowrap;display:inline-block;margin-top:4px}
+
+/* feuilles de route : invisibles à l'écran, seules visibles à l'impression */
+#feuilles{display:none}
+@media print{
+  body>*:not(#feuilles){display:none !important}
+  body{background:#fff}
+  #feuilles{display:block;color:#000;font-size:12pt}
+  .feuille-route{page-break-after:always;padding:8mm}
+  .feuille-route h2{font-size:20pt;margin:0 0 4mm}
+  .feuille-route table{width:100%;border-collapse:collapse;margin:4mm 0}
+  .feuille-route th,.feuille-route td{border:1px solid #000;padding:2mm 3mm;text-align:left}
+  .feuille-route td.case{width:18mm}
+  .feuille-route .petit{font-size:9pt;margin-top:6mm}
+}
+
+/* ================= Refonte téléphone (18/11/2026) : en-tête d'une ligne, menus langue et compte, onglets à icônes, formulaires pleine largeur ================= */
+input:not([type]),input[type=email],input[type=password],input[type=tel],input[type=search]{width:100%;min-height:48px;padding:8px 10px;border:1px solid var(--bord);border-radius:8px;background:var(--bg);color:var(--fg);font:inherit}
+#vue input,#vue select,#vue textarea{max-width:100%}
+.logo-marque{border-radius:12px;background:#fff}
+/* En-tête : marque à gauche, puis langue et compte ; tout tient sur une ligne même à 320 px. */
+.marque-mobile{display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none;min-width:0}
+.marque-mobile img{flex:none;width:40px;height:40px;border-radius:10px;background:#fff;object-fit:contain}
+.marque-mobile span{display:flex;flex-direction:column;min-width:0;line-height:1.1}
+.marque-mobile b{font-size:1.05rem}
+.marque-mobile small{margin:0!important;font-size:.74rem;opacity:.85;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.menu-deroulant{position:relative;display:inline-flex}
+.dd-bouton,#btn-entrer{gap:6px;padding:2px 10px}
+.dd-bouton .avatar{margin-right:0}
+.code-langue{font-weight:700;font-size:.8rem;letter-spacing:.02em}
+.dd-liste{position:absolute;right:0;top:calc(100% + 6px);z-index:60;min-width:220px;background:var(--bg);color:var(--fg);border:1px solid var(--bord-carte);border-radius:12px;box-shadow:0 12px 32px #0e352433;padding:6px;display:flex;flex-direction:column}
+.dd-liste[hidden]{display:none}
+.dd-liste a,.dd-liste button{display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 10px;border:0;border-radius:8px;background:none;color:var(--fg);text-decoration:none;font:inherit;text-align:left;cursor:pointer}
+.dd-liste a:hover,.dd-liste button:hover,.dd-liste [aria-current=true]{background:var(--carte)}
+.dd-liste [aria-current=true]{font-weight:700}
+.dd-liste small{color:var(--mut);font-weight:400}
+.dd-titre{margin:0;padding:8px 10px 10px;border-bottom:1px solid var(--bord-carte);margin-bottom:4px}
+.dd-titre small{display:block}
+.ico-vide{display:inline-block;width:18px}
+.bandeau.compact{padding:2px 12px;font-size:.8rem}
+.bandeau.compact summary{min-height:30px;display:flex;align-items:center;gap:4px;cursor:pointer;list-style:none}
+.bandeau.compact summary::-webkit-details-marker{display:none}
+.bandeau.compact summary::after{content:"ⓘ";margin-left:4px;font-weight:700}
+.bandeau.compact details[open]{padding-bottom:6px}
+/* Connexion */
+.form-connexion{max-width:460px}
+.form-connexion .primaire{width:100%;margin-top:14px}
+.champ-mdp{display:flex;gap:8px;align-items:stretch}
+.champ-mdp input{flex:1;min-width:0}
+.champ-mdp button{flex:none;min-width:92px}
+/* Fidélité */
+.score-fidelite .score-ligne{display:flex;align-items:center;gap:14px}
+.score-ico{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#fff3c4;color:#8a5a00}
+.regles{padding-left:0;list-style:none;display:grid;gap:10px}
+.regles li{display:flex;gap:10px;align-items:flex-start}
+.regles li .ico{flex:none;margin-top:2px;color:var(--pri)}
+.lien-points{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px 14px;color:var(--fg);text-decoration:none}
+.lien-points:hover{border-color:var(--pri)}
+.carte-fidelite{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:14px 0;color:var(--fg);text-decoration:none}
+.logo-accueil{display:block;width:min(220px,58vw);height:auto;margin:0 auto 4px}
+/* Indicateurs : jamais plus larges que l'écran */
+.kpi-t{min-width:0}
+.kpi-t>div{min-width:0}
+.kpi-t .lib,.kpi-t small{overflow-wrap:anywhere}
+.voir-plus{display:flex;justify-content:center;margin:12px 0}
+.txt-large{display:none}
+@media (min-width:960px){
+  .txt-large{display:inline}
+  .dd-bouton,#btn-entrer{padding:2px 12px}
+}
+@media (max-width:959px){
+  #entete{flex-wrap:nowrap;gap:8px;min-height:58px;padding:6px 10px}
+  #entete .titre-mobile{flex:1;min-width:0;margin:0}
+  #entete .barre-gauche{display:none}
+  #entete .puces{flex-wrap:nowrap;gap:6px;flex:none}
+  #entete .puce.bouton{min-width:44px;min-height:44px;border-radius:12px}
+  #onglets a,#onglets button{flex:1 1 0;min-width:0;flex-direction:column;gap:2px;min-height:58px;padding:5px 2px 4px;font-size:.72rem}
+  #onglets b{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+  #onglets .ico{flex:none}
+  .feuille a{display:flex;align-items:center;gap:10px}
+  .kpi-t b{font-size:1.55rem}
+  .kpi-t{padding:12px}
+  #vue h2{font-size:1.45rem}
+  .hero-texte .grand{font-size:1.75rem}
+}
+@media (max-width:359px){.marque-mobile small{display:none}}/* Signaler : petite carte pour placer le point (épingle fixe au centre) */
+.mini-carte{position:relative;margin:10px 0}
+.mini-carte #mini-conteneur{height:260px;border-radius:12px;overflow:hidden;border:1px solid var(--bord-carte)}
+.mini-carte #mini-conteneur>*{height:100%!important;width:100%!important}
+.mini-carte .epingle{position:absolute;left:50%;top:130px;width:30px;height:42px;margin:-42px 0 0 -15px;pointer-events:none;z-index:5;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 42'%3E%3Cpath d='M15 41C6 28 1 22 1 14a14 14 0 0 1 28 0c0 8-5 14-14 27z' fill='%23d92d20' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='15' cy='14' r='5' fill='%23fff'/%3E%3C/svg%3E")}
+#gps-etat.ok{color:var(--ok);font-weight:600}#gps-etat.attention{color:var(--att);font-weight:600}#gps-etat.erreur{color:var(--rej);font-weight:600}/* Grilles : jamais plus larges que l'écran ; console du jury sur une colonne au téléphone */
+.tdb{grid-template-columns:minmax(0,1fr)}
+@media (min-width:960px){.tdb{grid-template-columns:minmax(0,1fr) 350px}}
+@media (max-width:520px){.grille.aleas{grid-template-columns:minmax(0,1fr)}}
+.bandeau.compact summary{display:block;padding:5px 0;min-height:0}
+details.motifs>summary{font-weight:600;font-size:.92rem}/* Retouches du 18/11 (2) : logo d'en-tête plus grand, questions plus compactes au téléphone, choix du mode de signalement */
+.marque-mobile img{width:52px;height:52px;border-radius:12px}
+.logo-marque{width:64px;height:64px}
+.choix-mode{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:14px 0}
+.choix-mode .mode{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:16px;text-align:left;cursor:pointer;font:inherit;color:var(--fg);border:1px solid var(--bord-carte)}
+.choix-mode .mode:hover,.choix-mode .mode:focus-visible{border-color:var(--pri)}
+.choix-mode .mode .ico{color:var(--pri)}
+.choix-mode .mode small{color:var(--mut)}
+.estimation{margin:10px 0 0;padding:8px 10px;border-radius:10px;background:#fff3c4;color:#5a3d00}
+.alerte.attention{background:#fff3c4;color:#5a3d00;border:1px solid #d9b84a;border-radius:10px;padding:8px 10px}
+p.ok{color:var(--ok)}
+button.lien{background:none;border:0;padding:6px 0;color:var(--pri);text-decoration:underline;cursor:pointer;min-height:0}
+.detail-points{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.detail-points li{display:flex;gap:12px;align-items:flex-start;padding:8px 10px;border:1px solid var(--bord-carte);border-radius:10px}
+.detail-points li>b{flex:none;min-width:42px;font-family:var(--f-chiffres);font-size:1.15rem;color:var(--pri)}
+.carte-installer{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:14px 0}
+.carte-installer[hidden]{display:none}
+@media (max-width:959px){
+  #entete{min-height:66px}
+  .choix label{font-size:.9rem;min-height:44px;padding:6px 10px;gap:6px}
+  .choix label .ico{width:20px;height:20px}
+  fieldset{padding:10px 12px 12px}
+  legend{font-size:.98rem}
+  input[type=radio],input[type=checkbox]{width:18px;height:18px}
+  #vue h2{font-size:1.35rem}
+  .hero-texte .grand{font-size:1.6rem}
+  .chapeau{font-size:1rem}
+}
+/* Carte au téléphone : la légende (à gauche) et le bouton « Signaler un tas » (à droite) ne se chevauchent plus.
+   Le bouton monte au-dessus de la légende repliée ; la légende ouverte reste étroite et défile si besoin. */
+@media (max-width:600px){
+  .legende{max-width:calc(100% - 24px);bottom:24px;font-size:.78rem}
+  .legende[open]{max-height:45vh;overflow:auto}
+  .cta-flottant{bottom:76px!important;right:10px!important;left:auto!important;padding:0 16px!important;min-height:48px!important;font-size:.95rem!important}
+}

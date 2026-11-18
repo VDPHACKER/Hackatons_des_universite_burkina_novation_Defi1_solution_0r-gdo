@@ -1,0 +1,21 @@
+# Déploiement en une commande :   docker compose up --build
+# Au premier démarrage, le mot de passe administrateur (aléatoire, affiché une seule fois) est dans les journaux :
+#   docker compose logs oregdo | findstr "Mot de passe"        (Windows)   |   docker compose logs oregdo | grep "Mot de passe"
+# Pour choisir soi-même le mot de passe :  OREGDO_ADMIN_MDP=... docker compose up --build
+services:
+  oregdo:
+    build: .
+    image: oregdo:latest
+    ports:
+      - "${OREGDO_PORT:-8000}:8000"                 # port de l'ordinateur ; s'il est déjà pris :  OREGDO_PORT=8130 docker compose up --build
+    environment:
+      OREGDO_COMMUNE: ${OREGDO_COMMUNE:-ouaga}      # pack de commune servi (ouaga, bobo...)
+      OREGDO_ADMIN_ID: ${OREGDO_ADMIN_ID:-admin}
+      OREGDO_ADMIN_MDP: ${OREGDO_ADMIN_MDP:-}       # vide : mot de passe aléatoire généré au premier démarrage
+      OREGDO_PROXY_CONFIANT: ${OREGDO_PROXY_CONFIANT:-0}   # 1 derrière un tunnel ou un proxy HTTPS (vraie adresse du téléphone)
+    volumes:
+      - oregdo-data:/app/data                       # base SQLite, clé de signature, messages vocaux : conservés entre les redémarrages
+    restart: unless-stopped
+
+volumes:
+  oregdo-data: {}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 56" role="img" aria-label="Logo Orẽgdo : une feuille au-dessus d'immeubles">
+  <path d="M10 24C10 10 23 3 41 4c1 15-7 26-23 26-3 0-6-2-8-6z" fill="#3aa65f"/>
+  <path d="M15 22c9-2 15-7 21-14" stroke="#eafff1" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <g fill="#cfe8d6"><rect x="5" y="36" width="11" height="19" rx="1"/><rect x="18" y="29" width="13" height="26" rx="1"/><rect x="33" y="23" width="15" height="32" rx="1"/><rect x="50" y="32" width="10" height="23" rx="1"/></g>
+  <g fill="#14472f"><rect x="8" y="40" width="2.5" height="3"/><rect x="8" y="46" width="2.5" height="3"/><rect x="22" y="33" width="2.5" height="3"/><rect x="26" y="33" width="2.5" height="3"/><rect x="22" y="40" width="2.5" height="3"/><rect x="26" y="40" width="2.5" height="3"/><rect x="37" y="27" width="2.5" height="3"/><rect x="42" y="27" width="2.5" height="3"/><rect x="37" y="34" width="2.5" height="3"/><rect x="42" y="34" width="2.5" height="3"/><rect x="53" y="36" width="2.5" height="3"/></g>
+</svg>

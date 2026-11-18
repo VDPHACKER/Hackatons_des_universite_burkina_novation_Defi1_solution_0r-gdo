@@ -1,0 +1,36 @@
+# Environnement et caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.playwright-mcp/
+node_modules/
+
+# Secrets et données personnelles : ne jamais publier
+.env
+data/secret.key
+data/*.db
+data/*.db-*
+comptes_demo.txt
+acces_demo.txt
+data/audio/
+
+# Données lourdes ou régénérables (voir README : scripts/fetch_osm.py, scripts/build_*.py)
+data/cache/
+data/raw/*
+!data/raw/open_buildings/
+data/raw/open_buildings/*
+!data/raw/open_buildings/URL.txt
+
+# Fichiers temporaires de l'éditeur ou d'Office
+~$*
+*.tmp
+Thumbs.db
+
+# Certificat de test pour le téléphone (généré par scripts/telephone_https.py)
+data/tls/
+
+# Notes de travail personnelles (hors dépôt)
+prompt.md
+comptes_demo*.txt

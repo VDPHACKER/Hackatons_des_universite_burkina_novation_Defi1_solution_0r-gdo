@@ -1,0 +1,17 @@
+{
+  "source": "Google Open Buildings v3 (HDX buildings-google-bfa, ODbL)",
+  "confiance_min": 0.7,
+  "batiments_retenus": 1270512,
+  "batiments_ecartes_confiance": 279700,
+  "emprise_totale_m2": 61546683,
+  "population_repartie": 2415266,
+  "ilots": 2136,
+  "ilots_sans_batiment": 83,
+  "date": "2026-11-17",
+  "osm": {
+    "batiments": 331374,
+    "emprise_totale_m2": 18624829,
+    "correlation_population_par_ilot": 0.322,
+    "ecart_relatif_median": 1.0
+  }
+}
