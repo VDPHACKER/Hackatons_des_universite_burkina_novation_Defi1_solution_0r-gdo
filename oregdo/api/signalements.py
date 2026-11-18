@@ -313,7 +313,7 @@ class CorpsPieges(BaseModel):
 
 
 @router.post("/alea/pieges")
-def lancer_pieges(corps: CorpsPieges, u=Depends(exiger_roles("mairie"))):     # épreuve en direct : mairie ou admin
+def lancer_pieges(corps: CorpsPieges, u=Depends(exiger_roles("admin"))):     # épreuve en direct : compte du jury (administration) seulement
     """Fait passer des signalements piégés par le VRAI pipeline. Renvoie `resultats` (verdict et motifs de chacun)
     et `resume` (vérifiés / à confirmer / rejetés). Les signalements sont conservés (source « jury », synthétiques)."""
     try:

@@ -237,7 +237,7 @@ def recalculer():
     return _json({**plan, "message": f"Plan recalculé en {plan['temps_calcul_s']} s."})
 
 
-@router.post("/alea", dependencies=[Depends(exiger_mairie)])      # épreuve en direct : la mairie pilote, l'admin passe toujours
+@router.post("/alea", dependencies=[Depends(exiger_roles("admin"))])   # épreuve en direct : réservée au compte du jury (administration)
 def appliquer_alea(corps: dict = Body(...)):
     """Applique un aléa (panne_camion, saison_pluies, nouveau_quartier, signalements_pieges) puis recalcule."""
     try:

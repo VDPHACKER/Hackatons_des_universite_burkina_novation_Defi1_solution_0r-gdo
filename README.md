@@ -50,12 +50,12 @@ Lancez le serveur **quelques minutes avant** la démonstration : le tout premier
 | Plans → Commune | le plan en une phrase, une légende des symboles, les tournées camion par camion, les emplacements conseillés | *Recalculer le plan* |
 | Plans → Par arrondissement | les 12 arrondissements classés du moins bien au mieux desservi | feuilles de route imprimables, exports CSV et GeoJSON |
 | Simulation → Scénarios | curseurs : **population, abonnement, camions, fréquence de passage, budget, tri** ; acteurs (ménages, pré-collecteurs, brigade, mairie) | *Lancer la simulation*, *Garder ce scénario pour comparer* |
-| Simulation → Épreuve en direct | la console du jury : avant/après sur la carte, temps de recalcul, journal | panne de camions, saison des pluies, nouveau quartier, **signalements piégés**, retour à la référence |
 | Plus → Importer une collecte | | charger le **jeu de test caché** (CSV, Excel exporté en CSV, ODK/Kobo, WKT, GeoJSON) |
 
-5. **Brigade Laabal** (compte `brigade`) : *À vérifier* puis *Interventions* (sensibiliser, puis sanctionner en cas de récidive).
-6. **Pré-collecteur** (compte `precollecteur`) : *Ma tournée*, et signaler un tas croisé en route.
-7. **API** : documentation interactive sur `/docs`. Envoyer directement des pièges : `POST /api/alea/pieges` avec `{"signalements": [...]}` ou `{"generer": 24}` (compte mairie).
+5. **Épreuve en direct (jury)** (compte `admin`, réservé au jury) : *Simulation → Épreuve en direct*. Un bouton par aléa : panne de camions, saison des pluies, nouveau quartier, **signalements piégés** ; la carte montre l'avant et l'après, avec le temps de recalcul et un journal. *Remettre la situation de référence* annule tout. La mairie n'y a pas accès : elle compare ses propres scénarios.
+6. **Brigade Laabal** (compte `brigade`) : *À vérifier* puis *Interventions* (sensibiliser, puis sanctionner en cas de récidive).
+7. **Pré-collecteur** (compte `precollecteur`) : *Ma tournée*, et signaler un tas croisé en route.
+8. **API** : documentation interactive sur `/docs`. Envoyer directement des pièges : `POST /api/alea/pieges` avec `{"signalements": [...]}` ou `{"generer": 24}` (compte `admin`).
 
 ## Installation manuelle (Windows, sans Docker)
 

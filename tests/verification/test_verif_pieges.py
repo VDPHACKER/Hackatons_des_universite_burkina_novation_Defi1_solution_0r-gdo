@@ -121,7 +121,7 @@ def test_revalidation_protegee(client, auth, sig):
 
 
 def test_routes_de_pilotage_protegees(client, auth):
-    """Scénario, plan, simulation et aléas de l'épreuve en direct : mairie (l'admin passe toujours). La brigade n'y a pas accès."""
+    """Scénario, plan et simulation : mairie (l'admin passe toujours) ; aléas de l'épreuve en direct : admin seulement. La brigade n'a accès à rien de cela."""
     mairie_ou_admin = [("put", "/api/scenario", {}), ("post", "/api/plan/recalculer", None), ("post", "/api/simulation/run", {"jours": 1}),
                        ("post", "/api/alea", {"type": "saison_pluies"}), ("post", "/api/alea/pieges", {"generer": 1})]
     brigade, mairie, enqueteur = _entetes("brigade"), _entetes("mairie"), _entetes("precollecteur")
@@ -132,8 +132,12 @@ def test_routes_de_pilotage_protegees(client, auth):
         assert envoyer(url, headers=brigade, **kw).status_code == 403, url
         assert envoyer(url, headers=enqueteur, **kw).status_code == 403, url
     assert client.put("/api/scenario", json={}, headers=mairie).status_code == 200
-    assert client.post("/api/alea/pieges", json={"generer": 1}, headers=mairie).status_code == 200      # épreuve en direct par la mairie
-    assert client.post("/api/alea", json={"type": "saison_pluies"}, headers=mairie).status_code == 200
+    # Épreuve en direct : réservée au compte du jury (administration). La mairie simule ses propres scénarios, elle n'injecte pas de pièges.
+    admin = _entetes("admin")
+    assert client.post("/api/alea/pieges", json={"generer": 1}, headers=mairie).status_code == 403
+    assert client.post("/api/alea", json={"type": "saison_pluies"}, headers=mairie).status_code == 403
+    assert client.post("/api/alea/pieges", json={"generer": 1}, headers=admin).status_code == 200
+    assert client.post("/api/alea", json={"type": "saison_pluies"}, headers=admin).status_code == 200
     assert client.get("/api/scenario").status_code == 200                               # lecture ouverte (carte publique)
 
 

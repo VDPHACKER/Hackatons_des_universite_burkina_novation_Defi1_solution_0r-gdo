@@ -26,7 +26,7 @@ export const ECRANS = {
   plan: { fichier: 'plan', titre: 'Plan de gestion', roles: ['mairie'] },
   scenarios: { fichier: 'scenarios', titre: 'Scénarios et simulation', roles: ['mairie'] },
   arrondissement: { fichier: 'arrondissement', titre: "Plan d'un arrondissement", roles: ['mairie'] },
-  jury: { fichier: 'jury', titre: 'Épreuve en direct (jury)', roles: ['mairie'] },
+  jury: { fichier: 'jury', titre: 'Épreuve en direct (jury)', roles: ['admin'] },      // le jury teste l'outil ; la mairie n'en a pas besoin
   admin: { fichier: 'admin', titre: 'Administration', roles: ['admin'] },
 };
 
@@ -41,7 +41,7 @@ export const MENU = {
   precollecteur: { onglets: ['accueil', 'precollecteur', 'carte', 'signaler'], plus: ['suivi', 'droits', 'parametres'] },
   brigade: { onglets: ['accueil', 'verifier', 'brigade', 'carte'], plus: ['importer', 'droits', 'parametres'] },
   mairie: { onglets: ['mairie', 'plan', 'scenarios', 'carte'], plus: ['rapports', 'importer', 'commun', 'parametres'] },
-  admin: { onglets: ['admin', 'mairie', 'scenarios', 'carte'], plus: ['plan', 'verifier', 'brigade', 'rapports', 'importer', 'commun', 'parametres'] },
+  admin: { onglets: ['admin', 'mairie', 'scenarios', 'carte'], plus: ['jury', 'plan', 'verifier', 'brigade', 'rapports', 'importer', 'commun', 'parametres'] },
 };
 
 export const menuDe = (role) => MENU[role] || MENU.visiteur;
