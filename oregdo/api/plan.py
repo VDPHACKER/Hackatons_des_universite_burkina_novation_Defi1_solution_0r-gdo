@@ -268,7 +268,7 @@ def lancer_simulation(corps: dict = Body(default_factory=dict)):
     return _json(resultat)
 
 
-@router.get("/simulation/comparaison")
+@router.get("/simulation/comparaison", dependencies=[Depends(exiger_mairie)])   # calcul long : jamais ouvert aux anonymes
 def comparaison(jours: str | None = None):
     """Plan cible (valeurs du config) contre scénario courant, même graine ; résultats mémorisés."""
     try:

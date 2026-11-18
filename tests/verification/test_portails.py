@@ -417,3 +417,45 @@ def test_un_signalement_renvoye_apres_coupure_n_est_enregistre_qu_une_fois(clien
     conn = base.ouvrir()
     assert conn.execute("SELECT COUNT(*) FROM signalement").fetchone()[0] == 1
     conn.close()
+
+
+# ------------------------------------------------------------------ communication entre les profils, d'un bout à l'autre
+def test_un_signalement_circule_du_citoyen_a_la_brigade_puis_a_la_mairie(client, sig):
+    """Le parcours que le jury suivra : citoyen → brigade → citoyen (suivi) → carte publique → brigade (intervention)
+    → mairie (tableau de bord) ; voisins → brigade (à revérifier) ; pré-collecteur → mairie (collectes)."""
+    compte("agent", "brigade"); compte("maire", "mairie"); compte("moussa", "precollecteur", point="PR-1")
+    brigade, mairie, precol = entetes(client, "agent"), entetes(client, "maire"), entetes(client, "moussa")
+    # 1. Le citoyen signale sans compte et sans photo : « à confirmer », avec un code de suivi.
+    r = client.post("/api/signalements", json={**sig, "appareil": "TEL-CITOYEN"})
+    assert r.status_code == 201 and r.json()["statut"] == "a_confirmer"
+    code = r.json()["code_suivi"]
+    assert client.get(f"/api/suivi/{code}").json()["statut"] == "a_confirmer"
+    assert client.get("/api/public/depotoirs").json()["features"] == []            # pas encore sur la carte publique
+    # 2. La brigade le trouve dans sa file et le confirme sur place.
+    file = client.get("/api/brigade/file", headers=brigade).json()
+    assert file["nombre"] == 1
+    sid = file["signalements"][0]["id"]
+    assert client.post(f"/api/signalements/{sid}/revalider", json={"statut": "verifie", "motif": "Vérifié sur place"}, headers=brigade).status_code == 200
+    assert client.get("/api/brigade/file", headers=brigade).json()["nombre"] == 0
+    # 3. Le citoyen voit le changement avec son code, et le tas apparaît sur la carte publique.
+    suivi = client.get(f"/api/suivi/{code}").json()
+    assert suivi["statut"] == "verifie" and suivi["historique"][-1]["statut"] == "verifie"
+    carte = client.get("/api/public/depotoirs").json()["features"]
+    assert len(carte) == 1
+    # 4. La brigade sensibilise ; la mairie le voit dans son tableau de bord.
+    did = client.get("/api/brigade/depotoirs", headers=brigade).json()["depotoirs"][0]["id"]
+    assert client.post("/api/brigade/interventions", json={"depotoir_id": did, "type": "sensibilisation", "issue": "habitants informés"}, headers=brigade).status_code == 201
+    k = client.get("/api/mairie/kpi", headers=mairie).json()
+    assert k["depotoirs_verifies"] == 1 and k["interventions"]["sensibilisation"] == 1
+    # 5. Deux voisins disent que le tas n'est plus là : la brigade doit revérifier (rien n'est supprimé).
+    ref, (lon, lat) = carte[0]["properties"]["ref"], carte[0]["geometry"]["coordinates"]
+    conn = base.ouvrir(); d = conn.execute("SELECT lat, lon FROM depotoir").fetchone(); conn.close()
+    for v in ("VOISIN-1", "VOISIN-2"):
+        assert client.post(f"/api/public/depotoirs/{ref}/avis", json={"type": "disparu", "appareil": v, "lat": d["lat"], "lon": d["lon"]}).status_code == 201
+    assert client.get("/api/brigade/depotoirs", headers=brigade).json()["depotoirs"][0]["a_reverifier"] is True
+    # 6. Le pré-collecteur saisit une collecte ; la mairie la retrouve.
+    assert client.post("/api/precollecteur/collectes", json={"kg": 75, "nb_menages": 20}, headers=precol).status_code == 201
+    assert client.get("/api/mairie/kpi", headers=mairie).json()["collectes"]["nb_collectes"] == 1
+    # 7. Chacun reste dans son rôle : le citoyen ne lit pas la file, le pré-collecteur ne revalide pas.
+    assert client.get("/api/brigade/file").status_code == 401
+    assert client.post(f"/api/signalements/{sid}/revalider", json={"statut": "rejete", "motif": "essai"}, headers=precol).status_code == 403
