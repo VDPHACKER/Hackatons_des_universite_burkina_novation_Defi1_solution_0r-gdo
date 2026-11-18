@@ -4,11 +4,13 @@
 
 Pourquoi : un navigateur de téléphone n'autorise la position GPS, le micro et l'installation de l'application que sur une adresse
 SÉCURISÉE (https, ou http://localhost). Avec http://192.168.x.x le bouton « Utiliser ma position » échoue toujours.
-Ce script crée un certificat auto-signé pour les adresses de cette machine (data/tls/, valable 30 jours, jamais versionné) puis lance
-le serveur. Sur le téléphone : ouvrir l'adresse affichée, accepter l'avertissement du navigateur (« Avancé » puis « Continuer »).
-Le téléphone et l'ordinateur doivent être sur le même réseau Wi-Fi, et le pare-feu Windows doit autoriser le port (une fenêtre le demande au 1er lancement).
-Limite : le service worker (mode hors ligne) ne s'enregistre pas avec un certificat auto-signé ; pour tester le hors-ligne et l'installation, utiliser
-`adb reverse` ou l'option de Chrome décrite dans le README (section « Sur un téléphone »).
+https ne demande pas Internet : c'est un chiffrement entre le téléphone et cet ordinateur, sur le Wi-Fi local.
+Ce script crée une AUTORITÉ DE CERTIFICATION LOCALE (une fois, dans data/tls/, jamais versionné), signe avec elle un certificat pour les
+adresses de cette machine, sert une petite page d'installation en http (port 8444), puis lance le serveur en https (port 8443).
+Chaque téléphone installe UNE FOIS le certificat de l'autorité depuis cette page ; ensuite l'adresse https s'ouvre sans avertissement et
+le GPS, le micro, l'installation de l'application et le mode hors ligne fonctionnent, sans Internet.
+L'autorité est limitée aux adresses privées et à localhost : elle ne peut pas servir à imiter un site d'Internet.
+Le téléphone et l'ordinateur doivent être sur le même réseau Wi-Fi, et le pare-feu Windows doit autoriser les deux ports.
 """
 import argparse
 import ipaddress
@@ -82,13 +84,92 @@ def adresses_locales():
     return sorted(a for a in trouvees if ipaddress.ip_address(a).is_private and not a.startswith("127."))
 
 
-def certificat(ips):
+# Autorité de certification LOCALE : créée une fois, gardée dans data/tls/ (jamais versionné), installée une fois sur chaque téléphone.
+# Elle est limitée aux adresses privées et à localhost (nameConstraints) : même si sa clé fuyait, elle ne pourrait pas imiter un site d'Internet.
+CONTRAINTES = ",".join(["critical"] + [f"permitted;IP:{r}" for r in ("10.0.0.0/255.0.0.0", "172.16.0.0/255.240.0.0", "192.168.0.0/255.255.0.0",
+                                                                     "127.0.0.0/255.0.0.0")] + ["permitted;DNS:localhost"])
+NOM_CERTIFICAT_AUTORITE = "oregdo-autorite-locale.crt"
+
+
+def autorite():
+    """Clé et certificat de l'autorité locale (10 ans). Réutilisés à chaque lancement : le téléphone ne l'installe qu'une fois."""
     TLS.mkdir(parents=True, exist_ok=True)
-    cert, cle = TLS / "cert.pem", TLS / "key.pem"
+    cle, crt = TLS / "autorite.key", TLS / NOM_CERTIFICAT_AUTORITE
+    if not (cle.exists() and crt.exists()):
+        subprocess.run([trouver_openssl(), "req", "-x509", "-newkey", "rsa:2048", "-nodes", "-sha256", "-days", "3650",
+                        "-keyout", str(cle), "-out", str(crt), "-subj", "/O=Oregdo/CN=Oregdo autorite locale (reseau prive)",
+                        "-addext", "basicConstraints=critical,CA:TRUE,pathlen:0",
+                        "-addext", "keyUsage=critical,keyCertSign,cRLSign",
+                        "-addext", f"nameConstraints={CONTRAINTES}"], check=True, capture_output=True)
+    return crt, cle
+
+
+def certificat(ips):
+    """Certificat du serveur signé par l'autorité locale, pour les adresses actuelles de la machine (régénéré à chaque lancement).
+    397 jours au plus et usage « serveur » : ce sont les règles d'Android et d'iOS pour qu'un certificat soit accepté sans avertissement."""
+    ca_crt, ca_cle = autorite()
+    cert, cle, demande, ext = TLS / "cert.pem", TLS / "key.pem", TLS / "serveur.csr", TLS / "serveur.ext"
     alt = ",".join(["DNS:localhost", "IP:127.0.0.1"] + [f"IP:{a}" for a in ips])
-    subprocess.run([trouver_openssl(), "req", "-x509", "-newkey", "rsa:2048", "-nodes", "-days", "30", "-keyout", str(cle), "-out", str(cert),
-                    "-subj", "/CN=oregdo-test", "-addext", f"subjectAltName={alt}"], check=True, capture_output=True)
+    ext.write_text(f"subjectAltName={alt}\nbasicConstraints=critical,CA:FALSE\nkeyUsage=critical,digitalSignature,keyEncipherment\n"
+                   "extendedKeyUsage=serverAuth\n", encoding="ascii")
+    ossl = trouver_openssl()
+    subprocess.run([ossl, "req", "-new", "-newkey", "rsa:2048", "-nodes", "-keyout", str(cle), "-out", str(demande),
+                    "-subj", "/O=Oregdo/CN=Oregdo serveur local"], check=True, capture_output=True)
+    subprocess.run([ossl, "x509", "-req", "-in", str(demande), "-CA", str(ca_crt), "-CAkey", str(ca_cle), "-CAcreateserial",
+                    "-days", "397", "-sha256", "-extfile", str(ext), "-out", str(cert)], check=True, capture_output=True)
+    demande.unlink(missing_ok=True)
     return cert, cle
+
+
+PAGE_INSTALLATION = """<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orẽgdo : installer le certificat</title><style>body{{font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;padding:16px;line-height:1.5;color:#14281c}}
+a.btn{{display:block;text-align:center;background:#1e7a46;color:#fff;padding:14px;border-radius:10px;text-decoration:none;font-weight:700;margin:16px 0}}
+h2{{font-size:1.1rem;margin-top:24px}}code{{background:#eef3ee;padding:2px 4px;border-radius:4px}}</style></head><body>
+<h1>Orẽgdo sur ce téléphone</h1>
+<p>Une seule fois par téléphone : installez le certificat de l'ordinateur de la mairie. Ensuite, l'application s'ouvre en https sans avertissement,
+et le GPS, le micro, l'installation et le <b>mode hors ligne</b> fonctionnent, sans Internet.</p>
+<a class="btn" href="/{nom}">1. Télécharger le certificat</a>
+<h2>2. Android</h2>
+<p>Paramètres, puis Sécurité (ou « Sécurité et confidentialité »), puis « Chiffrement et identifiants » (ou « Autres paramètres de sécurité »),
+puis « Installer un certificat », puis « Certificat CA ». Choisissez le fichier <code>{nom}</code> dans Téléchargements et confirmez.</p>
+<h2>2. iPhone</h2>
+<p>Ouvrez cette page dans Safari et touchez « Télécharger », puis « Autoriser ». Dans Réglages, touchez « Profil téléchargé » et « Installer ».
+Enfin, dans Réglages, Général, Informations, « Réglages des certificats », activez la confiance pour « Oregdo autorite locale ».</p>
+<h2>3. Ouvrir l'application</h2>
+<p><a href="https://{ip}:{port}/">https://{ip}:{port}/</a> : il ne doit plus y avoir d'avertissement. Ouvrez la page d'accueil une fois ;
+elle reste ensuite disponible sans réseau.</p>
+<p style="color:#4a5e51;font-size:.9rem">Ce certificat ne vaut que pour les adresses du réseau local (192.168.x.x, 10.x.x.x, 172.16 à 31.x.x) :
+il ne permet pas d'intercepter les sites d'Internet.</p></body></html>"""
+
+
+def servir_installation(port_https, ip, port):
+    """Petite page en http (port 8444 par défaut) : le téléphone y télécharge le certificat de l'autorité avant de passer en https.
+    Elle ne sert que deux contenus : la page d'explication et le certificat PUBLIC de l'autorité (jamais sa clé)."""
+    import threading
+    from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+    crt = (TLS / NOM_CERTIFICAT_AUTORITE).read_bytes()
+    page = PAGE_INSTALLATION.format(nom=NOM_CERTIFICAT_AUTORITE, ip=ip, port=port_https).encode("utf-8")
+
+    class Gestion(BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.path == "/" + NOM_CERTIFICAT_AUTORITE:
+                corps, type_ = crt, "application/x-x509-ca-cert"
+            elif self.path in ("/", "/index.html"):
+                corps, type_ = page, "text/html; charset=utf-8"
+            else:
+                self.send_error(404); return
+            self.send_response(200)
+            self.send_header("Content-Type", type_)
+            self.send_header("Content-Length", str(len(corps)))
+            self.end_headers()
+            self.wfile.write(corps)
+
+        def log_message(self, *args):          # pas de journal des visites dans la console
+            pass
+
+    serveur = ThreadingHTTPServer(("0.0.0.0", port), Gestion)
+    threading.Thread(target=serveur.serve_forever, name="installation-certificat", daemon=True).start()
+    return serveur
 
 
 def main():
@@ -105,19 +186,24 @@ def main():
     if a.port != demande:
         print(f"\nLe port {demande} est déjà utilisé (ancien serveur resté ouvert ?) : le port {a.port} est utilisé à la place.")
     principale = adresse_principale()
-    print("\nSur le téléphone (connecté au MÊME Wi-Fi que l'ordinateur), ouvrez cette adresse, puis acceptez l'avertissement du navigateur :")
-    if principale in ips:
-        print(f"\n    https://{principale}:{a.port}      <-- celle du Wi-Fi, la bonne dans presque tous les cas")
-    autres = [ip for ip in ips if ip != principale]
+    ip_wifi = principale if principale in ips else ips[0]
+    port_install = port_libre(a.port + 1)
+    if port_install == a.port:
+        port_install = port_libre(a.port + 2)
+    servir_installation(a.port, ip_wifi, port_install)
+    print("\nSur le téléphone, connecté au MÊME Wi-Fi que l'ordinateur (Internet n'est pas nécessaire) :")
+    print(f"\n  1. UNE SEULE FOIS par téléphone, installer le certificat :   http://{ip_wifi}:{port_install}")
+    print(f"  2. Ouvrir l'application, sans avertissement :                https://{ip_wifi}:{a.port}")
+    print("     (GPS, micro, installation de l'application et mode hors ligne fonctionnent.)")
+    autres = [ip for ip in ips if ip != ip_wifi]
     if autres:
-        print("\n  Autres adresses (cartes réseau virtuelles, à n'essayer qu'en dernier recours) :")
-        for ip in autres:
-            print(f"    https://{ip}:{a.port}")
-    print("\nTest rapide : ajoutez /api/sante à l'adresse. Si la page affiche {\"ok\":true, ...}, tout fonctionne.")
+        print("\n  Autres adresses (cartes réseau virtuelles, à n'essayer qu'en dernier recours) : " + ", ".join(autres))
+    print("\nTest rapide : ajoutez /api/sante à l'adresse https. Si la page affiche {\"ok\":true, ...}, tout fonctionne.")
+    print(f"Le certificat de l'autorité est gardé dans {TLS} : les téléphones déjà équipés n'ont rien à refaire au prochain lancement.")
     ouvert = regle_pare_feu(a.port)
-    if ouvert is False:
-        print(f"\n!! Le pare-feu Windows bloque probablement le port {a.port}. Ouvrez PowerShell EN ADMINISTRATEUR et collez :\n"
-              f'   New-NetFirewallRule -DisplayName "Oregdo telephone {a.port}" -Direction Inbound -Protocol TCP -LocalPort {a.port} -Action Allow -Profile Private')
+    if ouvert is False or regle_pare_feu(port_install) is False:
+        print(f"\n!! Le pare-feu Windows bloque probablement les ports {a.port} et {port_install}. Ouvrez PowerShell EN ADMINISTRATEUR et collez :\n"
+              f'   New-NetFirewallRule -DisplayName "Oregdo telephone" -Direction Inbound -Protocol TCP -LocalPort {a.port},{port_install} -Action Allow -Profile Private')
     elif ouvert is None:
         print(f"\n(Le pare-feu n'a pas pu être vérifié. Si le téléphone n'arrive pas à se connecter, autorisez le port {a.port}  : voir le README, section « Sur un téléphone ».)")
     print("\nCtrl+C pour arrêter.\n")
