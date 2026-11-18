@@ -1,11 +1,11 @@
 // Service worker : app shell + couches du pack en cache (hors ligne). Les appels /api sont geres par l'application (IndexedDB).
-const V = 'oregdo-v41';
+const V = 'oregdo-v43';
 const VM = 'oregdo-masquage-v1';   // moteurs et modèles de masquage (≈ 45 Mo) : mis en cache à la première photo, jamais revérifiés
 const FOND = ['routes_principales', 'communes', 'lieux', 'reperes', 'verts', 'decharges_osm'].map((n) => `data/pack/fond/${n}.geojson`)
   .concat(['OpenSans-Regular', 'OpenSans-Bold'].flatMap((f) => ['0-255', '256-511'].map((r) => `vendor/fonts/${f}/${r}.pbf`)));
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'css/polices.css', 'css/app.css', 'css/design.css', 'icons/logo.png', 'icons/logo-entete.png', 'vendor/polices/source-sans-3-latin-wght-normal.woff2', 'vendor/polices/source-sans-3-latin-ext-wght-normal.woff2', 'vendor/polices/source-sans-3-vietnamese-wght-normal.woff2', 'vendor/polices/bricolage-grotesque-latin-wght-normal.woff2', 'vendor/polices/bricolage-grotesque-latin-ext-wght-normal.woff2', 'js/icones.js', 'js/notifications.js', 'js/fidelite.js', 'js/sousnav.js', 'vendor/polices/bricolage-grotesque-vietnamese-wght-normal.woff2', 'js/views/tableau.js', 'js/views/parametres.js', 'js/app.js', 'js/api.js', 'js/db.js', 'js/util.js', 'js/sync.js', 'js/map.js', 'js/charts.js', 'js/kpi.js', 'js/exif.js', 'js/masquage.js', 'js/i18n.js', 'js/commune.js', 'data/i18n/dyu.json', 'data/i18n/mos.json', 'js/session.js', 'js/acces.js',
   'js/views/carte.js', 'js/views/signaler.js', 'js/views/verification.js', 'js/views/plan.js', 'js/views/scenarios.js', 'js/views/arrondissement.js', 'js/views/jury.js', 'js/views/droits.js', 'js/views/commun.js', 'js/views/accueil.js', 'js/views/confidentialite.js',
-  'js/views/connexion.js', 'js/views/suivi.js', 'js/views/importer.js', 'js/installer.js', 'js/reprise.js', 'js/views/points.js', 'js/views/precollecteur.js', 'js/views/brigade.js', 'js/views/mairie.js', 'js/views/admin.js',
+  'js/views/connexion.js', 'js/views/suivi.js', 'js/views/importer.js', 'js/installer.js', 'js/horsligne.js', 'js/reprise.js', 'js/views/points.js', 'js/views/precollecteur.js', 'js/views/brigade.js', 'js/views/mairie.js', 'js/views/admin.js',
   'data/droits.json', 'data/pack/commune.geojson', 'data/pack/secteurs.geojson', 'data/pack/eau.geojson', 'data/pack/routes.geojson', 'data/pack/sites_candidats.geojson', 'data/pack/infrastructures.geojson',
   'vendor/maplibre/maplibre-gl.js', 'vendor/maplibre/maplibre-gl.css', 'icons/icon-192.png', ...FOND];
 

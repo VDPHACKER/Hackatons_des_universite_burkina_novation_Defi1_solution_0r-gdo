@@ -478,3 +478,21 @@ button.lien{background:none;border:0;padding:6px 0;color:var(--pri);text-decorat
   #lateral .logo-marque{width:120px;height:120px;border-radius:18px;box-shadow:0 6px 18px #0004}
   #lateral .marque-nom{font-size:1.6rem}
 }
+.bandeau.hors-ligne{background:#e8eef7;color:#13294b;border-bottom:1px solid #9fb4d6;padding:6px 12px;font-size:.84rem}
+.etat-hors-ligne{list-style:none;padding:0;margin:6px 0 10px;display:grid;gap:4px}
+.etat-hors-ligne .ok{color:var(--ok);font-weight:600}.etat-hors-ligne .manque{color:var(--att)}
+
+/* Bas de la barre latérale : le logo Orẽgdo, à la place de l'ancienne illustration (même coin, même taille) */
+@media (min-width:960px){
+  #lateral .lateral-bas{padding:8px;background:#fff;border-radius:14px;box-shadow:0 6px 18px #0004}
+  #lateral .lateral-bas img{display:block;width:100%;height:auto;border-radius:8px}
+}
+@media (min-width:960px){
+  #lateral .marque{height:auto!important;min-height:0!important;margin-bottom:2px}
+  #lateral .marque-nom{display:block;line-height:1.15}
+  #lateral .slogan{margin:6px 0 18px;position:static}
+}
+@media (min-width:960px){
+  #lateral>*{flex-shrink:0}                 /* la colonne ne comprime plus le logo, le nom ni le slogan */
+  #lateral{overflow-y:auto}                 /* petit écran : la barre défile au lieu d'écraser son contenu */
+}

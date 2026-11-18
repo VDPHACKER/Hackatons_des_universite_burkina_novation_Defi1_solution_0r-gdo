@@ -3,6 +3,7 @@ import { post } from '../api.js';
 import { LANGUES, langue, choisir, statut } from '../i18n.js';
 import { commune } from '../commune.js';
 import { utilisateur, LIBELLE_ROLE } from '../session.js';
+import { etatHorsLigne, preparerHorsLigne } from '../horsligne.js';
 
 export async function render(racine) {
   const c = commune(), u = utilisateur(), admin = !!u && u.role === 'admin';       // le jargon technique ne s'affiche qu'à l'administration
@@ -13,6 +14,10 @@ export async function render(racine) {
   <div class="carte"><h3 style="margin-top:0">Affichage</h3>
     <div class="choix"><button class="secondaire" id="p-theme">Thème clair ou sombre</button><button class="secondaire" id="p-eco">Mode économie de données</button></div>
     <p class="petit mut">Le mode économie réduit la taille des photos et masque le fond de carte pour consommer moins de données mobiles.</p></div>
+  <div class="carte"><h3 style="margin-top:0">Utilisation sans réseau</h3>
+    <ul class="etat-hors-ligne" id="hl-etat"><li class="mut">Vérification…</li></ul>
+    <p><button class="primaire" id="hl-preparer" type="button">Préparer pour l'utilisation sans réseau</button></p>
+    <p class="petit mut" id="hl-avance" role="status" aria-live="polite">À faire une fois avec du réseau (de préférence en Wi-Fi) : ensuite, l'application, la carte, le signalement avec photo et le suivi fonctionnent sans connexion. Les signalements faits sans réseau partent tout seuls au retour de la connexion. La connexion des agents, elle, demande toujours le réseau.</p></div>
   <div class="carte"><h3 style="margin-top:0">Commune</h3>
     <p><b>${esc(c.nom)}</b> · ${nf(c.population)} habitants (RGPH 2019) · ${nf(c.menages)} ménages</p>
     <p class="petit mut">Application : ${esc(c.marque || '')}.${admin ? ' La commune servie se choisit au démarrage du serveur (variable <code>OREGDO_COMMUNE</code>) ; voir <code>docs/15-seconde-commune.md</code>.' : ''}</p>
@@ -20,6 +25,18 @@ export async function render(racine) {
   <div class="carte"><h3 style="margin-top:0">Compte</h3>
     ${u ? `<p><b>${esc(u.nom)}</b> · ${esc(LIBELLE_ROLE[u.role] || u.role)}${u.zone ? ' · ' + esc(u.zone) : ''}</p>` : '<p>Vous utilisez l\'application sans compte (citoyen). <a href="#/connexion">Connexion des agents et de la mairie</a></p>'}</div>`;
   $$('input[name=lg]').forEach((r) => (r.onchange = () => choisir(r.value)));
+  const majHL = async () => {
+    const e = await etatHorsLigne(), z = $('#hl-etat'); if (!z) return;
+    const ligne = (ok, texte) => `<li class="${ok ? 'ok' : 'manque'}">${ok ? '✓' : '○'} ${texte}${ok ? '' : ' : pas encore prêt'}</li>`;
+    z.innerHTML = ligne(e.application, 'Application et carte') + ligne(e.masquage, 'Masquage des photos (visages, plaques)') + ligne(e.donnees, 'Dernières données de la commune');
+  };
+  majHL();
+  $('#hl-preparer').onclick = async (ev) => {
+    const b = ev.currentTarget, z = $('#hl-avance'); b.disabled = true;
+    try { await preparerHorsLigne((m) => { if (z) z.textContent = m; }); if (z) z.textContent = 'Prêt : vous pouvez utiliser l'application sans réseau.'; toast('Prêt pour l'utilisation sans réseau.'); }
+    catch (e) { if (z) z.textContent = erreurTexte(e); }
+    b.disabled = false; majHL();
+  };
   $('#p-theme').onclick = () => document.getElementById('btn-theme').click();
   $('#p-eco').onclick = () => document.getElementById('btn-eco').click();
   const relire = $('#p-relire');

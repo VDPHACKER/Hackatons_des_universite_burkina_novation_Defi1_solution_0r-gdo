@@ -8,6 +8,7 @@ import { LANGUES, initLangue, choisir, langue, statut, t } from './i18n.js';
 import { chargerCommune, commune } from './commune.js';
 import { verifierChangements, alertesSuivi, libelleStatut } from './fidelite.js';
 import { installer, installee, surChangement } from './installer.js';
+import { preparationAutomatique } from './horsligne.js';
 import { initialiser as initNotifications, rafraichir as rafraichirNotifications } from './notifications.js';
 import { role, utilisateur, connecte, autorise, fermer, LIBELLE_ROLE } from './session.js';
 
@@ -32,6 +33,7 @@ function themeInit() {
 function puces() {
   const maj = () => {
     const r = $('#puce-reseau'); r.textContent = etat.online ? 'En ligne' : 'Hors ligne'; r.classList.toggle('hors', !etat.online);
+    const bh = $('#bandeau-hors-ligne'); if (bh) bh.hidden = etat.online;
     // Bandeau tant que les données affichées sont synthétiques : on ne doit pas les prendre pour la réalité.
     $('#bandeau-synth').hidden = etat.synthetique !== true;
     const f = $('#puce-fraicheur'); f.textContent = etat.perime ? `Données du cache (${ago(etat.derniere)})` : 'Données : ' + ago(etat.derniere);
@@ -189,6 +191,7 @@ window.addEventListener('hashchange', aller);
 aller();
 synchroniser().catch(() => {});
 setInterval(() => synchroniser().catch(() => {}), 60000);
+preparationAutomatique();                  // en Wi-Fi : masquage et données gardés pour l'utilisation sans réseau
 setTimeout(surveillerSuivi, 4000); setInterval(surveillerSuivi, 300000);          // toutes les 5 minutes tant que l'application est ouverte
 window.addEventListener('oregdo:suivi', pastilleSuivi); window.addEventListener('online', surveillerSuivi);
 if ('serviceWorker' in navigator) {

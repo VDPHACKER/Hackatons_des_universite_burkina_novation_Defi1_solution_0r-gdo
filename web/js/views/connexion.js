@@ -38,7 +38,9 @@ export async function render(racine, params) {
       toast(`Bienvenue ${r.utilisateur.nom}.`);
       location.hash = '#/' + (retour && ECRANS[retour] ? retour : ARRIVEE[r.utilisateur.role] || 'accueil');
     } catch (err) {
-      er.textContent = err.status === 401 ? 'Identifiant ou mot de passe incorrect.' : erreurTexte(err);
+      er.textContent = err.status === 401 ? 'Identifiant ou mot de passe incorrect.'
+        : err.status === 0 ? (navigator.onLine ? 'Le serveur ne répond pas pour le moment (il redémarre peut-être) : réessayez dans une minute.' : 'Vous êtes hors connexion : la connexion des agents a besoin du réseau. Les habitants, eux, peuvent signaler sans réseau.')
+        : erreurTexte(err);
       er.hidden = false; $('#mdp').value = ''; $('#mdp').focus();
     }
     const bouton = $('#b-co');           // absent si la connexion a réussi : l'écran a déjà été remplacé

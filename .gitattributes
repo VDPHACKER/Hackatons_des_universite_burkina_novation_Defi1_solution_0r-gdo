@@ -1,3 +1,6 @@
 # Scripts exécutés dans le conteneur Linux : fins de ligne Unix, même sur un clone Windows
 *.sh text eol=lf
 Dockerfile text eol=lf
+# Fichiers lus par cmd.exe et PowerShell : fins de ligne Windows, quel que soit le poste qui clone
+*.bat text eol=crlf
+*.ps1 text eol=crlf

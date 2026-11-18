@@ -60,6 +60,7 @@ if ($SansDemarrer) { Write-Host ""; Write-Host "Tout est pret. Pour demarrer : .
 
 Etape "4/4  Demarrage du serveur"
 $libre = $false
+$demande = $Port
 for ($p = $Port; $p -lt ($Port + 20); $p++) {
     $occupe = Get-NetTCPConnection -State Listen -LocalPort $p -ErrorAction SilentlyContinue
     if (-not $occupe) { $Port = $p; $libre = $true; break }
@@ -69,6 +70,8 @@ $hote = if ($Reseau) { "0.0.0.0" } else { "127.0.0.1" }
 Write-Host ""
 Write-Host "  Application : http://127.0.0.1:$Port/   (API : http://127.0.0.1:$Port/docs)" -ForegroundColor Cyan
 if ($Reseau) { Write-Host "  Sur le reseau local : http://<adresse-de-cet-ordinateur>:$Port/   (un telephone exige HTTPS : voir docs/16)" -ForegroundColor Cyan }
+if ($Port -ne $demande) { Write-Host "  ATTENTION : le port $demande est deja pris par un autre programme. Utilisez bien l'adresse ci-dessus (port $Port)." -ForegroundColor Yellow }
+Write-Host "  Comptes des autres profils (mairie, brigade, pre-collecteur) : double-cliquer scripts\comptes.bat" -ForegroundColor Cyan
 Write-Host "  Ctrl+C pour arreter."
 Write-Host ""
 & $venvPy -m uvicorn oregdo.app:app --host $hote --port $Port
