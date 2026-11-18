@@ -83,3 +83,26 @@ def test_tournees_suivent_les_routes_avec_le_graphe():
     p = plan.calculer_plan(Scenario.depuis_config())
     f = p["tournees"]["features"][0]
     assert len(f["geometry"]["coordinates"]) > 5 * (len(f["properties"]["arrets"]) + 2)
+
+
+def test_un_cache_abime_est_recalcule_sans_planter(tmp_path, monkeypatch, pts):
+    """Vu à l'essai à froid dans Docker : un fichier de cache tronqué faisait planter le premier calcul (EOFError)."""
+    import gc
+    monkeypatch.setattr(graphe_routier, "RACINE", tmp_path)
+    gr = graphe_routier.charger("ouaga")                 # objet partagé (lru_cache) : on vide ses mémoires internes
+    etat = {k: getattr(gr, k) for k in ("_hubs", "_hub_pos", "_hub_mat", "_hub_pred")}
+    try:
+        gr._hubs = None
+        gr.definir_hubs(pts[:6])
+        attendu = np.array(gr._matrice_hubs(False, False))
+        fichiers = list((tmp_path / "data" / "cache").glob("*.npy"))
+        assert len(fichiers) == 2
+        gr._hub_mat.clear(); gr._hub_pred.clear(); gc.collect()   # Windows : libérer la projection mémoire du fichier
+        for f in fichiers:                               # écriture interrompue : fichiers vides
+            f.write_bytes(b"")
+        assert np.allclose(gr._matrice_hubs(False, False), attendu)
+    finally:                                             # rendre le graphe partagé aux autres tests tel qu'il était
+        gr._hub_mat, gr._hub_pred = {}, {}
+        gc.collect()
+        for k, v in etat.items():
+            setattr(gr, k, v)

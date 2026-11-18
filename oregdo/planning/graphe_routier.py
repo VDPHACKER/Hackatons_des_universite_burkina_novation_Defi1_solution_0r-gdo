@@ -174,10 +174,14 @@ class Graphe:
         h = hashlib.sha1(self._hubs.tobytes() + repr((self.signature, cle, self.sp.facteur_cout_piste, self.sp.facteur_zone_inondable,
                                                       self.sp.rayon_zone_inondable_m)).encode()).hexdigest()[:16]
         f_dist, f_pred = (RACINE / "data" / "cache" / f"hubs_{h}.npy"), (RACINE / "data" / "cache" / f"preds_{h}.npy")
+        m = None
         if f_dist.exists() and f_pred.exists():
-            m = np.load(f_dist)
-            self._hub_pred[cle] = np.load(f_pred, mmap_mode="r")
-        else:
+            try:
+                m = np.load(f_dist)
+                self._hub_pred[cle] = np.load(f_pred, mmap_mode="r")
+            except (OSError, ValueError, EOFError):              # cache abîmé (écriture interrompue, disque plein) : on recalcule
+                m = None
+        if m is None:
             w = self.csr(*cle)
             m = np.empty((len(self._hubs),) * 2, np.float32)
             preds = np.empty((len(self._hubs), self.n), np.int32)
@@ -189,7 +193,7 @@ class Graphe:
                 np.save(f_dist, m)
                 np.save(f_pred, preds)
                 self._hub_pred[cle] = np.load(f_pred, mmap_mode="r")
-            except OSError:                                       # le cache disque est un confort, jamais une obligation
+            except (OSError, ValueError, EOFError):               # le cache disque est un confort, jamais une obligation
                 self._hub_pred[cle] = preds
         self._hub_mat[cle] = m
         return m

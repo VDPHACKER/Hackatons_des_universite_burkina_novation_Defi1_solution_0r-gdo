@@ -9,7 +9,7 @@
 | Module | Rôle |
 |---|---|
 | Vérification | 8 contrôles indépendants, score 0-100, statuts vérifié (≥ 70), à confirmer (40-69), rejeté (< 40), motifs lisibles en français, journal d'audit, rien n'est supprimé |
-| Plan de gestion | Points de regroupement (p-médiane sous budget), tournées CVRP (OR-Tools), pluie, pannes, nouveau quartier, recalcul en quelques secondes |
+| Plan de gestion | Points de regroupement (p-médiane sous budget), tournées CVRP (PyVRP, OR-Tools en secours), pluie, pannes, nouveau quartier, recalcul en quelques secondes |
 | Simulation | Modèle multi-agents Mesa au pas journalier, brigade Laabal en deux phases (sensibilisation puis sanction), diagnostic honnête du stock de dépotoirs |
 | Interface | Une PWA (MapLibre) hors ligne, avec connexion et écrans par rôle : carte, signaler et suivre, points et badges, pré-collecteur, brigade, import d'une collecte, mairie, administration, console du jury, droits et devoirs des ménages |
 | Collecte simulée | Campagne de terrain de l'équipe dans un secteur, simulée (à la demande du jury) et comparée à la vérité terrain : `python -m oregdo.verification.collecte_simulee` |
@@ -20,7 +20,9 @@
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\deployer.ps1
 ```
-Vérifie Python 3.12, installe tout, crée l'administrateur (mot de passe lisible, affiché une fois) et démarre le serveur sur http://127.0.0.1:8000. Avec Docker : `docker compose up --build` (vérifié). 
+Vérifie Python 3.12, installe tout, crée l'administrateur (mot de passe lisible, affiché une fois) et démarre le serveur sur http://127.0.0.1:8000. Avec Docker : `docker compose up --build`, puis http://localhost:8000 (premier lancement : environ 15 minutes de téléchargement et de préparation, ensuite quelques secondes).
+
+> **Port 8000 déjà pris** (message « port is already allocated ») : choisir un autre port. PowerShell : `$env:OREGDO_PORT=8130; docker compose up --build` ; Linux, macOS ou Git Bash : `OREGDO_PORT=8130 docker compose up --build`. L'adresse devient http://localhost:8130.
 
 ### Comptes : le plus simple
 

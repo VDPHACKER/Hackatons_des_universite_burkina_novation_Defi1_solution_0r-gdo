@@ -30,7 +30,8 @@ def main() -> int:
         print(f"  Identifiant  : {ident}")
         print(f"  Mot de passe : {mdp}")
         print("  Notez-le maintenant : il ne sera plus jamais affiché.")
-        print("  Perdu ? python -m oregdo.comptes reinitialiser --id " + ident)
+        print("  Perdu ? python -m oregdo.comptes reinitialiser --id " + ident
+              + "   (avec Docker : docker compose exec oregdo python -m oregdo.comptes reinitialiser --id " + ident + ")")
         print("  Comptes de démonstration (un par rôle) : double-cliquer scripts\\comptes.bat")
         print("=" * 66)
         return 0

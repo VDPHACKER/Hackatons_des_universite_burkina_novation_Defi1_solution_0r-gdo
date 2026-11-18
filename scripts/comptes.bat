@@ -19,16 +19,24 @@ if not defined LOCAL if not defined CONTENEUR (
   pause
   exit /b 1
 )
-if "%MDP%"=="" if defined LOCAL for /f "delims=" %%p in ('".venv\Scripts\python.exe" -c "from oregdo.comptes import mot_de_passe_lisible as m; print(m())"') do set "MDP=%%p"
-if "%MDP%"=="" if defined CONTENEUR for /f "delims=" %%p in ('docker compose exec -T oregdo python -c "from oregdo.comptes import mot_de_passe_lisible as m; print(m())"') do set "MDP=%%p"
-if defined LOCAL (
-  echo === Application locale (scripts\deployer.ps1) ===
-  ".venv\Scripts\python.exe" -m oregdo.comptes demo --mdp "%MDP%"
-)
-if defined CONTENEUR (
-  echo === Application Docker (docker compose) ===
-  docker compose exec -T oregdo python -m oregdo.comptes demo --mdp "%MDP%"
-)
+rem Mot de passe commun : tire au hasard par l'application (locale, sinon Docker) s'il n'est pas donne.
+if not "%MDP%"=="" goto :creer
+if defined LOCAL goto :mdp_local
+goto :mdp_docker
+:mdp_local
+for /f "delims=" %%p in ('.venv\Scripts\python.exe -c "from oregdo.comptes import mot_de_passe_lisible as m; print(m())"') do set "MDP=%%p"
+goto :creer
+:mdp_docker
+for /f "delims=" %%p in ('docker compose exec -T oregdo python -c "from oregdo.comptes import mot_de_passe_lisible as m; print(m())"') do set "MDP=%%p"
+:creer
+if not defined LOCAL goto :docker
+echo === Application locale, lancee par scripts\deployer.ps1 ===
+".venv\Scripts\python.exe" -m oregdo.comptes demo --mdp "%MDP%"
+:docker
+if not defined CONTENEUR goto :fin
+echo === Application Docker, lancee par docker compose ===
+docker compose exec -T oregdo python -m oregdo.comptes demo --mdp "%MDP%"
+:fin
 echo.
 echo ==================================================================
 echo   Identifiants : admin, mairie, brigade, precollecteur

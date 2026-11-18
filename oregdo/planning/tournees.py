@@ -1,7 +1,7 @@
-"""Tournées de collecte : CVRP à voyages multiples (OR-Tools).
+"""Tournées de collecte : CVRP à voyages multiples. Solveur PyVRP par défaut (voir `_tournees_pyvrp`), OR-Tools en secours.
 
 Choix de modélisation :
-- un « véhicule » OR-Tools = un voyage d'un camion ; un camion fait au plus `voyages_max_par_jour` voyages ;
+- un « véhicule » = un voyage d'un camion ; un camion fait au plus `voyages_max_par_jour` voyages ;
   le 1er voyage part du dépôt, les suivants du CET (retour de vidage) ; tous finissent au CET ;
 - camions en panne : absents de la liste des véhicules (donc impossibles à retrouver dans les tournées) ;
 - un PR dont la charge dépasse la capacité d'un camion est découpé en plusieurs arrêts ;
