@@ -8,7 +8,7 @@ Ce script crée un certificat auto-signé pour les adresses de cette machine (da
 le serveur. Sur le téléphone : ouvrir l'adresse affichée, accepter l'avertissement du navigateur (« Avancé » puis « Continuer »).
 Le téléphone et l'ordinateur doivent être sur le même réseau Wi-Fi, et le pare-feu Windows doit autoriser le port (une fenêtre le demande au 1er lancement).
 Limite : le service worker (mode hors ligne) ne s'enregistre pas avec un certificat auto-signé ; pour tester le hors-ligne et l'installation, utiliser
-`adb reverse` ou un tunnel HTTPS (voir docs/16-tester-sur-telephone.md).
+`adb reverse` ou l'option de Chrome décrite dans le README (section « Sur un téléphone »).
 """
 import argparse
 import ipaddress
@@ -119,7 +119,7 @@ def main():
         print(f"\n!! Le pare-feu Windows bloque probablement le port {a.port}. Ouvrez PowerShell EN ADMINISTRATEUR et collez :\n"
               f'   New-NetFirewallRule -DisplayName "Oregdo telephone {a.port}" -Direction Inbound -Protocol TCP -LocalPort {a.port} -Action Allow -Profile Private')
     elif ouvert is None:
-        print(f"\n(Le pare-feu n'a pas pu être vérifié. Si le téléphone n'arrive pas à se connecter, autorisez le port {a.port} : voir docs/16.)")
+        print(f"\n(Le pare-feu n'a pas pu être vérifié. Si le téléphone n'arrive pas à se connecter, autorisez le port {a.port}  : voir le README, section « Sur un téléphone ».)")
     print("\nCtrl+C pour arrêter.\n")
     env = dict(os.environ)
     if a.commune:

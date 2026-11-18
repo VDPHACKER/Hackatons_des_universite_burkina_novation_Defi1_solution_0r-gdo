@@ -183,7 +183,7 @@ await chargerCommune();
 marque();
 if (!window.isSecureContext) {                 // http hors localhost : GPS, micro et installation bloqués par le navigateur
   const b = document.createElement('div'); b.className = 'bandeau'; b.setAttribute('role', 'note');
-  b.innerHTML = '<b>Connexion non sécurisée (http).</b> Le navigateur bloque le GPS, le micro et l\'installation de l\'application. Ouvrez l\'application en <b>https</b> (voir docs/16-tester-sur-telephone.md).';
+  b.innerHTML = '<b>Connexion non sécurisée (http).</b> Le navigateur bloque le GPS, le micro et l\'installation de l\'application. Ouvrez l\'application par son adresse <b>https</b> (demandez-la à l\'administrateur de la plateforme).';
   $('#bandeau-langue').before(b);
 }
 $$('.ico-slot').forEach((e) => (e.innerHTML = icone(e.dataset.ico, 16)));

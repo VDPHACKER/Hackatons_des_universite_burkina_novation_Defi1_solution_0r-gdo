@@ -69,7 +69,7 @@ if (-not $libre) { Echec "Aucun port libre entre $Port et $($Port + 19). Fermez 
 $hote = if ($Reseau) { "0.0.0.0" } else { "127.0.0.1" }
 Write-Host ""
 Write-Host "  Application : http://127.0.0.1:$Port/   (API : http://127.0.0.1:$Port/docs)" -ForegroundColor Cyan
-if ($Reseau) { Write-Host "  Sur le reseau local : http://<adresse-de-cet-ordinateur>:$Port/   (un telephone exige HTTPS : voir docs/16)" -ForegroundColor Cyan }
+if ($Reseau) { Write-Host "  Sur le reseau local : http://<adresse-de-cet-ordinateur>:$Port/   (un telephone exige HTTPS : voir le README, section Sur un telephone)" -ForegroundColor Cyan }
 if ($Port -ne $demande) { Write-Host "  ATTENTION : le port $demande est deja pris par un autre programme. Utilisez bien l'adresse ci-dessus (port $Port)." -ForegroundColor Yellow }
 Write-Host "  Comptes des autres profils (mairie, brigade, pre-collecteur) : double-cliquer scripts\comptes.bat" -ForegroundColor Cyan
 Write-Host "  Ctrl+C pour arreter."

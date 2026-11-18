@@ -80,7 +80,17 @@ $env:OREGDO_ADMIN_MDP = "choisissez-un-mot-de-passe-long"
 .venv\Scripts\python.exe -m uvicorn oregdo.app:app --port 8000
 ```
 
-Ouvrir http://127.0.0.1:8000/ (interface) ou http://127.0.0.1:8000/docs (API interactive). Cette commande n'écoute que l'ordinateur lui-même : **pour un téléphone**, double-cliquer `scripts\lancer_telephone.bat` (HTTPS sur le réseau local) ou voir la documentation livrée séparément. La base est **vide** au départ : les signalements réels arrivent par l'application. Pour une démonstration, l'administrateur charge le jeu synthétique depuis l'écran « Administration » (bouton « Charger la démonstration »), et peut le retirer ensuite sans toucher aux vrais signalements.
+Ouvrir http://127.0.0.1:8000/ (interface) ou http://127.0.0.1:8000/docs (API interactive). Cette commande n'écoute que l'ordinateur lui-même : **pour un téléphone**, voir ci-dessous.
+
+### Sur un téléphone
+
+Un navigateur de téléphone n'autorise le **GPS, le micro, l'installation et le mode hors ligne** que sur une adresse sécurisée (`https://…` ou `http://localhost`). Avec `http://192.168.x.x:8000`, l'application s'ouvre mais ces fonctions restent bloquées. Trois façons de faire, de la plus simple à la plus complète :
+
+1. **HTTPS sur le réseau local** (Android ou iPhone, même Wi-Fi que l'ordinateur) : double-cliquer `scripts\lancer_telephone.bat`, ouvrir sur le téléphone l'adresse `https://…:8443` affichée, puis « Paramètres avancés » et « Continuer » (certificat de test). GPS, micro et caméra fonctionnent ; l'installation et le hors ligne ne sont pas garantis avec ce certificat.
+2. **Chrome sur Android, sans certificat** : ouvrir `chrome://flags`, chercher « Insecure origins treated as secure », y ajouter l'adresse `http://<adresse-de-l-ordinateur>:8000`, activer et relancer Chrome (serveur lancé avec Docker, ou avec `scripts\deployer.ps1 -Reseau` pour qu'il accepte les autres appareils). Tout fonctionne, y compris l'installation et le hors ligne.
+3. **Câble USB (Android)** : activer le débogage USB, puis sur l'ordinateur `adb reverse tcp:8000 tcp:8000` ; le téléphone ouvre `http://localhost:8000`. Tout fonctionne.
+
+Si le téléphone n'atteint pas l'ordinateur : autoriser le port dans le pare-feu Windows (PowerShell en administrateur : `New-NetFirewallRule -DisplayName "Oregdo" -Direction Inbound -Protocol TCP -LocalPort 8443 -Action Allow -Profile Private`) ; un Wi-Fi public ou d'école isole souvent les appareils : utiliser alors le partage de connexion du téléphone.
 
 ### Une application, des écrans par rôle
 
@@ -97,7 +107,10 @@ Créer d'autres comptes : écran « Administration », ou en ligne de commande, 
 
 ## Tests
 
+Les outils de test ne sont pas installés par le déploiement : les ajouter une fois, puis lancer la suite (environ 8 minutes).
+
 ```powershell
+.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
 .venv\Scripts\python.exe -m pytest tests/verification tests/planning_sim -q
 ```
 
