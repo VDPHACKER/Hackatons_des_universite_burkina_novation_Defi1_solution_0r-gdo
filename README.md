@@ -35,6 +35,28 @@ Double-cliquer **`scripts\comptes.bat`** : il crée (ou remet à zéro) un compt
 
 `scripts\comptes.bat mon-mot-commun` donne le même mot de passe à tous. Mot de passe perdu ou compte bloqué : `python -m oregdo.comptes reinitialiser --id admin`. L'identifiant ne tient pas compte des majuscules (« Admin » tapé sur un téléphone fonctionne).
 
+## Parcours du jury, écran par écran
+
+Lancez le serveur **quelques minutes avant** la démonstration : le tout premier calcul du plan prend 12 à 30 s, les suivants 1 à 4 s.
+
+1. **Ouvrir** `http://localhost:8000` (ou le port annoncé au lancement). Données fictives signalées par un bandeau jaune permanent.
+2. **Créer les comptes** : double-cliquer `scripts\comptes.bat`. Il affiche un mot de passe commun pour `admin`, `mairie`, `brigade` et `precollecteur`.
+3. **Habitant (sans compte)** : *Signaler* (photo floutée sur le téléphone, fonctionne sans réseau), *Suivi* avec le code reçu, *Carte* des dépotoirs vérifiés.
+4. **Mairie** (bouton *Connexion*, compte `mairie`). La mairie n'a que des outils de décision :
+
+| Onglet | Ce qu'on y voit | Ce qu'on peut y faire |
+|---|---|---|
+| Tableau de bord | indicateurs, carte, signalements récents ; filtre par arrondissement en haut | repérer les zones mal desservies |
+| Plans → Commune | le plan en une phrase, une légende des symboles, les tournées camion par camion, les emplacements conseillés | *Recalculer le plan* |
+| Plans → Par arrondissement | les 12 arrondissements classés du moins bien au mieux desservi | feuilles de route imprimables, exports CSV et GeoJSON |
+| Simulation → Scénarios | curseurs : **population, abonnement, camions, fréquence de passage, budget, tri** ; acteurs (ménages, pré-collecteurs, brigade, mairie) | *Lancer la simulation*, *Garder ce scénario pour comparer* |
+| Simulation → Épreuve en direct | la console du jury : avant/après sur la carte, temps de recalcul, journal | panne de camions, saison des pluies, nouveau quartier, **signalements piégés**, retour à la référence |
+| Plus → Importer une collecte | | charger le **jeu de test caché** (CSV, Excel exporté en CSV, ODK/Kobo, WKT, GeoJSON) |
+
+5. **Brigade Laabal** (compte `brigade`) : *À vérifier* puis *Interventions* (sensibiliser, puis sanctionner en cas de récidive).
+6. **Pré-collecteur** (compte `precollecteur`) : *Ma tournée*, et signaler un tas croisé en route.
+7. **API** : documentation interactive sur `/docs`. Envoyer directement des pièges : `POST /api/alea/pieges` avec `{"signalements": [...]}` ou `{"generer": 24}` (compte mairie).
+
 ## Installation manuelle (Windows, sans Docker)
 
 Prérequis : Python 3.12.

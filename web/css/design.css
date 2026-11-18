@@ -496,3 +496,12 @@ button.lien{background:none;border:0;padding:6px 0;color:var(--pri);text-decorat
   #lateral>*{flex-shrink:0}                 /* la colonne ne comprime plus le logo, le nom ni le slogan */
   #lateral{overflow-y:auto}                 /* petit écran : la barre défile au lieu d'écraser son contenu */
 }
+
+/* Écran Plan : aide de lecture (légende des symboles) et résumé en une phrase */
+.aide-lecture summary{cursor:pointer}
+.aide-lecture ol{margin:6px 0 4px;padding-left:20px}
+.aide-lecture li{margin:4px 0}
+.leg-ligne{display:flex;align-items:center;gap:8px;margin:3px 0}
+.phrase-plan:empty{display:none}
+.phrase-plan{background:var(--carte);border-left:4px solid var(--pri);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:var(--t-l);line-height:1.45}
+.aide-lecture a{display:inline;padding:0;min-height:0;margin:0}

@@ -3,6 +3,7 @@ import { get, post, lirePlan } from '../api.js';
 import { kpiHtml } from '../kpi.js';
 import * as M from '../map.js';
 import { sousNav, PLANS } from '../sousnav.js';
+import { symbole } from '../icones.js';
 
 const COUL = ['#d1007a', '#0057c8', '#c46a00', '#6b2fb3', '#00776e'];
 function parCamion(feats) {
@@ -16,8 +17,20 @@ const ligne = (o) => `<tr><td><b style="color:${COUL[(+o.camion || 0) % 5]}">●
 export async function render(racine) {
   racine.innerHTML = `${sousNav(PLANS, 'plan')}<h2>Plan de gestion</h2>
   <div class="alerte"><b>Plan cible, pas la situation actuelle.</b> Ce que les camions et les points de regroupement pourraient faire si les dépotoirs vérifiés étaient desservis. Résultat de simulation sur données de démonstration : à ne pas citer comme un fait.</div>
-  <p class="mut">Seuls les dépotoirs <b>vérifiés</b> entrent dans le plan.</p>
+  <details class="carte aide-lecture" open><summary><b>Comment lire ce plan</b></summary>
+    <ol class="petit">
+      <li><b>En une phrase</b> : l'encadré juste sous le bouton « Recalculer » dit combien de déchets les camions évacuent et combien de ménages ont un point à portée.</li>
+      <li><b>Sur la carte</b> :
+        <span class="leg-ligne">${symbole('pr', 16)} point de regroupement retenu (là où les pré-collecteurs déposent)</span>
+        <span class="leg-ligne">${symbole('camion', 16)} tournée d'un camion (une couleur par camion)</span>
+        <span class="leg-ligne"><svg class="sym" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="#fff" stroke="#6b2fb3" stroke-width="3"/></svg> emplacement conseillé pour un nouveau point</span>
+        <span class="leg-ligne">${symbole('cet', 16)} centre d'enfouissement, où les camions vident</span></li>
+      <li><b>Les cases chiffrées</b> : touchez ou survolez une case pour lire ce qu'elle mesure.</li>
+      <li><b>Pour essayer autre chose</b> (plus de camions, abonnement, budget…) : onglet <a href="#/scenarios">Simulation</a>. Pour un seul arrondissement et les feuilles de route imprimables : <a href="#/arrondissement">Plan d'un arrondissement</a>.</li>
+    </ol>
+    <p class="petit mut">Seuls les dépotoirs <b>vérifiés</b> entrent dans le plan : un signalement douteux ou piégé ne déplace jamais un camion.</p></details>
   <button class="primaire" id="recalc">Recalculer le plan</button> <span id="temps" class="mut" role="status"></span>
+  <p id="phrase" class="phrase-plan" aria-live="polite"></p>
   <div id="kpi"></div>
   <div class="carte-zone" style="flex:none;height:320px;margin-top:10px"><div class="cible" id="cible-carte"></div></div>
   <h3>Tournées par camion</h3><div id="tournees"></div>
@@ -31,7 +44,9 @@ export async function render(racine) {
     $('#kpi').innerHTML = kpiHtml(p.kpi) + '<p class="petit mut">Simulation sur une journée type, données synthétiques.</p>';
     $('#temps').textContent = p.temps_s != null || ms != null ? `Calculé en ${nf(p.temps_s ?? ms / 1000, 2)} s` : '';
     M.donnees('pr', p.pr); M.donnees('tournees', p.tournees);
-    const t = parCamion(fc(p.tournees).features);
+    const t = parCamion(fc(p.tournees).features), k = p.kpi || {}, nbPr = fc(p.pr).features.length;
+    $('#phrase').innerHTML = `Avec <b>${nf(t.length)} camions</b> et <b>${nf(nbPr)} points de regroupement</b>, le plan évacue <b>${k.tonnes != null ? nf(k.tonnes) + ' tonnes' : '?'}</b> de déchets par jour`
+      + `${k.couverture != null ? ` ; <b>${nf(k.couverture)} %</b> des ménages ont un point à portée` : ''}${k.fuite != null ? ` et <b>${nf(k.fuite, 1)} %</b> des déchets finissent encore dans des dépotoirs` : ''}.`;
     $('#tournees').innerHTML = t.length ? `<p>${t.length} camions, triés par charge.</p><div class="defile"><table><tr><th>Camion</th><th>Voyages</th><th>PR</th><th>Distance</th><th>Charge</th></tr>${t.slice(0, 8).map(ligne).join('')}</table></div>${t.length > 8 ? `<details><summary>Voir les ${t.length - 8} autres camions</summary><div class="defile"><table>${t.slice(8).map(ligne).join('')}</table></div></details>` : ''}` : '<p class="mut">Aucune tournée.</p>';
     const pr = fc(p.pr).features;
     $('#pr').innerHTML = pr.length ? `<p>${pr.length} PR retenus.</p><details><summary>Voir la liste</summary><ul>${pr.slice(0, 60).map((f) => `<li>${esc(f.properties.id)}${f.properties.secteur ? ' · secteur ' + esc(f.properties.secteur) : ''}${f.properties.cout_fcfa ? ' · ' + nf(f.properties.cout_fcfa) + ' FCFA' : ''}</li>`).join('')}</ul></details>` : '<p class="mut">Aucun PR retenu.</p>';
