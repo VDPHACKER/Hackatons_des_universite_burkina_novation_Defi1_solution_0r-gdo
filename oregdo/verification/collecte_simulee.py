@@ -1,6 +1,6 @@
 """Collecte de terrain SIMULÉE dans un secteur (le jury a demandé de simuler la collecte réelle).
 
-L'équipe (4 membres) parcourt un secteur pendant deux matinées avec l'application et signale les tas qu'elle voit.
+L'équipe (3 membres) parcourt un secteur pendant deux matinées avec l'application et signale les tas qu'elle voit.
 Comme la VÉRITÉ TERRAIN est connue (où sont vraiment les tas), on mesure ce que le pipeline en fait : tas détectés,
 signalements d'un même tas fusionnés en un seul dépotoir, faux dépotoirs créés par une mauvaise position GPS, erreur de position.
 
@@ -35,7 +35,7 @@ from . import base, controles, doublons, score
 from .synthetique import exif_fictif, photo_synthetique
 
 GRAINE = 20261118
-EQUIPE = ("BN-M1", "BN-M2", "BN-M3", "BN-M4")         # membres de l'équipe Burkina_Novation (identifiants de collecte)
+EQUIPE = ("BN-1", "BN-2", "BN-3")         # les 3 membres de l'équipe Burkina_Novation (identifiants de collecte anonymes)
 SORTIE = RACINE / "livrables" / "collecte_simulee"
 M_LAT = 111_320.0
 
@@ -92,10 +92,9 @@ def tas_verite(rng, secteur, ref, n):
 
 
 def _zone(t, centre):
-    """Zone d'un membre : un quart du secteur autour de son centre."""
-    if t["lat"] >= centre.y:
-        return 0 if t["lon"] >= centre.x else 1
-    return 2 if t["lon"] < centre.x else 3
+    """Zone d'un membre : un tiers du secteur, découpé en trois secteurs angulaires autour de son centre."""
+    angle = math.degrees(math.atan2(t["lat"] - centre.y, t["lon"] - centre.x)) % 360
+    return int(angle // 120)
 
 
 def _gps(rng, lat, lon):
@@ -220,7 +219,7 @@ Reproductible : `python -m oregdo.verification.collecte_simulee --secteur {code}
 ## Protocole simulé
 - Secteur : **{sec['nom']}** ({int(sec['population']):,} habitants selon le pack, arrondissement {sec.get('arrondissement', '?')}).
 - **{b['tas_vrais']} tas réels** placés au bord des voies du secteur (4 à 15 m de l'axe, au moins 60 m entre deux tas).
-- **4 membres** (BN-M1 à BN-M4), chacun dans un quart du secteur, deux matinées, à pied (4 km/h).
+- **3 membres** (BN-1 à BN-3), chacun dans un tiers du secteur, deux matinées, à pied (4 km/h).
 - Un membre voit 8 tas sur 10 de sa zone ; un second membre repasse sur 4 tas sur 10 le lendemain.
 - GPS de téléphone : précision médiane ~9 m, 4 % de mauvais relevés (80 à 250 m). 90 % des signalements avec photo. 3 % envoyés deux fois.
 
@@ -250,6 +249,7 @@ Reproductible : `python -m oregdo.verification.collecte_simulee --secteur {code}
 - `verite_terrain_{code}.geojson` : position réelle des tas (ce que la simulation sait et que l'application ignore).
 """
     (dossier / "bilan.md").write_text(texte, encoding="utf-8")
+    (dossier / "bilan.json").write_text(json.dumps(bilan, ensure_ascii=False, indent=1), encoding="utf-8")   # pour les graphiques du rapport
     return dossier
 
 

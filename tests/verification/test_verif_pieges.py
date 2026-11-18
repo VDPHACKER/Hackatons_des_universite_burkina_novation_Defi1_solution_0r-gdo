@@ -81,7 +81,7 @@ def test_alea_signalements_pieges_ne_change_pas_le_plan(client, sig, bons_points
         vrai_depotoir(bons_points[i], enqueteur=f"R{i}", appareil=f"RA{i}", horodatage=sig["horodatage"])
     avant = client.post("/api/plan/recalculer", headers=JURY).json()
     assert avant["kpi"]["nb_depotoirs_verifies"] >= 3
-    r = client.post("/api/alea", json={"type": "signalements_pieges", "params": {"generer": 24}}, headers=JURY).json()
+    r = client.post("/api/alea", json={"type": "signalements_pieges", "params": {"generer": 24, "graine": 2026}}, headers=JURY).json()
     assert len(r["resultats"]) == 24
     assert r["resume"]["pieges_verifies"] == 0, [x for x in r["resultats"] if x["statut"] == "verifie"]   # le piège fautif, pour comprendre
     assert r["plan_modifie"] is False and r["plan"]["empreinte"] == avant["empreinte"]
@@ -166,3 +166,16 @@ def test_export_osm_reel_sans_demo(client, sig):
     r = client.get("/api/export/osm")
     assert r.status_code == 200 and r.json()["nombre"] == 1 and "DÉMONSTRATION" not in r.json()["osm"]
     assert client.get("/api/depotoirs").json()["synthetique"] is False
+
+
+@pytest.mark.parametrize("graines", [range(0, 30), range(1000, 1030)])
+def test_aucun_piege_ne_passe_verifie_quel_que_soit_le_tirage(client, sig, bons_points, graines):
+    """Les pièges sont tirés au hasard pendant l'épreuve : on balaie 60 tirages, avec de vrais dépotoirs déjà en base."""
+    from oregdo.verification import lot
+    for i in range(3):
+        vrai_depotoir(bons_points[i], enqueteur=f"R{i}", appareil=f"RA{i}", horodatage=sig["horodatage"])
+    fautifs = []
+    for g in graines:
+        res = lot.verifier_pieges(generer=24, graine=g)
+        fautifs += [(g, r.get("cas"), r.get("score")) for r in res["resultats"] if r["statut"] == "verifie"]
+    assert not fautifs, fautifs

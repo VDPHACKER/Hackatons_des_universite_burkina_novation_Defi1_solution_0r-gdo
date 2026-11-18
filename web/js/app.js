@@ -2,7 +2,7 @@ import './reprise.js';                        // d'abord : reprend les réglages
 import { $, $$, ago, toast, esc } from './util.js';
 import { etat, surEtat, post, get } from './api.js';
 import { synchroniser } from './sync.js';
-import { ECRANS, menuDe, titre, titreCourt, titreLateral } from './acces.js';
+import { ECRANS, menuDe, titre, titreCourt, titreLateral, destine } from './acces.js';
 import { icone } from './icones.js';
 import { LANGUES, initLangue, choisir, langue, statut, t } from './i18n.js';
 import { chargerCommune, commune } from './commune.js';
@@ -108,6 +108,11 @@ async function aller() {
   $$('#onglets a, #nav-lateral a').forEach((a) => a.classList.toggle('actif', a.getAttribute('href') === '#/' + parent));
   $('#plus').hidden = true; $('#btn-plus')?.setAttribute('aria-expanded', 'false');
   if (!autorise(ecran.roles)) { refuser(racine, nom); return; }
+  if (!destine(nom, role())) {
+    racine.innerHTML = `<h2>${esc(titre(nom))}</h2><div class="alerte info" role="status">Cet écran sert aux habitants. Votre compte ${esc(LIBELLE_ROLE[role()] || role())} a ses propres outils dans le menu.
+      Pour signaler en tant qu'habitant, déconnectez-vous d'abord.</div><p><a class="btn primaire" href="#/${menuDe(role()).onglets[0]}">Aller à mon espace</a></p>`;
+    return;
+  }
   racine.innerHTML = '<p class="mut">Chargement…</p>';
   try {
     const m = await import(`./views/${ecran.fichier}.js`);

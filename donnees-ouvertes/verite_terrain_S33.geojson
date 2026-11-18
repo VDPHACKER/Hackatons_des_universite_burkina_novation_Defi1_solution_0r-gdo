@@ -1,0 +1,486 @@
+{
+ "type": "FeatureCollection",
+ "synthetique": true,
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527769,
+     12.362874
+    ]
+   },
+   "properties": {
+    "id": "T01",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.534045,
+     12.355721
+    ]
+   },
+   "properties": {
+    "id": "T02",
+    "taille": "petit",
+    "nature": "végétaux",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527439,
+     12.358767
+    ]
+   },
+   "properties": {
+    "id": "T03",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.536331,
+     12.363404
+    ]
+   },
+   "properties": {
+    "id": "T04",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526759,
+     12.352235
+    ]
+   },
+   "properties": {
+    "id": "T05",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.550493,
+     12.340494
+    ]
+   },
+   "properties": {
+    "id": "T06",
+    "taille": "grand",
+    "nature": "végétaux",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.531106,
+     12.355911
+    ]
+   },
+   "properties": {
+    "id": "T07",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526814,
+     12.349486
+    ]
+   },
+   "properties": {
+    "id": "T08",
+    "taille": "tres_grand",
+    "nature": "plastiques",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.549332,
+     12.339709
+    ]
+   },
+   "properties": {
+    "id": "T09",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.548001,
+     12.338706
+    ]
+   },
+   "properties": {
+    "id": "T10",
+    "taille": "tres_grand",
+    "nature": "gravats",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526197,
+     12.340484
+    ]
+   },
+   "properties": {
+    "id": "T11",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526493,
+     12.347209
+    ]
+   },
+   "properties": {
+    "id": "T12",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.540539,
+     12.360845
+    ]
+   },
+   "properties": {
+    "id": "T13",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526975,
+     12.353721
+    ]
+   },
+   "properties": {
+    "id": "T14",
+    "taille": "moyen",
+    "nature": "végétaux",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.535092,
+     12.355688
+    ]
+   },
+   "properties": {
+    "id": "T15",
+    "taille": "tres_grand",
+    "nature": "plastiques",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.546078,
+     12.3373
+    ]
+   },
+   "properties": {
+    "id": "T16",
+    "taille": "petit",
+    "nature": "végétaux",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.532815,
+     12.35588
+    ]
+   },
+   "properties": {
+    "id": "T17",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.540028,
+     12.357275
+    ]
+   },
+   "properties": {
+    "id": "T18",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527191,
+     12.357402
+    ]
+   },
+   "properties": {
+    "id": "T19",
+    "taille": "grand",
+    "nature": "végétaux",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.54395,
+     12.358821
+    ]
+   },
+   "properties": {
+    "id": "T20",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.525562,
+     12.347053
+    ]
+   },
+   "properties": {
+    "id": "T21",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.535814,
+     12.355619
+    ]
+   },
+   "properties": {
+    "id": "T22",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526048,
+     12.337953
+    ]
+   },
+   "properties": {
+    "id": "T23",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.528903,
+     12.356036
+    ]
+   },
+   "properties": {
+    "id": "T24",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.541175,
+     12.360643
+    ]
+   },
+   "properties": {
+    "id": "T25",
+    "taille": "tres_grand",
+    "nature": "ordures menagères",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527598,
+     12.36129
+    ]
+   },
+   "properties": {
+    "id": "T26",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.545864,
+     12.357649
+    ]
+   },
+   "properties": {
+    "id": "T27",
+    "taille": "tres_grand",
+    "nature": "végétaux",
+    "caniveau": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526177,
+     12.339866
+    ]
+   },
+   "properties": {
+    "id": "T28",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526408,
+     12.344962
+    ]
+   },
+   "properties": {
+    "id": "T29",
+    "taille": "tres_grand",
+    "nature": "plastiques",
+    "caniveau": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527087,
+     12.363578
+    ]
+   },
+   "properties": {
+    "id": "T30",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false
+   }
+  }
+ ]
+}

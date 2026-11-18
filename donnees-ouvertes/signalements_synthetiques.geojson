@@ -1,0 +1,7214 @@
+{
+ "type": "FeatureCollection",
+ "name": "signalements_synthetiques_ouagadougou",
+ "description": "Signalements de tas d'ordures FICTIFS pour Ouagadougou (démonstration). Ne pas les prendre pour des observations réelles.",
+ "license": {
+  "nom": "Open Database License (ODbL) 1.0",
+  "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "Orẽgdo, Hackathon des Universités 2026 (jeu de signalements fictif, à des fins de démonstration)"
+ },
+ "date_export": "2026-11-17",
+ "nombre": 300,
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.566274,
+     12.419224
+    ]
+   },
+   "properties": {
+    "id": "S0001",
+    "date": "2026-10-31",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 45",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.56623,
+     12.419224
+    ]
+   },
+   "properties": {
+    "id": "S0002",
+    "date": "2026-10-31",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 45",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.472117,
+     12.365482
+    ]
+   },
+   "properties": {
+    "id": "S0003",
+    "date": "2026-11-15",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 29",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.472235,
+     12.365553
+    ]
+   },
+   "properties": {
+    "id": "S0004",
+    "date": "2026-11-15",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 29",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.472185,
+     12.36549
+    ]
+   },
+   "properties": {
+    "id": "S0005",
+    "date": "2026-11-15",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 29",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.521444,
+     12.3972
+    ]
+   },
+   "properties": {
+    "id": "S0006",
+    "date": "2026-11-14",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.52126,
+     12.397338
+    ]
+   },
+   "properties": {
+    "id": "S0007",
+    "date": "2026-11-14",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.521318,
+     12.397323
+    ]
+   },
+   "properties": {
+    "id": "S0008",
+    "date": "2026-11-14",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.52147,
+     12.397144
+    ]
+   },
+   "properties": {
+    "id": "S0009",
+    "date": "2026-11-14",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.489497,
+     12.335406
+    ]
+   },
+   "properties": {
+    "id": "S0010",
+    "date": "2026-10-29",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 79.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.489356,
+     12.335445
+    ]
+   },
+   "properties": {
+    "id": "S0011",
+    "date": "2026-10-29",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.489396,
+     12.335477
+    ]
+   },
+   "properties": {
+    "id": "S0012",
+    "date": "2026-10-30",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.489416,
+     12.335403
+    ]
+   },
+   "properties": {
+    "id": "S0013",
+    "date": "2026-10-30",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.569631,
+     12.376509
+    ]
+   },
+   "properties": {
+    "id": "S0014",
+    "date": "2026-11-12",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 51",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.569591,
+     12.376601
+    ]
+   },
+   "properties": {
+    "id": "S0015",
+    "date": "2026-11-12",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 51",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.569541,
+     12.376487
+    ]
+   },
+   "properties": {
+    "id": "S0016",
+    "date": "2026-11-12",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 51",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.511737,
+     12.424454
+    ]
+   },
+   "properties": {
+    "id": "S0017",
+    "date": "2026-10-28",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 27",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.511621,
+     12.42442
+    ]
+   },
+   "properties": {
+    "id": "S0018",
+    "date": "2026-10-28",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 27",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.507573,
+     12.337229
+    ]
+   },
+   "properties": {
+    "id": "S0019",
+    "date": "2026-11-05",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.507589,
+     12.337199
+    ]
+   },
+   "properties": {
+    "id": "S0020",
+    "date": "2026-11-05",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.513895,
+     12.424971
+    ]
+   },
+   "properties": {
+    "id": "S0021",
+    "date": "2026-10-21",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 27",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.513917,
+     12.42481
+    ]
+   },
+   "properties": {
+    "id": "S0022",
+    "date": "2026-10-21",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 27",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.55952,
+     12.394401
+    ]
+   },
+   "properties": {
+    "id": "S0023",
+    "date": "2026-11-13",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.559426,
+     12.394508
+    ]
+   },
+   "properties": {
+    "id": "S0024",
+    "date": "2026-11-13",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.559475,
+     12.394531
+    ]
+   },
+   "properties": {
+    "id": "S0025",
+    "date": "2026-11-13",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.463359,
+     12.448355
+    ]
+   },
+   "properties": {
+    "id": "S0026",
+    "date": "2026-10-19",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 43",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.463394,
+     12.448157
+    ]
+   },
+   "properties": {
+    "id": "S0027",
+    "date": "2026-10-19",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 43",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.463304,
+     12.448191
+    ]
+   },
+   "properties": {
+    "id": "S0028",
+    "date": "2026-10-19",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 43",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.582469,
+     12.441869
+    ]
+   },
+   "properties": {
+    "id": "S0029",
+    "date": "2026-10-27",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 79.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 35",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.582509,
+     12.441963
+    ]
+   },
+   "properties": {
+    "id": "S0030",
+    "date": "2026-10-27",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 35",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.480257,
+     12.340561
+    ]
+   },
+   "properties": {
+    "id": "S0031",
+    "date": "2026-11-11",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 3",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.480267,
+     12.340511
+    ]
+   },
+   "properties": {
+    "id": "S0032",
+    "date": "2026-11-11",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 3",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.589655,
+     12.429611
+    ]
+   },
+   "properties": {
+    "id": "S0033",
+    "date": "2026-10-24",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 4",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529764,
+     12.313562
+    ]
+   },
+   "properties": {
+    "id": "S0034",
+    "date": "2026-11-13",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529829,
+     12.313551
+    ]
+   },
+   "properties": {
+    "id": "S0035",
+    "date": "2026-11-13",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529881,
+     12.313533
+    ]
+   },
+   "properties": {
+    "id": "S0036",
+    "date": "2026-11-14",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529769,
+     12.313506
+    ]
+   },
+   "properties": {
+    "id": "S0037",
+    "date": "2026-11-14",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529447,
+     12.302961
+    ]
+   },
+   "properties": {
+    "id": "S0038",
+    "date": "2026-11-10",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 24",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529534,
+     12.302999
+    ]
+   },
+   "properties": {
+    "id": "S0039",
+    "date": "2026-11-10",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 24",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529447,
+     12.303033
+    ]
+   },
+   "properties": {
+    "id": "S0040",
+    "date": "2026-11-11",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 24",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.456709,
+     12.417342
+    ]
+   },
+   "properties": {
+    "id": "S0041",
+    "date": "2026-11-07",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 79.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 34",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.456692,
+     12.417436
+    ]
+   },
+   "properties": {
+    "id": "S0042",
+    "date": "2026-11-07",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 34",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.456809,
+     12.417478
+    ]
+   },
+   "properties": {
+    "id": "S0043",
+    "date": "2026-11-07",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 34",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.558619,
+     12.387496
+    ]
+   },
+   "properties": {
+    "id": "S0044",
+    "date": "2026-10-24",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.558748,
+     12.387467
+    ]
+   },
+   "properties": {
+    "id": "S0045",
+    "date": "2026-10-24",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.558692,
+     12.387376
+    ]
+   },
+   "properties": {
+    "id": "S0046",
+    "date": "2026-10-24",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.558555,
+     12.387366
+    ]
+   },
+   "properties": {
+    "id": "S0047",
+    "date": "2026-10-24",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.568104,
+     12.352566
+    ]
+   },
+   "properties": {
+    "id": "S0048",
+    "date": "2026-11-08",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.568062,
+     12.352606
+    ]
+   },
+   "properties": {
+    "id": "S0049",
+    "date": "2026-11-09",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.568044,
+     12.352583
+    ]
+   },
+   "properties": {
+    "id": "S0050",
+    "date": "2026-11-09",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.568231,
+     12.352528
+    ]
+   },
+   "properties": {
+    "id": "S0051",
+    "date": "2026-11-09",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.5608,
+     12.318812
+    ]
+   },
+   "properties": {
+    "id": "S0052",
+    "date": "2026-10-23",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 55",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.560765,
+     12.31877
+    ]
+   },
+   "properties": {
+    "id": "S0053",
+    "date": "2026-10-23",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 55",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.534217,
+     12.364517
+    ]
+   },
+   "properties": {
+    "id": "S0054",
+    "date": "2026-11-05",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 20",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.502614,
+     12.43732
+    ]
+   },
+   "properties": {
+    "id": "S0055",
+    "date": "2026-11-04",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 39",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.502677,
+     12.437453
+    ]
+   },
+   "properties": {
+    "id": "S0056",
+    "date": "2026-11-04",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 39",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.463842,
+     12.421503
+    ]
+   },
+   "properties": {
+    "id": "S0057",
+    "date": "2026-11-12",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 34",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.463879,
+     12.421345
+    ]
+   },
+   "properties": {
+    "id": "S0058",
+    "date": "2026-11-12",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 34",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.587271,
+     12.412133
+    ]
+   },
+   "properties": {
+    "id": "S0059",
+    "date": "2026-11-07",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 4",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.481284,
+     12.419892
+    ]
+   },
+   "properties": {
+    "id": "S0060",
+    "date": "2026-11-13",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 1",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.481251,
+     12.419969
+    ]
+   },
+   "properties": {
+    "id": "S0061",
+    "date": "2026-11-13",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 1",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.481333,
+     12.42001
+    ]
+   },
+   "properties": {
+    "id": "S0062",
+    "date": "2026-11-13",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 1",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.481238,
+     12.419957
+    ]
+   },
+   "properties": {
+    "id": "S0063",
+    "date": "2026-11-13",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 1",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.500209,
+     12.395198
+    ]
+   },
+   "properties": {
+    "id": "S0064",
+    "date": "2026-10-24",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.500131,
+     12.395089
+    ]
+   },
+   "properties": {
+    "id": "S0065",
+    "date": "2026-10-24",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.50011,
+     12.395183
+    ]
+   },
+   "properties": {
+    "id": "S0066",
+    "date": "2026-10-24",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.476986,
+     12.370979
+    ]
+   },
+   "properties": {
+    "id": "S0067",
+    "date": "2026-10-20",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 29",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.476868,
+     12.370922
+    ]
+   },
+   "properties": {
+    "id": "S0068",
+    "date": "2026-10-20",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 29",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.574423,
+     12.325332
+    ]
+   },
+   "properties": {
+    "id": "S0069",
+    "date": "2026-10-31",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.564863,
+     12.385248
+    ]
+   },
+   "properties": {
+    "id": "S0070",
+    "date": "2026-11-08",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.564816,
+     12.385163
+    ]
+   },
+   "properties": {
+    "id": "S0071",
+    "date": "2026-11-08",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.564783,
+     12.385263
+    ]
+   },
+   "properties": {
+    "id": "S0072",
+    "date": "2026-11-09",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.564902,
+     12.385191
+    ]
+   },
+   "properties": {
+    "id": "S0073",
+    "date": "2026-11-09",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.580028,
+     12.327159
+    ]
+   },
+   "properties": {
+    "id": "S0074",
+    "date": "2026-11-13",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.57993,
+     12.327151
+    ]
+   },
+   "properties": {
+    "id": "S0075",
+    "date": "2026-11-13",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.579978,
+     12.327191
+    ]
+   },
+   "properties": {
+    "id": "S0076",
+    "date": "2026-11-13",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.579912,
+     12.327233
+    ]
+   },
+   "properties": {
+    "id": "S0077",
+    "date": "2026-11-13",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.59356,
+     12.448561
+    ]
+   },
+   "properties": {
+    "id": "S0078",
+    "date": "2026-10-27",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 22",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.593509,
+     12.448588
+    ]
+   },
+   "properties": {
+    "id": "S0079",
+    "date": "2026-10-27",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 22",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.56052,
+     12.351271
+    ]
+   },
+   "properties": {
+    "id": "S0080",
+    "date": "2026-10-18",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.560578,
+     12.351367
+    ]
+   },
+   "properties": {
+    "id": "S0081",
+    "date": "2026-10-19",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.560602,
+     12.351337
+    ]
+   },
+   "properties": {
+    "id": "S0082",
+    "date": "2026-10-19",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.560685,
+     12.351171
+    ]
+   },
+   "properties": {
+    "id": "S0083",
+    "date": "2026-10-19",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.57407,
+     12.448955
+    ]
+   },
+   "properties": {
+    "id": "S0084",
+    "date": "2026-10-30",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 35",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.497943,
+     12.387789
+    ]
+   },
+   "properties": {
+    "id": "S0085",
+    "date": "2026-11-15",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.497919,
+     12.387817
+    ]
+   },
+   "properties": {
+    "id": "S0086",
+    "date": "2026-11-15",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.497977,
+     12.387681
+    ]
+   },
+   "properties": {
+    "id": "S0087",
+    "date": "2026-11-15",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.487637,
+     12.406585
+    ]
+   },
+   "properties": {
+    "id": "S0088",
+    "date": "2026-10-27",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.487481,
+     12.406499
+    ]
+   },
+   "properties": {
+    "id": "S0089",
+    "date": "2026-10-27",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.476188,
+     12.394204
+    ]
+   },
+   "properties": {
+    "id": "S0090",
+    "date": "2026-10-27",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.476216,
+     12.394238
+    ]
+   },
+   "properties": {
+    "id": "S0091",
+    "date": "2026-10-27",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.475782,
+     12.416338
+    ]
+   },
+   "properties": {
+    "id": "S0092",
+    "date": "2026-10-25",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 1",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.475713,
+     12.339788
+    ]
+   },
+   "properties": {
+    "id": "S0093",
+    "date": "2026-10-20",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 3",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.475725,
+     12.339723
+    ]
+   },
+   "properties": {
+    "id": "S0094",
+    "date": "2026-10-20",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 3",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.487675,
+     12.38502
+    ]
+   },
+   "properties": {
+    "id": "S0095",
+    "date": "2026-10-26",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.556532,
+     12.371091
+    ]
+   },
+   "properties": {
+    "id": "S0096",
+    "date": "2026-11-14",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 25",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.556635,
+     12.371026
+    ]
+   },
+   "properties": {
+    "id": "S0097",
+    "date": "2026-11-14",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 25",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.556593,
+     12.371218
+    ]
+   },
+   "properties": {
+    "id": "S0098",
+    "date": "2026-11-14",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 25",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.539858,
+     12.440675
+    ]
+   },
+   "properties": {
+    "id": "S0099",
+    "date": "2026-11-05",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 14",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.539821,
+     12.440497
+    ]
+   },
+   "properties": {
+    "id": "S0100",
+    "date": "2026-11-06",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 14",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.519581,
+     12.441247
+    ]
+   },
+   "properties": {
+    "id": "S0101",
+    "date": "2026-11-15",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 27",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.519653,
+     12.441277
+    ]
+   },
+   "properties": {
+    "id": "S0102",
+    "date": "2026-11-15",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 27",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.571108,
+     12.307364
+    ]
+   },
+   "properties": {
+    "id": "S0103",
+    "date": "2026-10-28",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 55",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.539529,
+     12.314762
+    ]
+   },
+   "properties": {
+    "id": "S0104",
+    "date": "2026-10-22",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.539539,
+     12.314644
+    ]
+   },
+   "properties": {
+    "id": "S0105",
+    "date": "2026-10-22",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.522359,
+     12.404159
+    ]
+   },
+   "properties": {
+    "id": "S0106",
+    "date": "2026-11-06",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 88.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.522549,
+     12.404248
+    ]
+   },
+   "properties": {
+    "id": "S0107",
+    "date": "2026-11-06",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.52237,
+     12.404299
+    ]
+   },
+   "properties": {
+    "id": "S0108",
+    "date": "2026-11-06",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.50443,
+     12.445665
+    ]
+   },
+   "properties": {
+    "id": "S0109",
+    "date": "2026-11-12",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 90.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 39",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.50445,
+     12.445704
+    ]
+   },
+   "properties": {
+    "id": "S0110",
+    "date": "2026-11-12",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 39",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.504531,
+     12.445791
+    ]
+   },
+   "properties": {
+    "id": "S0111",
+    "date": "2026-11-13",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 39",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.504584,
+     12.445584
+    ]
+   },
+   "properties": {
+    "id": "S0112",
+    "date": "2026-11-13",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "verifie",
+    "score": 100.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 39",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.507534,
+     12.337221
+    ]
+   },
+   "properties": {
+    "id": "S0113",
+    "date": "2026-11-08",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.500137,
+     12.39516
+    ]
+   },
+   "properties": {
+    "id": "S0114",
+    "date": "2026-10-26",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.564885,
+     12.385148
+    ]
+   },
+   "properties": {
+    "id": "S0115",
+    "date": "2026-11-09",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.489384,
+     12.335438
+    ]
+   },
+   "properties": {
+    "id": "S0116",
+    "date": "2026-11-02",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.481265,
+     12.419932
+    ]
+   },
+   "properties": {
+    "id": "S0117",
+    "date": "2026-11-14",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 1",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.556573,
+     12.371176
+    ]
+   },
+   "properties": {
+    "id": "S0118",
+    "date": "2026-11-15",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 25",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.560538,
+     12.351264
+    ]
+   },
+   "properties": {
+    "id": "S0119",
+    "date": "2026-10-19",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529597,
+     12.30305
+    ]
+   },
+   "properties": {
+    "id": "S0120",
+    "date": "2026-11-12",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 24",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.574091,
+     12.448977
+    ]
+   },
+   "properties": {
+    "id": "S0121",
+    "date": "2026-11-02",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 35",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.568182,
+     12.352599
+    ]
+   },
+   "properties": {
+    "id": "S0122",
+    "date": "2026-11-10",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.556529,
+     12.371029
+    ]
+   },
+   "properties": {
+    "id": "S0123",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 25",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.500136,
+     12.395053
+    ]
+   },
+   "properties": {
+    "id": "S0124",
+    "date": "2026-10-25",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 12",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.480264,
+     12.340538
+    ]
+   },
+   "properties": {
+    "id": "S0125",
+    "date": "2026-11-12",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 3",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.456742,
+     12.417508
+    ]
+   },
+   "properties": {
+    "id": "S0126",
+    "date": "2026-11-08",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 34",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.560852,
+     12.318867
+    ]
+   },
+   "properties": {
+    "id": "S0127",
+    "date": "2026-10-25",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 55",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.52987,
+     12.313482
+    ]
+   },
+   "properties": {
+    "id": "S0128",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.55945,
+     12.394541
+    ]
+   },
+   "properties": {
+    "id": "S0129",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.489291,
+     12.335389
+    ]
+   },
+   "properties": {
+    "id": "S0130",
+    "date": "2026-11-01",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.487415,
+     12.406517
+    ]
+   },
+   "properties": {
+    "id": "S0131",
+    "date": "2026-10-29",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.560558,
+     12.351296
+    ]
+   },
+   "properties": {
+    "id": "S0132",
+    "date": "2026-10-21",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.548781,
+     12.423434
+    ]
+   },
+   "properties": {
+    "id": "S0133",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 45",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.497588,
+     12.436969
+    ]
+   },
+   "properties": {
+    "id": "S0134",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 1",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.453306,
+     12.319025
+    ]
+   },
+   "properties": {
+    "id": "S0135",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 42",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.587339,
+     12.346962
+    ]
+   },
+   "properties": {
+    "id": "S0136",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 17",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.524739,
+     12.389243
+    ]
+   },
+   "properties": {
+    "id": "S0137",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 20",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.505442,
+     12.345072
+    ]
+   },
+   "properties": {
+    "id": "S0138",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.541016,
+     12.439494
+    ]
+   },
+   "properties": {
+    "id": "S0139",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 14",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.495774,
+     12.41293
+    ]
+   },
+   "properties": {
+    "id": "S0140",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.577788,
+     12.386736
+    ]
+   },
+   "properties": {
+    "id": "S0141",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 38",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.497381,
+     12.366588
+    ]
+   },
+   "properties": {
+    "id": "S0142",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 36",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.462828,
+     12.374409
+    ]
+   },
+   "properties": {
+    "id": "S0143",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 29",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.580224,
+     12.426733
+    ]
+   },
+   "properties": {
+    "id": "S0144",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 35",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.462818,
+     12.394034
+    ]
+   },
+   "properties": {
+    "id": "S0145",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 9",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.453541,
+     12.442779
+    ]
+   },
+   "properties": {
+    "id": "S0146",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 43",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.58187,
+     12.318722
+    ]
+   },
+   "properties": {
+    "id": "S0147",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.452021,
+     12.3267
+    ]
+   },
+   "properties": {
+    "id": "S0148",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 42",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529318,
+     12.352774
+    ]
+   },
+   "properties": {
+    "id": "S0149",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 33",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.486072,
+     12.387136
+    ]
+   },
+   "properties": {
+    "id": "S0150",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.510984,
+     12.339253
+    ]
+   },
+   "properties": {
+    "id": "S0151",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.586542,
+     12.321289
+    ]
+   },
+   "properties": {
+    "id": "S0152",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.502246,
+     12.313593
+    ]
+   },
+   "properties": {
+    "id": "S0153",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 30",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.489965,
+     12.350993
+    ]
+   },
+   "properties": {
+    "id": "S0154",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 36",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.501146,
+     12.306907
+    ]
+   },
+   "properties": {
+    "id": "S0155",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": "Secteur 30",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.166711,
+     13.852248
+    ]
+   },
+   "properties": {
+    "id": "S0156",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.622554,
+     13.756427
+    ]
+   },
+   "properties": {
+    "id": "S0157",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.978264,
+     13.911484
+    ]
+   },
+   "properties": {
+    "id": "S0158",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.863709,
+     13.811779
+    ]
+   },
+   "properties": {
+    "id": "S0159",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.471629,
+     14.099297
+    ]
+   },
+   "properties": {
+    "id": "S0160",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.509793,
+     14.407548
+    ]
+   },
+   "properties": {
+    "id": "S0161",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.37578,
+     13.530917
+    ]
+   },
+   "properties": {
+    "id": "S0162",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.209209,
+     14.488854
+    ]
+   },
+   "properties": {
+    "id": "S0163",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.94202,
+     13.846811
+    ]
+   },
+   "properties": {
+    "id": "S0164",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.100371,
+     14.043006
+    ]
+   },
+   "properties": {
+    "id": "S0165",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.838658,
+     13.980844
+    ]
+   },
+   "properties": {
+    "id": "S0166",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.74265,
+     13.675022
+    ]
+   },
+   "properties": {
+    "id": "S0167",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.502325,
+     12.389096
+    ]
+   },
+   "properties": {
+    "id": "S0168",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.513242,
+     12.38991
+    ]
+   },
+   "properties": {
+    "id": "S0169",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.479187,
+     12.305137
+    ]
+   },
+   "properties": {
+    "id": "S0170",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.591286,
+     12.372469
+    ]
+   },
+   "properties": {
+    "id": "S0171",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.512167,
+     12.390499
+    ]
+   },
+   "properties": {
+    "id": "S0172",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.511481,
+     12.388727
+    ]
+   },
+   "properties": {
+    "id": "S0173",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529639,
+     12.345081
+    ]
+   },
+   "properties": {
+    "id": "S0174",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.479407,
+     12.305101
+    ]
+   },
+   "properties": {
+    "id": "S0175",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.507395,
+     12.389988
+    ]
+   },
+   "properties": {
+    "id": "S0176",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.503346,
+     12.387853
+    ]
+   },
+   "properties": {
+    "id": "S0177",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.539043,
+     12.324217
+    ]
+   },
+   "properties": {
+    "id": "S0178",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.50501,
+     12.386971
+    ]
+   },
+   "properties": {
+    "id": "S0179",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.520674,
+     12.338324
+    ]
+   },
+   "properties": {
+    "id": "S0180",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.505577,
+     12.359834
+    ]
+   },
+   "properties": {
+    "id": "S0181",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.520766,
+     12.346017
+    ]
+   },
+   "properties": {
+    "id": "S0182",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.506309,
+     12.347919
+    ]
+   },
+   "properties": {
+    "id": "S0183",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.5077,
+     12.351701
+    ]
+   },
+   "properties": {
+    "id": "S0184",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.523101,
+     12.339537
+    ]
+   },
+   "properties": {
+    "id": "S0185",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.518132,
+     12.349846
+    ]
+   },
+   "properties": {
+    "id": "S0186",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.513624,
+     12.352737
+    ]
+   },
+   "properties": {
+    "id": "S0187",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.520108,
+     12.348744
+    ]
+   },
+   "properties": {
+    "id": "S0188",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.506072,
+     12.361115
+    ]
+   },
+   "properties": {
+    "id": "S0189",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.0,
+     0.0
+    ]
+   },
+   "properties": {
+    "id": "S0190",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.0,
+     0.0
+    ]
+   },
+   "properties": {
+    "id": "S0191",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.0,
+     0.0
+    ]
+   },
+   "properties": {
+    "id": "S0192",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.0,
+     0.0
+    ]
+   },
+   "properties": {
+    "id": "S0193",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.0,
+     0.0
+    ]
+   },
+   "properties": {
+    "id": "S0194",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.0,
+     0.0
+    ]
+   },
+   "properties": {
+    "id": "S0195",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.0,
+     0.0
+    ]
+   },
+   "properties": {
+    "id": "S0196",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.0,
+     0.0
+    ]
+   },
+   "properties": {
+    "id": "S0197",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.426497,
+     -1.485104
+    ]
+   },
+   "properties": {
+    "id": "S0198",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.340567,
+     -1.593182
+    ]
+   },
+   "properties": {
+    "id": "S0199",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.346996,
+     -1.588589
+    ]
+   },
+   "properties": {
+    "id": "S0200",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.321095,
+     -1.515323
+    ]
+   },
+   "properties": {
+    "id": "S0201",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.411249,
+     -1.488968
+    ]
+   },
+   "properties": {
+    "id": "S0202",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.366369,
+     -1.52794
+    ]
+   },
+   "properties": {
+    "id": "S0203",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.331884,
+     -1.599677
+    ]
+   },
+   "properties": {
+    "id": "S0204",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.406947,
+     -1.484321
+    ]
+   },
+   "properties": {
+    "id": "S0205",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.430197,
+     -1.502971
+    ]
+   },
+   "properties": {
+    "id": "S0206",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.313463,
+     -1.560726
+    ]
+   },
+   "properties": {
+    "id": "S0207",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 1,
+    "source": "application",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.518452,
+     12.4143
+    ]
+   },
+   "properties": {
+    "id": "S0208",
+    "date": "2026-11-21",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 27",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.453908,
+     12.440242
+    ]
+   },
+   "properties": {
+    "id": "S0209",
+    "date": "2027-01-03",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 43",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.530424,
+     12.373385
+    ]
+   },
+   "properties": {
+    "id": "S0210",
+    "date": "2027-01-16",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 20",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.477045,
+     12.412144
+    ]
+   },
+   "properties": {
+    "id": "S0211",
+    "date": "2026-12-03",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.495338,
+     12.322239
+    ]
+   },
+   "properties": {
+    "id": "S0212",
+    "date": "2027-01-11",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 53",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.548373,
+     12.302583
+    ]
+   },
+   "properties": {
+    "id": "S0213",
+    "date": "2026-11-29",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 24",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.562296,
+     12.395288
+    ]
+   },
+   "properties": {
+    "id": "S0214",
+    "date": "2026-12-13",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 44",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.542763,
+     12.394244
+    ]
+   },
+   "properties": {
+    "id": "S0215",
+    "date": "2026-12-28",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 8",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.456653,
+     12.371756
+    ]
+   },
+   "properties": {
+    "id": "S0216",
+    "date": "2026-11-20",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 29",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.46468,
+     12.390458
+    ]
+   },
+   "properties": {
+    "id": "S0217",
+    "date": "2026-12-23",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 9",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.478835,
+     12.302384
+    ]
+   },
+   "properties": {
+    "id": "S0218",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 7",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.478835,
+     12.302384
+    ]
+   },
+   "properties": {
+    "id": "S0219",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 7",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.478835,
+     12.302384
+    ]
+   },
+   "properties": {
+    "id": "S0220",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 7",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.478835,
+     12.302384
+    ]
+   },
+   "properties": {
+    "id": "S0221",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 7",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.46618,
+     12.392126
+    ]
+   },
+   "properties": {
+    "id": "S0222",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 9",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.46618,
+     12.392126
+    ]
+   },
+   "properties": {
+    "id": "S0223",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 9",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.46618,
+     12.392126
+    ]
+   },
+   "properties": {
+    "id": "S0224",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 9",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.46618,
+     12.392126
+    ]
+   },
+   "properties": {
+    "id": "S0225",
+    "date": "2026-11-16",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 9",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.592283,
+     12.337759
+    ]
+   },
+   "properties": {
+    "id": "S0226",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.592283,
+     12.337759
+    ]
+   },
+   "properties": {
+    "id": "S0227",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.592283,
+     12.337759
+    ]
+   },
+   "properties": {
+    "id": "S0228",
+    "date": "2026-11-16",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.592283,
+     12.337759
+    ]
+   },
+   "properties": {
+    "id": "S0229",
+    "date": "2026-11-16",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 26",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.498906,
+     12.3404
+    ]
+   },
+   "properties": {
+    "id": "S0230",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.498906,
+     12.3404
+    ]
+   },
+   "properties": {
+    "id": "S0231",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.498906,
+     12.3404
+    ]
+   },
+   "properties": {
+    "id": "S0232",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.498906,
+     12.3404
+    ]
+   },
+   "properties": {
+    "id": "S0233",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 11",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.537323,
+     12.32434
+    ]
+   },
+   "properties": {
+    "id": "S0234",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.537323,
+     12.32434
+    ]
+   },
+   "properties": {
+    "id": "S0235",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.537323,
+     12.32434
+    ]
+   },
+   "properties": {
+    "id": "S0236",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.537323,
+     12.32434
+    ]
+   },
+   "properties": {
+    "id": "S0237",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 18",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.480776,
+     12.40685
+    ]
+   },
+   "properties": {
+    "id": "S0238",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.480776,
+     12.40685
+    ]
+   },
+   "properties": {
+    "id": "S0239",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.480776,
+     12.40685
+    ]
+   },
+   "properties": {
+    "id": "S0240",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.480776,
+     12.40685
+    ]
+   },
+   "properties": {
+    "id": "S0241",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.459478,
+     12.377677
+    ]
+   },
+   "properties": {
+    "id": "S0242",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 9",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.553824,
+     12.346539
+    ]
+   },
+   "properties": {
+    "id": "S0243",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.551595,
+     12.303127
+    ]
+   },
+   "properties": {
+    "id": "S0244",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 55",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.492669,
+     12.302546
+    ]
+   },
+   "properties": {
+    "id": "S0245",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 7",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.542531,
+     12.394488
+    ]
+   },
+   "properties": {
+    "id": "S0246",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 8",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.488072,
+     12.312154
+    ]
+   },
+   "properties": {
+    "id": "S0247",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 53",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.555743,
+     12.337339
+    ]
+   },
+   "properties": {
+    "id": "S0248",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 2",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.516315,
+     12.316252
+    ]
+   },
+   "properties": {
+    "id": "S0249",
+    "date": "2026-11-17",
+    "taille": "grand",
+    "nature": "mixte",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 30",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.563195,
+     12.411827
+    ]
+   },
+   "properties": {
+    "id": "S0250",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "accessibilite": "tricycle",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 45",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.599308,
+     12.437568
+    ]
+   },
+   "properties": {
+    "id": "S0251",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 22",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.476735,
+     12.388213
+    ]
+   },
+   "properties": {
+    "id": "S0252",
+    "date": "2026-11-17",
+    "taille": "petit",
+    "nature": "mixte",
+    "caniveau": true,
+    "accessibilite": "camion",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 21",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.557243,
+     12.321373
+    ]
+   },
+   "properties": {
+    "id": "S0253",
+    "date": "2026-11-17",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "accessibilite": "difficile",
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "application",
+    "secteur": "Secteur 55",
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.519764,
+     12.382552
+    ]
+   },
+   "properties": {
+    "id": "S0254",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.510987,
+     12.413697
+    ]
+   },
+   "properties": {
+    "id": "S0255",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.529167,
+     12.433903
+    ]
+   },
+   "properties": {
+    "id": "S0256",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.46845,
+     12.412614
+    ]
+   },
+   "properties": {
+    "id": "S0257",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.5303,
+     12.430086
+    ]
+   },
+   "properties": {
+    "id": "S0258",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.557218,
+     12.30439
+    ]
+   },
+   "properties": {
+    "id": "S0259",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.458996,
+     12.354846
+    ]
+   },
+   "properties": {
+    "id": "S0260",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.465761,
+     12.425845
+    ]
+   },
+   "properties": {
+    "id": "S0261",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.518652,
+     12.426796
+    ]
+   },
+   "properties": {
+    "id": "S0262",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.469304,
+     12.352123
+    ]
+   },
+   "properties": {
+    "id": "S0263",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.519117,
+     12.334188
+    ]
+   },
+   "properties": {
+    "id": "S0264",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527555,
+     12.446381
+    ]
+   },
+   "properties": {
+    "id": "S0265",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.549306,
+     12.321107
+    ]
+   },
+   "properties": {
+    "id": "S0266",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.453084,
+     12.411235
+    ]
+   },
+   "properties": {
+    "id": "S0267",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.534494,
+     12.322783
+    ]
+   },
+   "properties": {
+    "id": "S0268",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.582696,
+     12.440797
+    ]
+   },
+   "properties": {
+    "id": "S0269",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.561935,
+     12.351405
+    ]
+   },
+   "properties": {
+    "id": "S0270",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.502398,
+     12.419188
+    ]
+   },
+   "properties": {
+    "id": "S0271",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.579112,
+     12.418397
+    ]
+   },
+   "properties": {
+    "id": "S0272",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.593346,
+     12.421
+    ]
+   },
+   "properties": {
+    "id": "S0273",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.545666,
+     12.424938
+    ]
+   },
+   "properties": {
+    "id": "S0274",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.554907,
+     12.445282
+    ]
+   },
+   "properties": {
+    "id": "S0275",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.593377,
+     12.329525
+    ]
+   },
+   "properties": {
+    "id": "S0276",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.458053,
+     12.400173
+    ]
+   },
+   "properties": {
+    "id": "S0277",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.505537,
+     12.327821
+    ]
+   },
+   "properties": {
+    "id": "S0278",
+    "date": "2026-11-16",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.52,
+     12.35
+    ]
+   },
+   "properties": {
+    "id": "S0279",
+    "date": "2026-11-17",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "rejete",
+    "score": 39.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.519764,
+     12.382552
+    ]
+   },
+   "properties": {
+    "id": "S0280",
+    "date": "2026-11-17",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "csv",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.553051,
+     12.346354
+    ]
+   },
+   "properties": {
+    "id": "S0281",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.482245,
+     12.443243
+    ]
+   },
+   "properties": {
+    "id": "S0282",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.456342,
+     12.341439
+    ]
+   },
+   "properties": {
+    "id": "S0283",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.453203,
+     12.395577
+    ]
+   },
+   "properties": {
+    "id": "S0284",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.566154,
+     12.392521
+    ]
+   },
+   "properties": {
+    "id": "S0285",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.597963,
+     12.320388
+    ]
+   },
+   "properties": {
+    "id": "S0286",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.544311,
+     12.415033
+    ]
+   },
+   "properties": {
+    "id": "S0287",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.594571,
+     12.315991
+    ]
+   },
+   "properties": {
+    "id": "S0288",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.474528,
+     12.391653
+    ]
+   },
+   "properties": {
+    "id": "S0289",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.573901,
+     12.354403
+    ]
+   },
+   "properties": {
+    "id": "S0290",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.594389,
+     12.365715
+    ]
+   },
+   "properties": {
+    "id": "S0291",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.540322,
+     12.439546
+    ]
+   },
+   "properties": {
+    "id": "S0292",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.558392,
+     12.326752
+    ]
+   },
+   "properties": {
+    "id": "S0293",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.549656,
+     12.431279
+    ]
+   },
+   "properties": {
+    "id": "S0294",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.578054,
+     12.383857
+    ]
+   },
+   "properties": {
+    "id": "S0295",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.599429,
+     12.441064
+    ]
+   },
+   "properties": {
+    "id": "S0296",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.505768,
+     12.394508
+    ]
+   },
+   "properties": {
+    "id": "S0297",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.586859,
+     12.404947
+    ]
+   },
+   "properties": {
+    "id": "S0298",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.565016,
+     12.333728
+    ]
+   },
+   "properties": {
+    "id": "S0299",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.580564,
+     12.439666
+    ]
+   },
+   "properties": {
+    "id": "S0300",
+    "date": "2026-11-15",
+    "taille": null,
+    "nature": null,
+    "caniveau": null,
+    "accessibilite": null,
+    "statut": "a_confirmer",
+    "score": 69.0,
+    "nb_photos": 0,
+    "source": "geojson",
+    "secteur": null,
+    "synthetique": true
+   }
+  }
+ ]
+}

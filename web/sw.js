@@ -1,5 +1,5 @@
 // Service worker : app shell + couches du pack en cache (hors ligne). Les appels /api sont geres par l'application (IndexedDB).
-const V = 'oregdo-v44';
+const V = 'oregdo-v45';
 const VM = 'oregdo-masquage-v1';   // moteurs et modèles de masquage (≈ 45 Mo) : mis en cache à la première photo, jamais revérifiés
 const FOND = ['routes_principales', 'communes', 'lieux', 'reperes', 'verts', 'decharges_osm'].map((n) => `data/pack/fond/${n}.geojson`)
   .concat(['OpenSans-Regular', 'OpenSans-Bold'].flatMap((f) => ['0-255', '256-511'].map((r) => `vendor/fonts/${f}/${r}.pbf`)));

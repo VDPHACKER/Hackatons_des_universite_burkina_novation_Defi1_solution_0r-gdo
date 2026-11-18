@@ -83,6 +83,18 @@ Ne lancez pas deux suites en même temps : elles partagent des ressources et peu
 
 `scripts/build_osm_layers.py` lit l'extrait OpenStreetMap local (`scripts/fetch_osm.py`) et produit : le graphe routier réel (`packs/ouaga/graphe_routier.npz`, utilisé pour les distances et les tracés des tournées) et les couches du fond de carte (`web/data/pack/fond/` : routes, quartiers, communes, repères, espaces verts, décharges déjà cartographiées). Environ 80 s. Les noms sur la carte utilisent des polices locales (`web/vendor/fonts/`), donc la carte reste lisible hors ligne.
 
+## Données ouvertes
+
+Le dossier `donnees-ouvertes/` contient les jeux livrés sous licence **ODbL 1.0** (dictionnaire des champs dans `LICENCE-DONNEES.md`) :
+
+| Fichier | Contenu |
+|---|---|
+| `signalements_synthetiques.geojson` | 300 signalements **fictifs** à Ouagadougou, avec statut et score de vérification |
+| `collecte_S33.geojson` | 36 signalements de la collecte de terrain simulée du secteur 33 |
+| `verite_terrain_S33.geojson` | les 30 tas réels de cette simulation, pour mesurer la chaîne de vérification |
+
+Aucune donnée personnelle : ni appareil, ni compte, ni photo, ni message vocal.
+
 ## Scripts de données et de livrables
 
 | Commande | Ce qu'elle fait |
@@ -105,11 +117,10 @@ diagrammes draw.io, analyses) est livrée séparément par l'équipe Burkina_Nov
 
 ## Limites connues
 - Contours d'îlots, secteurs, sites candidats et CET synthétiques. La population par îlot est modélisée d'après les bâtiments Open Buildings (voir la documentation livrée séparément).
-- Données de base synthétiques (îlots, secteurs, sites candidats, CET) ; pas de bâtiments réels (357 698 existent dans OSM, non utilisés pour l'instant, voir la documentation livrée séparément).
 - Graphe routier réel (OpenStreetMap) : sens uniques ignorés, revêtement supposé (8 % revêtu), ni vitesses ni trafic ; il occupe 545 Mo de cache dans `data/cache/` (reconstruit automatiquement, ~21 s par saison au premier lancement).
-- Le rayon d'accès aux points de regroupement (1 300 m de route) est une hypothèse recalibrée pour rester cohérente avec le recensement de 2019 (la documentation livrée séparément §6).
+- Le rayon d'accès aux points de regroupement (1 300 m de route) est une hypothèse recalibrée pour rester cohérente avec le recensement de 2019 (voir la documentation livrée séparément).
 - La photo n'est pas jugée sur son contenu (classifieur optionnel non fourni) ; l'identifiant d'appareil d'un citoyen n'est pas authentifié.
-- Collecte de terrain : simulée (à la demande du jury), pas encore réelle (`livrables/collecte_simulee/bilan.md`).
+- Collecte de terrain : simulée (à la demande du jury), pas encore réelle ; `python -m oregdo.verification.collecte_simulee` la reproduit (graine fixe) et compare le résultat à la vérité terrain.
 - Non testé : vrai téléphone Android, GPS et caméra réels, installation PWA.
 - Import réel dans OpenStreetMap : procédure communautaire requise (consultation, compte dédié) ; l'export refuse les données synthétiques.
 

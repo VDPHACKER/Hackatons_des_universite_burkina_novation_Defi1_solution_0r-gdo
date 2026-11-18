@@ -1,4 +1,7 @@
-"""Accès à la base SQLite (un seul fichier) : création, écriture, lecture, journal."""
+"""Accès à la base SQLite (un seul fichier) : création, écriture, lecture, journal.
+
+Sécurité SQL : quand une requête est assemblée (filtres facultatifs), seuls des fragments FIXES écrits dans le code
+(« statut=? », « essai=0 »…) sont concaténés ; toute valeur venue d'un utilisateur passe en paramètre « ? »."""
 import json
 import os
 import sqlite3

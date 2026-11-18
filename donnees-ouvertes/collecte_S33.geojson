@@ -1,0 +1,800 @@
+{
+ "type": "FeatureCollection",
+ "licence": "ODbL 1.0",
+ "synthetique": true,
+ "description": "Collecte de terrain SIMULÉE (Orẽgdo, équipe Burkina_Novation), Secteur 33 de Ouagadougou : données fictives.",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526797,
+     12.349488
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:26:59.220613+00:00",
+    "enqueteur": "BN-3",
+    "taille": "tres_grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 8.0,
+    "secteur": "Secteur 33",
+    "statut": "a_confirmer",
+    "photo": false,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.535845,
+     12.355666
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:32:35.708561+00:00",
+    "enqueteur": "BN-1",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "precision_m": 5.7,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.540071,
+     12.357228
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:34:46.193793+00:00",
+    "enqueteur": "BN-2",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "precision_m": 10.6,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.525558,
+     12.347029
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:35:03.699650+00:00",
+    "enqueteur": "BN-3",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": true,
+    "precision_m": 9.5,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.535103,
+     12.355743
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:38:36.004906+00:00",
+    "enqueteur": "BN-1",
+    "taille": "tres_grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 12.4,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.534043,
+     12.355716
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:44:19.389384+00:00",
+    "enqueteur": "BN-1",
+    "taille": "petit",
+    "nature": "végétaux",
+    "caniveau": true,
+    "precision_m": 5.3,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.543978,
+     12.358704
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:44:56.521007+00:00",
+    "enqueteur": "BN-2",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 14.4,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.532796,
+     12.35592
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:49:38.324741+00:00",
+    "enqueteur": "BN-1",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 8.4,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527725,
+     12.339907
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:49:59.480854+00:00",
+    "enqueteur": "BN-3",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "precision_m": 61.6,
+    "secteur": "Secteur 33",
+    "statut": "a_confirmer",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.545866,
+     12.357665
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:51:40.985110+00:00",
+    "enqueteur": "BN-2",
+    "taille": "tres_grand",
+    "nature": "végétaux",
+    "caniveau": true,
+    "precision_m": 7.1,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.531093,
+     12.35596
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T08:57:04.686055+00:00",
+    "enqueteur": "BN-1",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "precision_m": 6.4,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527202,
+     12.357402
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T09:08:51.457823+00:00",
+    "enqueteur": "BN-1",
+    "taille": "grand",
+    "nature": "végétaux",
+    "caniveau": false,
+    "precision_m": 9.8,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527321,
+     12.358831
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T09:15:13.468591+00:00",
+    "enqueteur": "BN-1",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 15.3,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.550502,
+     12.340437
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T09:25:24.819963+00:00",
+    "enqueteur": "BN-2",
+    "taille": "grand",
+    "nature": "végétaux",
+    "caniveau": false,
+    "precision_m": 8.6,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527738,
+     12.362891
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T09:25:40.757269+00:00",
+    "enqueteur": "BN-1",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "precision_m": 5.4,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.549268,
+     12.339737
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T09:31:04.917679+00:00",
+    "enqueteur": "BN-2",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "precision_m": 8.2,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.52711,
+     12.363559
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T09:32:04.996027+00:00",
+    "enqueteur": "BN-1",
+    "taille": "grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 9.8,
+    "secteur": "Secteur 33",
+    "statut": "a_confirmer",
+    "photo": false,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.54802,
+     12.338646
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T09:37:25.305186+00:00",
+    "enqueteur": "BN-2",
+    "taille": "tres_grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "precision_m": 7.5,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.536326,
+     12.363404
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T09:51:25.542579+00:00",
+    "enqueteur": "BN-1",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "precision_m": 14.7,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.541163,
+     12.360676
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T10:04:42.046985+00:00",
+    "enqueteur": "BN-1",
+    "taille": "tres_grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "precision_m": 8.2,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526987,
+     12.353726
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T10:34:03.723268+00:00",
+    "enqueteur": "BN-1",
+    "taille": "moyen",
+    "nature": "végétaux",
+    "caniveau": false,
+    "precision_m": 4.8,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526751,
+     12.352217
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-16T10:40:55.185907+00:00",
+    "enqueteur": "BN-1",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "precision_m": 6.7,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.532805,
+     12.355914
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T08:22:03.093289+00:00",
+    "enqueteur": "BN-3",
+    "taille": "moyen",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 13.7,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526796,
+     12.349498
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T08:30:33.172191+00:00",
+    "enqueteur": "BN-1",
+    "taille": "tres_grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 4.0,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526973,
+     12.353723
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T08:35:40.566669+00:00",
+    "enqueteur": "BN-3",
+    "taille": "moyen",
+    "nature": "végétaux",
+    "caniveau": false,
+    "precision_m": 25.0,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526852,
+     12.348093
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T08:38:12.884586+00:00",
+    "enqueteur": "BN-1",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "precision_m": 66.7,
+    "secteur": "Secteur 33",
+    "statut": "a_confirmer",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526852,
+     12.348093
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T08:38:44.884586+00:00",
+    "enqueteur": "BN-1",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": false,
+    "precision_m": 66.7,
+    "secteur": "Secteur 33",
+    "statut": "rejete",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.527218,
+     12.357388
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T08:39:49.773966+00:00",
+    "enqueteur": "BN-2",
+    "taille": "grand",
+    "nature": "végétaux",
+    "caniveau": false,
+    "precision_m": 16.7,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526396,
+     12.344978
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T08:45:33.539064+00:00",
+    "enqueteur": "BN-1",
+    "taille": "tres_grand",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 9.0,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.52609,
+     12.340434
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T08:57:11.222278+00:00",
+    "enqueteur": "BN-1",
+    "taille": "petit",
+    "nature": "gravats",
+    "caniveau": true,
+    "precision_m": 14.3,
+    "secteur": "Secteur 33",
+    "statut": "a_confirmer",
+    "photo": false,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526128,
+     12.339869
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T09:01:16.245035+00:00",
+    "enqueteur": "BN-1",
+    "taille": "grand",
+    "nature": "ordures menagères",
+    "caniveau": false,
+    "precision_m": 8.0,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.536366,
+     12.363399
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T09:02:37.378525+00:00",
+    "enqueteur": "BN-3",
+    "taille": "grand",
+    "nature": "gravats",
+    "caniveau": true,
+    "precision_m": 10.2,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.541158,
+     12.360587
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T09:07:57.776191+00:00",
+    "enqueteur": "BN-2",
+    "taille": "tres_grand",
+    "nature": "ordures menagères",
+    "caniveau": true,
+    "precision_m": 8.6,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.526081,
+     12.337998
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T09:08:29.779956+00:00",
+    "enqueteur": "BN-1",
+    "taille": "moyen",
+    "nature": "gravats",
+    "caniveau": false,
+    "precision_m": 12.0,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.54937,
+     12.339714
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T09:49:53.228643+00:00",
+    "enqueteur": "BN-1",
+    "taille": "moyen",
+    "nature": "mixte",
+    "caniveau": false,
+    "precision_m": 11.0,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -1.543971,
+     12.358845
+    ]
+   },
+   "properties": {
+    "horodatage": "2026-11-17T10:26:04.617478+00:00",
+    "enqueteur": "BN-1",
+    "taille": "petit",
+    "nature": "plastiques",
+    "caniveau": false,
+    "precision_m": 5.1,
+    "secteur": "Secteur 33",
+    "statut": "verifie",
+    "photo": true,
+    "synthetique": true
+   }
+  }
+ ]
+}

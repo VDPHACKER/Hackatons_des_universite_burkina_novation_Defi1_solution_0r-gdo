@@ -309,6 +309,7 @@ def export_osm(format: str = Query("json", description="json (les deux) | geojso
 class CorpsPieges(BaseModel):
     signalements: Optional[list[Any]] = Field(None, description="Signalements à tester (mêmes champs que POST /signalements, + piege facultatif)")
     generer: Optional[int] = Field(None, description="Nombre de pièges variés à générer")
+    graine: Optional[int] = Field(None, ge=0, le=10**9, description="Facultatif : rejoue exactement les mêmes pièges (démonstration reproductible)")
 
 
 @router.post("/alea/pieges")
@@ -316,7 +317,7 @@ def lancer_pieges(corps: CorpsPieges, u=Depends(exiger_roles("mairie"))):     # 
     """Fait passer des signalements piégés par le VRAI pipeline. Renvoie `resultats` (verdict et motifs de chacun)
     et `resume` (vérifiés / à confirmer / rejetés). Les signalements sont conservés (source « jury », synthétiques)."""
     try:
-        res = lot.verifier_pieges(corps.signalements, corps.generer)
+        res = lot.verifier_pieges(corps.signalements, corps.generer, graine=corps.graine)
         conn = _base()
         try:
             securite.auditer(conn, u, "alea_pieges", None, res["resume"])

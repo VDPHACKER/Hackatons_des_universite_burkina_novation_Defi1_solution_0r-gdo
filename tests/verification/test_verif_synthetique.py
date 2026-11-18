@@ -1,4 +1,5 @@
 """Tests du jeu synthétique : reproductibilité, détection des pièges, performance."""
+import os
 import time
 
 import pytest
@@ -48,4 +49,5 @@ def test_gonflage_ne_gonfle_pas_les_depotoirs(resultat):
 def test_performance_300_signalements(resultat):
     _, bilan, total = resultat
     print(f"\n[perf] {bilan['signalements_application']} signalements d'application en {bilan['temps_application_s']} s ; total import compris {total:.2f} s")
-    assert bilan["temps_application_s"] < 5
+    seuil = float(os.environ.get("OREGDO_SEUIL_VERIF_S", "5"))      # machine chargée (CI, autre calcul) : relever le seuil
+    assert bilan["temps_application_s"] < seuil, f"{bilan['temps_application_s']} s (seuil {seuil} s)"

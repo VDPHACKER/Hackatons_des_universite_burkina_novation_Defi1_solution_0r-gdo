@@ -3,6 +3,7 @@ import { $, $$, esc, badge, motifsHtml, normList, waLink, nf, toast, dateFr, app
 import { get, post, lirePlan } from '../api.js';
 import * as M from '../map.js';
 import { role } from '../session.js';
+import { destine } from '../acces.js';
 import { t } from '../i18n.js';
 import { icone, symbole } from '../icones.js';
 
@@ -43,7 +44,7 @@ export async function render(racine, params) {
     <div class="puces-f"><button data-l="pr" aria-pressed="false">Points de regroupement</button><button data-l="tournees" aria-pressed="false">Tournées</button><button data-l="rues" aria-pressed="true">Rues</button><button data-l="reperes" aria-pressed="true">Repères</button><button data-l="quartiers" aria-pressed="true">Quartiers</button><button data-l="communes" aria-pressed="true">Communes</button><button data-l="decharges" aria-pressed="true">Décharges déjà dans OSM</button><button data-l="secteurs" aria-pressed="false" title="Découpage de démonstration, pas les secteurs officiels">Secteurs (démo)</button><button data-l="osm" class="noeco" aria-pressed="false">Fond OSM en ligne</button></div>
   </div>
   <details class="legende" id="legende" open></details>
-  <a class="cta-flottant" href="#/signaler">${icone('plus', 18)} Signaler un tas</a>
+  ${destine('signaler', role()) ? `<a class="cta-flottant" href="#/signaler">${icone('plus', 18)} Signaler un tas</a>` : ''}
   <div class="fiche" id="fiche" hidden role="dialog" aria-label="Détail"></div></div>
   <div class="liste-carte" id="liste" hidden></div>`;
   let vivant = true, statuts = ['verifie', 'a_confirmer'], sigs = [], depFC = null, prFC = null;
@@ -87,7 +88,7 @@ export async function render(racine, params) {
         <p>${dp ? `${symbole('depot', 18)} <b>Dépotoir confirmé le plus proche</b> : à ${metres(dp.d)}.` : 'Aucun dépotoir confirmé connu.'}</p>
         <p class="petit mut">Distances à vol d'oiseau, position non conservée. Vous voyez un tas qui n'est pas sur la carte ?</p>
         <p class="petit mut">Position à ${Math.round(pos.coords.accuracy)} m près.</p>
-        <div class="choix"><a class="btn primaire" href="#/signaler?lat=${p[1].toFixed(6)}&lon=${p[0].toFixed(6)}&prec=${Math.round(pos.coords.accuracy)}">${icone('plus', 18)} Signaler un tas ici</a>${pr ? `<button class="secondaire" id="b-voir-pr">Voir ce point</button>` : ''}<button class="secondaire" data-fermer>Fermer</button></div>`);
+        <div class="choix">${destine('signaler', role()) ? `<a class="btn primaire" href="#/signaler?lat=${p[1].toFixed(6)}&lon=${p[0].toFixed(6)}&prec=${Math.round(pos.coords.accuracy)}">${icone('plus', 18)} Signaler un tas ici</a>` : ''}${pr ? `<button class="secondaire" id="b-voir-pr">Voir ce point</button>` : ''}<button class="secondaire" data-fermer>Fermer</button></div>`);
       $('#b-voir-pr')?.addEventListener('click', () => map.flyTo({ center: pr.c, zoom: 16.5, duration: 600 }));
     }, (e) => ouvrir(`<p role="alert">${esc(raisonGps(e))}</p><button class="secondaire" data-fermer>Fermer</button>`),
     { precisionVoulue: 60, dureeMax: 15000, progression: (r) => { const z = $('#autour-etat'); if (z) z.textContent = `Précision actuelle : ${Math.round(r.coords.accuracy)} m… on affine.`; } });

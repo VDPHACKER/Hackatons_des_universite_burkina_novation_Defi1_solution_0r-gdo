@@ -122,12 +122,13 @@ def resume(resultats) -> dict:
             "pieges_verifies": sum(r["statut"] == "verifie" and r["piege"] for r in resultats)}
 
 
-def verifier_pieges(signalements=None, generer=None, source="jury", conn=None) -> dict:
-    """Point d'entrée commun de POST /api/alea/pieges et de l'aléa « signalements_pieges »."""
+def verifier_pieges(signalements=None, generer=None, source="jury", conn=None, graine=None) -> dict:
+    """Point d'entrée commun de POST /api/alea/pieges et de l'aléa « signalements_pieges ».
+    `graine` (facultative) : rejoue exactement les mêmes pièges, pour une démonstration ou un test reproductibles."""
     if signalements is None and generer is None:
         raise ValueError("Fournir « signalements » (liste) ou « generer » (nombre de pièges à créer).")
     if signalements is None:
-        signalements = generer_pieges(int(generer))
+        signalements = generer_pieges(int(generer), graine=None if graine is None else int(graine))
     if not isinstance(signalements, list) or not 1 <= len(signalements) <= MAX_LOT:
         raise ValueError(f"Il faut entre 1 et {MAX_LOT} signalements.")
     res = verifier_lot(signalements, source, conn)

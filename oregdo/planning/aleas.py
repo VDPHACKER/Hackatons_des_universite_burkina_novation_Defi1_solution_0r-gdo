@@ -57,7 +57,10 @@ def appliquer(sc: Scenario, type_alea: str, params: dict | None = None) -> tuple
             generer = n("nombre de signalements à générer", generer, 0, maxi, entier=True)
         if recus is None and generer is None:
             generer = 10
-        lot_res = lot.verifier_pieges(recus, generer)
+        graine = params.get("graine")
+        if graine is not None:
+            graine = n("graine", graine, 0, 10**9, entier=True)
+        lot_res = lot.verifier_pieges(recus, generer, graine=graine)
         n, r = len(lot_res["resultats"]), lot_res["resume"]
         # Aucun effet sur le plan : seuls les dépotoirs au statut « vérifié » de la base y entrent.
         message = MessageAvecLot(f"{n} signalement(s) piégé(s) passés par le pipeline : {r['rejetes']} rejeté(s), "

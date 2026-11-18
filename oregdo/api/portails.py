@@ -300,7 +300,7 @@ def saisir_collecte(corps: dict, u=Depends(exiger_roles("precollecteur"))):
 
 @router.get("/precollecteur/collectes")
 def lister_collectes(du: Optional[str] = None, au: Optional[str] = None, u=Depends(exiger_roles("precollecteur"))):
-    cond, args = ["utilisateur=?"], [u["identifiant"]]
+    cond, args = ["utilisateur=?"], [u["identifiant"]]     # fragments fixes ; les valeurs passent en paramètres « ? »
     if du:
         cond.append("date>=?"); args.append(_date(du, "du"))
     if au:
