@@ -472,3 +472,9 @@ button.lien{background:none;border:0;padding:6px 0;color:var(--pri);text-decorat
   .legende[open]{max-height:45vh;overflow:auto}
   .cta-flottant{bottom:76px!important;right:10px!important;left:auto!important;padding:0 16px!important;min-height:48px!important;font-size:.95rem!important}
 }
+/* Barre latérale (ordinateur) : logo agrandi, posé au-dessus du nom */
+@media (min-width:960px){
+  #lateral .marque{flex-direction:column;align-items:flex-start;gap:10px;min-height:0}
+  #lateral .logo-marque{width:120px;height:120px;border-radius:18px;box-shadow:0 6px 18px #0004}
+  #lateral .marque-nom{font-size:1.6rem}
+}

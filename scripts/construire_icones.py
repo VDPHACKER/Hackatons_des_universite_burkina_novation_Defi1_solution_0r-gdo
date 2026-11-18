@@ -42,7 +42,7 @@ def main() -> None:
     complet.convert("RGB").save(ICONES / "logo.png", optimize=True)
     # Sans le slogan (bas de l'image) : le cercle, le monument et le nom restent lisibles en petit.
     sans_slogan = source.crop((0, 0, l, int(h * 0.835)))
-    sur_fond(sans_slogan, 128, 0.96).save(ICONES / "logo-entete.png", optimize=True)
+    sur_fond(sans_slogan, 256, 0.96).save(ICONES / "logo-entete.png", optimize=True)   # 256 px : net même agrandi (barre latérale)
     for cote in (192, 512):
         sur_fond(source, cote, 0.94).save(ICONES / f"icon-{cote}.png", optimize=True)
     sur_fond(source, 512, 0.78).save(ICONES / "icon-maskable-512.png", optimize=True)
