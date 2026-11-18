@@ -6,9 +6,11 @@ import { courbes, COULEURS } from '../charts.js';
 import { kvGet, kvSet } from '../db.js';
 import { sousNav, SIMULATION } from '../sousnav.js';
 
+// 43,7 % s'affiche avec sa décimale ; 70 % sans décimale inutile.
+const pourcent = (v) => { const p = Math.round(v * 1000) / 10; return nf(p, Number.isInteger(p) ? 0 : 1) + ' %'; };
 const CURS = [
   ['population', 'Population', 1e6, 6e6, 50000, (v) => nf(v) + ' habitants'],
-  ['taux_abonnement', "Part des ménages abonnés à un pré-collecteur", 0, 1, 0.01, (v) => nf(v * 100) + ' %'],
+  ['taux_abonnement', "Part des ménages abonnés à un pré-collecteur", 0, 1, 0.01, (v) => pourcent(v)],
   ['camions', 'Camions de la commune', 1, 60, 1, (v) => nf(v) + ' camions'],
   ['frequence', 'Un passage tous les… jours', 1, 7, 1, (v) => nf(v) + ' jour(s)'],
   ['budget', "Budget d'installation des points (FCFA, une fois)", 0, 3e8, 5e6, (v) => nf(v / 1e6) + ' M FCFA'],
@@ -41,9 +43,12 @@ export async function render(racine) {
   try { sc = lireScenario(await get('/api/scenario')); } catch (e) { toast(erreurTexte(e)); sc = {}; }
   if (!ok()) return;
   const defaut = { population: commune().population, taux_abonnement: 0.437, camions: commune().camions, frequence: 1, budget: commune().budget_pr_fcfa, taux_tri: 0 };
-  const poser = () => { CURS.forEach(([k, , , , , f]) => { const i = $('#c-' + k); i.value = sc[k] ?? defaut[k]; const o = $('#o-' + k); o.textContent = f(+i.value); i.oninput = () => { sc[k] = +i.value; o.textContent = f(+i.value); }; }); $('#c-pluies').checked = !!sc.saison_pluies; $('#c-ind').checked = !!sc.agents_individuels; $('#c-mairie').checked = !!sc.mairie_decisionnelle; };
+  // Valeur exacte du scénario (ex. 2 415 266 habitants, 43,7 %) : le curseur, lui, s'arrondit à son pas. On n'envoie la valeur du
+  // curseur que si la personne l'a déplacé ; sinon « Appliquer » modifierait la situation de référence sans qu'on l'ait demandé.
+  const exacte = (k) => sc[k] ?? defaut[k];
+  const poser = () => { CURS.forEach(([k, , , , , f]) => { const i = $('#c-' + k); i.value = exacte(k); const o = $('#o-' + k); o.textContent = f(exacte(k)); i.oninput = () => { sc[k] = +i.value; o.textContent = f(+i.value); }; }); $('#c-pluies').checked = !!sc.saison_pluies; $('#c-ind').checked = !!sc.agents_individuels; $('#c-mairie').checked = !!sc.mairie_decisionnelle; };
   poser(); $('#c-pluies').onchange = (e) => (sc.saison_pluies = e.target.checked);
-  const lire = () => { const o = {}; CURS.forEach(([k]) => (o[k] = +$('#c-' + k).value)); o.saison_pluies = $('#c-pluies').checked; o.agents_individuels = $('#c-ind').checked; o.mairie_decisionnelle = $('#c-mairie').checked; return o; };
+  const lire = () => { const o = {}; CURS.forEach(([k]) => (o[k] = exacte(k))); o.saison_pluies = $('#c-pluies').checked; o.agents_individuels = $('#c-ind').checked; o.mairie_decisionnelle = $('#c-mairie').checked; return o; };
   const dessiner = (ref, cur) => {
     const ks = Object.keys(ref).filter((k) => k !== 'jour' && Array.isArray(ref[k]) && LIB[k]);
     $('#graphes').innerHTML = ks.map((k) => { const [n, u] = LIB[k]; const f = k === 'couverture' ? 100 : 1;
